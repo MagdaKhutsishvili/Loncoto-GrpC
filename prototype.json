@@ -19,4 +19,21 @@
 	
 	
 	
+	
+
+	"Materiel":[
+	
+
+		{ "id" : 1, "serialNumero": 96582 "SiteId": 6315485,"ClientID",5326,"article_de_référence":453156,},
+		{ "id" : 2, "serialNumero": 96583 "SiteId": 6235485,"ClientID",5326,"article_de_référence":453595,},
+		{ "id" : 3, "serialNumero": 96584 "SiteId": 6315454,"ClientID",5326,"article_de_référence":783135,},
+		{ "id" : 4, "serialNumero": 96585 "SiteId": 6315485,"ClientID",5326,"article_de_référence":153135,}
+		
+	]
+	
+	
+	
+	
+	
+	
 	}
