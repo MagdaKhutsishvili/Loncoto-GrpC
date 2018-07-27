@@ -1,0 +1,19 @@
+{
+	"intervenants" : [
+		{ "id" : 1, "nom": "potter", "prenom": "harry"},
+		{ "id" : 2, "nom": "pitt", "prenom": "brad"},
+		{ "id" : 3, "nom": "stark", "prenom": "tony"},
+		{ "id" : 4, "nom": "chicken", "prenom": "little"}
+	
+	],
+			
+	"intervention" : [
+		{ "id" : 1, "nom": "potter", "prenom": "harry"},
+		{ "id" : 2, "nom": "pitt", "prenom": "brad"},
+		{ "id" : 3, "nom": "stark", "prenom": "tony"},
+		{ "id" : 4, "nom": "chicken", "prenom": "little"}
+	
+	]
+	
+	
+	}
