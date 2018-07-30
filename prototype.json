@@ -24,16 +24,34 @@
 	"Materiel":[
 	
 
-		{ "id" : 1, "serialNumero": 96582 "SiteId": 6315485,"ClientID",5326,"article_de_référence":453156,},
-		{ "id" : 2, "serialNumero": 96583 "SiteId": 6235485,"ClientID",5326,"article_de_référence":453595,},
-		{ "id" : 3, "serialNumero": 96584 "SiteId": 6315454,"ClientID",5326,"article_de_référence":783135,},
-		{ "id" : 4, "serialNumero": 96585 "SiteId": 6315485,"ClientID",5326,"article_de_référence":153135,}
+		{ "id" : 1, "serialNumero": 96582, "SiteId": 6315485,"ClientID",5326,"article_de_référence":453156},
+		{ "id" : 2, "serialNumero": 96583, "SiteId": 6235485,"ClientID",5326,"article_de_référence":453595},
+		{ "id" : 3, "serialNumero": 96584, "SiteId": 6315454,"ClientID",5326,"article_de_référence":783135},
+		{ "id" : 4, "serialNumero": 96585, "SiteId": 6315485,"ClientID",5326,"article_de_référence":153135}
 		
+	],
+	
+	
+	"Client":[
+	
+
+		{ "id" : 1, "Nom": "Bedaine Yves ", "email":"yves@bedaine.fr","nbsite":1},
+		{ "id" : 2, "Nom": "Oulala SAS", "email":"oulala@oui.fr","nbsite":1},
+		{ "id" : 3, "Nom": "Pepinere Sarl ", "email":"pepsdepeps@gmal.com","nbsite":1},
+		{ "id" : 4, "Nom": "La boite de Oui-Oui et Potiron" ,"email":"vas-y_ouioui@paysdesjouets.com","nbsite":1}
+		
+	],
+	
+	
+	"Site":[
+		{ "id" : 1, "nom": "Usine de tri" ,"adresse":"3 rue de la pomme 32000 mont-lesburnes","ClientID":5326},
+		{ "id" : 2, "nom": "Site Opale" ,"adresse":"14 rue singe 14300 Perague","ClientID":5326},
+		{ "id" : 3, "nom": "les tarterêts" ,"adresse":"2084 avenue de Cher-Haon 75014 Paris","ClientID":1121},
+		{ "id" : 4, "nom": "Obey" ,"adresse":"6 impasse du Sayan, 01200 Joie-Ville","ClientID":8444}
+	
+	
+	
 	]
-	
-	
-	
-	
 	
 	
 	}

@@ -10,8 +10,8 @@ Bien que les 3 toucheront à tout, on attribue un métier à chacun.
 
 
 
-François  => 
+François  => Intervention, Intervenant , Gourpe intervenant.
 
-Magda => Base de Données 
+Magda => Catalogue ,Articles
 
-Nicolas => Back
+Nicolas => Matériel, Client, Site
