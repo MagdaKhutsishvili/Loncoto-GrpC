@@ -27,3 +27,4 @@ Organisation du groupe :
 	Creer tous les composants
 	Commencer à coder quelques services
 	
+g
