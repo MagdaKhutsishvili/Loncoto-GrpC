@@ -1,0 +1,29 @@
+# Loncoto-GrpC
+
+
+
+Organisation du groupe : 
+
+
+
+
+[27-07-2018]
+	Bien que les 3 toucheront à tout, on attribue un métier à chacun.
+	////
+	2eme Décision: les 3 membres sont full-stack , on se partage juste les composants.
+
+
+
+	François  => Intervention, Intervenant , Gourpe intervenant.
+
+	Magda => Catalogue ,Articles
+
+	Nicolas => Matériel, Client, Site
+
+
+
+[01-08-2018]
+	Creer le squelette du projet 
+	Creer tous les composants
+	Commencer à coder quelques services
+	
