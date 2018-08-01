@@ -51,7 +51,22 @@
 	
 	
 	
-	]
+	],
 	
+	"Groupe Intervenants" : [
+		{ "id" : 1, "nom": "groupe1"},
+		{ "id" : 2, "nom": "groupe2"},
+		{ "id" : 3, "nom": "groupe3"},
+		{ "id" : 4, "nom": "groupe3"}
+ 	],
+	
+	"Article" : [
+	
+		{ "id" : 1, "nom": "ordinateurLG", "description" : "ecran casé"},
+		{ "id" : 2, "nom": "ordinateurLG", "description" : "lecteur CD bloqué"},
+		{ "id" : 3, "nom": "ordinateurLG", "description" : "ecran casé"},
+		{ "id" : 4, "nom": "ordinateurLG", "description" : "ventilateur bruyant"}
+	
+	]
 	
 	}
