@@ -4643,6 +4643,22 @@
 													"top": 272,
 													"width": 194.84619140625,
 													"height": 13
+												},
+												{
+													"_type": "ERDColumnView",
+													"_id": "AAAAAAFk9MVp1uiopKc=",
+													"_parent": {
+														"$ref": "AAAAAAFkasSf0+bJzV0="
+													},
+													"model": {
+														"$ref": "AAAAAAFk9MVpsuilbvc="
+													},
+													"fillColor": "#adc8ff",
+													"font": "Arial;13;0",
+													"left": 125,
+													"top": 287,
+													"width": 194.84619140625,
+													"height": 13
 												}
 											],
 											"fillColor": "#adc8ff",
@@ -4650,7 +4666,7 @@
 											"left": 120,
 											"top": 207,
 											"width": 204.84619140625,
-											"height": 83
+											"height": 98
 										}
 									],
 									"fillColor": "#adc8ff",
@@ -5542,7 +5558,7 @@
 											"font": "Arial;13;1",
 											"left": 152,
 											"top": 21,
-											"width": 136,
+											"width": 137.6181640625,
 											"height": 13,
 											"text": "Article"
 										},
@@ -5569,7 +5585,7 @@
 													"font": "Arial;13;0",
 													"left": 157,
 													"top": 44,
-													"width": 126,
+													"width": 127.6181640625,
 													"height": 13
 												},
 												{
@@ -5585,7 +5601,23 @@
 													"font": "Arial;13;0",
 													"left": 157,
 													"top": 59,
-													"width": 126,
+													"width": 127.6181640625,
+													"height": 13
+												},
+												{
+													"_type": "ERDColumnView",
+													"_id": "AAAAAAFk9MUEDOigkjE=",
+													"_parent": {
+														"$ref": "AAAAAAFk25juUyn3gEE="
+													},
+													"model": {
+														"$ref": "AAAAAAFk9MUD4uid8AI="
+													},
+													"fillColor": "#adc8ff",
+													"font": "Arial;13;0",
+													"left": 157,
+													"top": 74,
+													"width": 127.6181640625,
 													"height": 13
 												}
 											],
@@ -5593,15 +5625,15 @@
 											"font": "Arial;13;0",
 											"left": 152,
 											"top": 39,
-											"width": 136,
-											"height": 38
+											"width": 137.6181640625,
+											"height": 53
 										}
 									],
 									"fillColor": "#adc8ff",
 									"font": "Arial;13;0",
 									"left": 152,
 									"top": 16,
-									"width": 136,
+									"width": 137.6181640625,
 									"height": 128,
 									"nameLabel": {
 										"$ref": "AAAAAAFk25juUyn2PyI="
@@ -5813,7 +5845,7 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 334,
+											"left": 335,
 											"top": 86,
 											"height": 13,
 											"alpha": 1.5707963267948966,
@@ -5847,7 +5879,7 @@
 												"$ref": "AAAAAAFk254d6SpPHRA="
 											},
 											"font": "Arial;13;0",
-											"left": 312,
+											"left": 314,
 											"top": 85,
 											"height": 13,
 											"alpha": -0.5235987755982988,
@@ -5865,7 +5897,7 @@
 										"$ref": "AAAAAAFk25yiqioK9mI="
 									},
 									"lineStyle": 2,
-									"points": "384:77;287:77",
+									"points": "384:77;289:77",
 									"nameLabel": {
 										"$ref": "AAAAAAFk254d6SpQ51I="
 									},
@@ -6204,6 +6236,16 @@
 									"type": "int",
 									"length": 0,
 									"foreignKey": true
+								},
+								{
+									"_type": "ERDColumn",
+									"_id": "AAAAAAFk9MVpsuilbvc=",
+									"_parent": {
+										"$ref": "AAAAAAFkasSfyubFmUc="
+									},
+									"name": "Etat",
+									"type": "String",
+									"length": 0
 								}
 							]
 						},
@@ -6862,6 +6904,16 @@
 										"$ref": "AAAAAAFk25juUynz/+Q="
 									},
 									"name": "nom",
+									"type": "String",
+									"length": 0
+								},
+								{
+									"_type": "ERDColumn",
+									"_id": "AAAAAAFk9MUD4uid8AI=",
+									"_parent": {
+										"$ref": "AAAAAAFk25juUynz/+Q="
+									},
+									"name": "description",
 									"type": "String",
 									"length": 0
 								}
