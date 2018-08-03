@@ -7,11 +7,73 @@
 	
 	],
 			
+<<<<<<< HEAD
 	"intervention" : [
 		{ "id" : 1, "datePrevue": "22.05.2016", "date Effectuee": "14.07.2016", "Statut": "harry", "commentaire": "potter", "MatId": "potter", "IntervenantId": "potter"},
 		{ "id" : 2, "datePrevue": "22.05.2016", "date Effectuee": "14.07.2016", "Statut": "harry", "commentaire": "potter", "MatId": "potter", "IntervenantId": "potter"},
 		{ "id" : 3, "datePrevue": "22.05.2016", "date Effectuee": "14.07.2016", "Statut": "harry", "commentaire": "potter", "MatId": "potter", "IntervenantId": "potter"},
 		{ "id" : 4, "datePrevue": "22.05.2016", "date Effectuee": "14.07.2016", "Statut": "harry", "commentaire": "potter", "MatId": "potter", "IntervenantId": "potter"}
+=======
+	"interventions" : [
+		{ "id" : 1, "datePrévu": "06/06/1851", "dateEffectué": "06/06/2011","Commentaire","deux cent ans d'ecart quand meme","MaterielId":453135,"IntervenantID":74512556},
+		{ "id" : 2, "datePrévu": "06/06/1451", "dateEffectué": "07/06/2011","Commentaire","c'était dur","MaterielId":47835,"IntervenantID":4512556},
+		{ "id" : 3, "datePrévu": "06/06/2051", "dateEffectué": "08/06/2011","Commentaire","c'était facile","MaterielId":453135,"IntervenantID":451245556},
+		{ "id" : 4, "datePrévu": "06/06/2001", "dateEffectué": "09/06/2011","Commentaire","mal au dos","MaterielId":5453135,"IntervenantID":4512556},
+		{ "id" : 5, "datePrévu": "06/06/2017", "dateEffectué": "10/06/2011","Commentaire","Manque une vise","MaterielId":4553135,"IntervenantID":45125756}
+		
+	],
+	
+	
+	
+	
+	
+
+	"Materiel":[
+	
+
+		{ "id" : 1, "serialNumero": 96582, "SiteId": 6315485,"ClientID",5326,"article_de_référence":453156},
+		{ "id" : 2, "serialNumero": 96583, "SiteId": 6235485,"ClientID",5326,"article_de_référence":453595},
+		{ "id" : 3, "serialNumero": 96584, "SiteId": 6315454,"ClientID",5326,"article_de_référence":783135},
+		{ "id" : 4, "serialNumero": 96585, "SiteId": 6315485,"ClientID",5326,"article_de_référence":153135}
+		
+	],
+	
+	
+	"Client":[
+	
+
+		{ "id" : 1, "Nom": "Bedaine Yves ", "email":"yves@bedaine.fr","nbsite":1},
+		{ "id" : 2, "Nom": "Oulala SAS", "email":"oulala@oui.fr","nbsite":1},
+		{ "id" : 3, "Nom": "Pepinere Sarl ", "email":"pepsdepeps@gmal.com","nbsite":1},
+		{ "id" : 4, "Nom": "La boite de Oui-Oui et Potiron" ,"email":"vas-y_ouioui@paysdesjouets.com","nbsite":1}
+		
+	],
+	
+	
+	"Site":[
+		{ "id" : 1, "nom": "Usine de tri" ,"adresse":"3 rue de la pomme 32000 mont-lesburnes","ClientID":5326},
+		{ "id" : 2, "nom": "Site Opale" ,"adresse":"14 rue singe 14300 Perague","ClientID":5326},
+		{ "id" : 3, "nom": "les tarterêts" ,"adresse":"2084 avenue de Cher-Haon 75014 Paris","ClientID":1121},
+		{ "id" : 4, "nom": "Obey" ,"adresse":"6 impasse du Sayan, 01200 Joie-Ville","ClientID":8444}
+	
+	
+	
+	],
+	
+	"Groupe Intervenants" : [
+		{ "id" : 1, "nom": "groupe1"},
+		{ "id" : 2, "nom": "groupe2"},
+		{ "id" : 3, "nom": "groupe3"},
+		{ "id" : 4, "nom": "groupe3"}
+ 	],
+	
+	"Article" : [
+	
+		{ "id" : 1, "nom": "ordinateurLG", "description" : "ecran casé"},
+		{ "id" : 2, "nom": "ordinateurLG", "description" : "lecteur CD bloqué"},
+		{ "id" : 3, "nom": "ordinateurLG", "description" : "ecran casé"},
+		{ "id" : 4, "nom": "ordinateurLG", "description" : "ventilateur bruyant"}
+>>>>>>> branch 'master' of https://github.com/0Nico/Loncoto-GrpC.git
 	
 	]
 	"materiel" : [
@@ -20,6 +82,7 @@
 		{ "id" : 3, "serialNo": "12457", "salleId": "67985", "clientId": "7547"},
 		{ "id" : 4, "serialNo": "9753", "salleId": "54666", "clientId": "754747"}
 	
+<<<<<<< HEAD
 	]
 	"client" : [
 		{ "id" : 1, "nom": "microsoft", "email": "harry"},
@@ -42,4 +105,6 @@
 		{ "id" : 4, "nom": "groupe3"}
 
 	]
+=======
+>>>>>>> branch 'master' of https://github.com/0Nico/Loncoto-GrpC.git
 	}
