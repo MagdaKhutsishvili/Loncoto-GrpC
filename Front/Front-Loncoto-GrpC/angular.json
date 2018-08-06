@@ -32,7 +32,7 @@
 
             ],
             "scripts": [
-              "sr/template-bootstrap/vendor/jquery/jquery.min.js",
+              "src/template-bootstrap/vendor/jquery/jquery.min.js",
               "src/template-bootstrap/vendor/bootstrap/js/bootstrap.bundle.min.js",
     
         
