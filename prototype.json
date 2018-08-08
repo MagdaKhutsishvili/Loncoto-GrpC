@@ -7,13 +7,7 @@
 	
 	],
 			
-<<<<<<< HEAD
-	"intervention" : [
-		{ "id" : 1, "datePrevue": "22.05.2016", "date Effectuee": "14.07.2016", "Statut": "harry", "commentaire": "potter", "MatId": "potter", "IntervenantId": "potter"},
-		{ "id" : 2, "datePrevue": "22.05.2016", "date Effectuee": "14.07.2016", "Statut": "harry", "commentaire": "potter", "MatId": "potter", "IntervenantId": "potter"},
-		{ "id" : 3, "datePrevue": "22.05.2016", "date Effectuee": "14.07.2016", "Statut": "harry", "commentaire": "potter", "MatId": "potter", "IntervenantId": "potter"},
-		{ "id" : 4, "datePrevue": "22.05.2016", "date Effectuee": "14.07.2016", "Statut": "harry", "commentaire": "potter", "MatId": "potter", "IntervenantId": "potter"}
-=======
+
 	"interventions" : [
 		{ "id" : 1, "datePrévu": "06/06/1851", "dateEffectué": "06/06/2011","Commentaire","deux cent ans d'ecart quand meme","MaterielId":453135,"IntervenantID":74512556},
 		{ "id" : 2, "datePrévu": "06/06/1451", "dateEffectué": "07/06/2011","Commentaire","c'était dur","MaterielId":47835,"IntervenantID":4512556},
@@ -73,7 +67,7 @@
 		{ "id" : 2, "nom": "ordinateurLG", "description" : "lecteur CD bloqué"},
 		{ "id" : 3, "nom": "ordinateurLG", "description" : "ecran casé"},
 		{ "id" : 4, "nom": "ordinateurLG", "description" : "ventilateur bruyant"}
->>>>>>> branch 'master' of https://github.com/0Nico/Loncoto-GrpC.git
+
 	
 	]
 	"materiel" : [
@@ -81,30 +75,6 @@
 		{ "id" : 2, "serialNo": "2468", "salleId": "675478", "clientId": "7547"},
 		{ "id" : 3, "serialNo": "12457", "salleId": "67985", "clientId": "7547"},
 		{ "id" : 4, "serialNo": "9753", "salleId": "54666", "clientId": "754747"}
-	
-<<<<<<< HEAD
-	]
-	"client" : [
-		{ "id" : 1, "nom": "microsoft", "email": "harry"},
-		{ "id" : 2, "nom": "google", "email": "brad"},
-		{ "id" : 3, "nom": "twitter", "email": "tony"},
-		{ "id" : 4, "nom": "cisco", "email": "little"}
-	
-	]
-	"site" : [
-		{ "id" : 1, "nom": "microsoft", "addresse": "harry", "coordonnée": "harry"},
-		{ "id" : 2, "nom": "google", "addresse": "brad", "coordonnée": "harry"},
-		{ "id" : 3, "nom": "twitter", "addresse": "tony", "coordonnée": "harry"},
-		{ "id" : 4, "nom": "cisco", "addresse": "little", "coordonnée": "harry"}
-	
-	]
-	"Groupe Intervenants" : [
-		{ "id" : 1, "nom": "groupe1"},
-		{ "id" : 2, "nom": "groupe2"},
-		{ "id" : 3, "nom": "groupe3"},
-		{ "id" : 4, "nom": "groupe3"}
+	]	
 
-	]
-=======
->>>>>>> branch 'master' of https://github.com/0Nico/Loncoto-GrpC.git
-	}
+}
