@@ -1,3 +1,33 @@
-<p>
-  display-interventions-duclient works!
-</p>
+<div class="panel panel-primary">
+  <div class="panel-heading"> {{ title }} </div>
+  <div class="panel-body">
+  <table class="table table-striped table-hover table-dark" border="1">
+
+<thead>
+<tr>
+<th>ID</th>
+<th>DatePrevu</th>
+<th>DateEffectue</th>
+<th>Statut</th>
+<th>Commentaire</th>
+<th>MatérielId</th>
+<th>IntervenantId</th>
+
+
+</tr>
+</thead>
+<tbody>
+<tr *ngFor="let intervention of InterObservable | async">
+<td>{{intervention.id}}</td>
+<td>{{intervention.datePrevu}}</td>
+<td>{{intervention.dateEffectue}}</td>
+<td>{{intervention.statut}}</td>
+<td>{{intervention.commentaire}}</td>
+<td>{{intervention.materielID}}</td>
+<td>{{intervention.intervenantID}}</td>
+
+</tr>
+</tbody>
+  </table> 
+  </div>
+</div>
