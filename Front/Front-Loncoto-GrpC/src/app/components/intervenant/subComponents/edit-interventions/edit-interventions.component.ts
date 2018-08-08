@@ -8,16 +8,16 @@ import { InterventionRepositoryService } from '../../../../services/intervention
   templateUrl: './edit-interventions.component.html',
   styleUrls: ['./edit-interventions.component.css']
 })
-export class LivreEditComponent implements OnInit, OnChanges {
+export class EditInterventionsComponent implements OnInit {
 
-  @Input() public editId: number;
-  public currentIntervention: Intervention;
+
+ 
   
-  constructor(private interventionRepository:InterventionRepositoryService) { }
+  constructor() { }
 
   ngOnInit() {
-    this.currentIntervention=new Intervention(0,"rien","aucun",10.0);
-  }
+    
+  }/*
   ngOnChanges(changes:any){
     if (this.editId==0){
       this.currentIntervention=new Intervention(0,"rien","aucun",10.0);
@@ -41,4 +41,6 @@ export class LivreEditComponent implements OnInit, OnChanges {
     }
   }
 
+}
+*/
 }

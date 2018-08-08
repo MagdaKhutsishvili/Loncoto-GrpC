@@ -4,11 +4,11 @@ import { Observable } from 'rxjs';
 import { InterventionRepositoryService } from '../../../../services/interventions-repository.service';
 
 @Component({
-  selector: 'app-display-interventions',
-  templateUrl: './display-interventions.component.html',
-  styleUrls: ['./display-interventions.component.css']
+  selector: 'app-display-interventions-operateur',
+  templateUrl: './display-interventions-operateur.component.html',
+  styleUrls: ['./display-interventions-operateur.component.css']
 })
-export class DisplayInterventionsComponent implements OnInit {
+export class DisplayInterventionsOperateurComponent implements OnInit {
 
 
 
@@ -20,6 +20,7 @@ export class DisplayInterventionsComponent implements OnInit {
 
   ngOnInit() {
     this.interventionsObservable = this.repertoireIntervention.getInterventionAsOsbervable();
+    this.repertoireIntervention.refreshListe();
   }
 
   public removeInter(id: number) {
