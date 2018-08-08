@@ -69,7 +69,7 @@
 		{ "id" : 4, "nom": "ordinateurLG", "description" : "ventilateur bruyant"}
 
 	
-	]
+	],
 	"materiel" : [
 		{ "id" : 1, "serialNo": "1357", "salleId": "474677", "clientId": "3626"},
 		{ "id" : 2, "serialNo": "2468", "salleId": "675478", "clientId": "7547"},
