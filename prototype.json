@@ -34,7 +34,6 @@
 	
 	
 	"Client":[
-	
 
 		{ "id" : 1, "Nom": "Bedaine Yves ", "email":"yves@bedaine.fr","nbsite":1},
 		{ "id" : 2, "Nom": "Oulala SAS", "email":"oulala@oui.fr","nbsite":1},
