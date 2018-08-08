@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Intervention } from '../../../../metier/objet-interventions';
+import { Observable } from 'rxjs';
+import { InterventionsRepositoryService } from '../../../../services/interventions-repository.service';
 
 @Component({
   selector: 'app-display-interventions-duclient',
@@ -7,9 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DisplayInterventionsDuclientComponent implements OnInit {
 
-  constructor() { }
+  public interventions : Array<Intervention>;
+public interventionObservable : Observable<Array<Intervention>>
+
+  constructor(private interventionRepository : InterventionsRepositoryService) { }
 
   ngOnInit() {
+    this.interventionObservable = this.interventionRepository.getInterventionObservable();
   }
 
 }
