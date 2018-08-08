@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Intervention } from '../../../../metier/objet-interventions';
+import { Intervention } from '../../../../metier/objet-intervention';
 import { Observable } from 'rxjs';
 import { InterventionsRepositoryService } from '../../../../services/interventions-repository.service';
 
@@ -11,12 +11,13 @@ import { InterventionsRepositoryService } from '../../../../services/interventio
 export class DisplayInterventionsDuclientComponent implements OnInit {
 
   public interventions : Array<Intervention>;
-public interventionObservable : Observable<Array<Intervention>>
+public interventionsObservable : Observable<Array<Intervention>>
 
   constructor(private interventionRepository : InterventionsRepositoryService) { }
 
   ngOnInit() {
-    this.interventionObservable = this.interventionRepository.getInterventionObservable();
+    this.interventionsObservable = this.interventionRepository.getInterventionAsOsbervable();
+    this.interventionRepository.refreshListe();
   }
 
 }

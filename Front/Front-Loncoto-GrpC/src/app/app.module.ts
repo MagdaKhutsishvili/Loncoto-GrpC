@@ -23,6 +23,8 @@ import { EditReferentielComponent } from './components/operateur/subComponents/e
 import { VitrineComponent } from './components/vitrine/vitrine.component';
 import { AboutComponent } from './components/vitrine/subComponent/about/about.component';
 import {DisplayInterventionsOperateurComponent} from './components/operateur/subComponents/display-interventions-operateur/display-interventions-operateur.component';
+import { DisplayPlanningsOperateurComponent } from './components/operateur/subComponents/display-plannings-operateur/display-plannings-operateur.component';
+import { EditInterventionsOperateurComponent } from './components/operateur/subComponents/edit-interventions-operateur/edit-interventions-operateur.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,9 @@ import {DisplayInterventionsOperateurComponent} from './components/operateur/sub
     EditReferentielComponent,
     VitrineComponent,
     AboutComponent,
-    DisplayInterventionsOperateurComponent
+    DisplayInterventionsOperateurComponent,
+    DisplayPlanningsOperateurComponent,
+    EditInterventionsOperateurComponent
   ],
   imports: [
     BrowserModule,

@@ -1,8 +1,8 @@
 
 export class Intervention{
     public constructor(public id :number,
-                        public datePrevu: Date,
-                        public dateEffectue: Date,
+                        public datePrevu: string,
+                        public dateEffectue: string,
                         public statut: string,
                         public commentaire: string,
                         public id_Materiel: number,

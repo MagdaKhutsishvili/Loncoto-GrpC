@@ -1,6 +1,6 @@
 import { Component, OnInit, OnChanges, Input } from '@angular/core';
 import { Intervention } from '../../../../metier/objet-intervention';
-import { InterventionRepositoryService } from '../../../../services/interventions-repository.service';
+import { InterventionsRepositoryService } from '../../../../services/interventions-repository.service';
 
 
 @Component({

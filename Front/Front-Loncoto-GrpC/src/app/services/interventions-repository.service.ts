@@ -5,27 +5,17 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class InterventionRepositoryService {
-
-
+export class InterventionsRepositoryService {
 
   private interventionSubject: BehaviorSubject<Array<Intervention>>;
-
-
   constructor(private http : HttpClient) { 
-
     this.interventionSubject= new BehaviorSubject([]);
-
-
   }
 
-  
   public getInterventionAsOsbervable(): Observable<Array<Intervention>>{
       return this.interventionSubject.asObservable();
 
   }
-
-
 
   public refreshListe():void{
 
@@ -46,4 +36,12 @@ export class InterventionRepositoryService {
 
 
   }
+  public updateIntervention(intervention : Intervention): void {
+    this.http.put(`http://localhost:3000/interventions/${intervention.id}`, intervention.toJson()).subscribe(resp =>{
+              this.refreshListe();
+    });
+  }
 }
+
+
+

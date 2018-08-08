@@ -11,5 +11,6 @@ describe('IntervenantRepositoryService', () => {
 
   it('should be created', inject([IntervenantRepositoryService], (service: IntervenantRepositoryService) => {
     expect(service).toBeTruthy();
+    
   }));
 });

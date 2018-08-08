@@ -1,7 +1,7 @@
 import { Component, OnInit,EventEmitter, Output  } from '@angular/core';
 import { Intervention } from '../../../../metier/objet-intervention';
 import { Observable } from 'rxjs';
-import { InterventionRepositoryService } from '../../../../services/interventions-repository.service';
+import { InterventionsRepositoryService } from '../../../../services/interventions-repository.service';
 
 @Component({
   selector: 'app-display-interventions-operateur',
@@ -16,7 +16,7 @@ export class DisplayInterventionsOperateurComponent implements OnInit {
   public interventionsObservable: Observable<Array<Intervention>>;
   @Output() public editRequired: EventEmitter<number>=new EventEmitter<number>();;
 
-  constructor(private repertoireIntervention: InterventionRepositoryService) { }
+  constructor(private repertoireIntervention: InterventionsRepositoryService) { }
 
   ngOnInit() {
     this.interventionsObservable = this.repertoireIntervention.getInterventionAsOsbervable();
