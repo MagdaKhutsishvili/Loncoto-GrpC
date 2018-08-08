@@ -7,6 +7,7 @@
 	
 	],
 			
+
 	"interventions" : [
 		{ "id" : 1, "datePrévu": "06/06/1851", "dateEffectué": "06/06/2011","Commentaire","deux cent ans d'ecart quand meme","MaterielId":453135,"IntervenantID":74512556},
 		{ "id" : 2, "datePrévu": "06/06/1451", "dateEffectué": "07/06/2011","Commentaire","c'était dur","MaterielId":47835,"IntervenantID":4512556},
@@ -66,7 +67,14 @@
 		{ "id" : 2, "nom": "ordinateurLG", "description" : "lecteur CD bloqué"},
 		{ "id" : 3, "nom": "ordinateurLG", "description" : "ecran casé"},
 		{ "id" : 4, "nom": "ordinateurLG", "description" : "ventilateur bruyant"}
+
 	
-	]
-	
-	}
+	],
+	"materiel" : [
+		{ "id" : 1, "serialNo": "1357", "salleId": "474677", "clientId": "3626"},
+		{ "id" : 2, "serialNo": "2468", "salleId": "675478", "clientId": "7547"},
+		{ "id" : 3, "serialNo": "12457", "salleId": "67985", "clientId": "7547"},
+		{ "id" : 4, "serialNo": "9753", "salleId": "54666", "clientId": "754747"}
+	]	
+
+}
