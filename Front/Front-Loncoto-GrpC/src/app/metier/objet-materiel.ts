@@ -8,7 +8,7 @@ export class Materiel{
                          {}
     
 /*
-    public copyFrom(other: Employe){
+    public copyFrom(other: Materiel){
         this.id=other.id;
         this.nom=other.nom;
         this.prenom=other.prenom;
