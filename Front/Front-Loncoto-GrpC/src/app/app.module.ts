@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 
+import { RouterModule } from "@angular/router";
+
 import { AppComponent } from './app.component';
 import { ClientComponent } from './components/client/client.component';
 import { OperateurComponent } from './components/operateur/operateur.component';
@@ -15,6 +17,9 @@ import { EditInterventionsComponent } from './components/intervenant/subComponen
 import { EditPlanningsComponent } from './components/operateur/subComponents/edit-plannings/edit-plannings.component';
 import { DisplayReferentielComponent } from './components/operateur/subComponents/display-referentiel/display-referentiel.component';
 import { EditReferentielComponent } from './components/operateur/subComponents/edit-referentiel/edit-referentiel.component';
+import { VitrineComponent } from './components/vitrine/vitrine.component';
+import { AboutComponent } from './components/vitrine/subComponent/about/about.component';
+
 
 @NgModule({
   declarations: [
@@ -29,12 +34,23 @@ import { EditReferentielComponent } from './components/operateur/subComponents/e
     EditInterventionsComponent,
     EditPlanningsComponent,
     DisplayReferentielComponent,
-    EditReferentielComponent
+    EditReferentielComponent,
+    VitrineComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot([
+      {path: 'home', component: VitrineComponent},
+      {path: 'about', component: AboutComponent},
+      {path: 'client', component: ClientComponent},
+      {path: 'intervenant', component: IntervenantComponent},
+      {path: 'operateur', component: OperateurComponent},
+     // {path: 'edit/:id',component: EditKoComponent},
+      {path: '', redirectTo: '/home', pathMatch:'full'}
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
