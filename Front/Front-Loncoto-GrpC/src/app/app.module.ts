@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
+import {NgxPageScrollModule} from 'ngx-page-scroll';
+
 
 import { RouterModule } from "@angular/router";
 
@@ -21,7 +23,7 @@ import { EditReferentielComponent } from './components/operateur/subComponents/e
 
 
 import { VitrineComponent } from './components/vitrine/vitrine.component';
-import { AboutComponent } from './components/vitrine/subComponent/about/about.component';
+
 import {DisplayInterventionsOperateurComponent} from './components/operateur/subComponents/display-interventions-operateur/display-interventions-operateur.component';
 import { DisplayPlanningsOperateurComponent } from './components/operateur/subComponents/display-plannings-operateur/display-plannings-operateur.component';
 import { EditInterventionsOperateurComponent } from './components/operateur/subComponents/edit-interventions-operateur/edit-interventions-operateur.component';
@@ -41,7 +43,6 @@ import { EditInterventionsOperateurComponent } from './components/operateur/subC
     DisplayReferentielComponent,
     EditReferentielComponent,
     VitrineComponent,
-    AboutComponent,
     DisplayInterventionsOperateurComponent,
     DisplayPlanningsOperateurComponent,
     EditInterventionsOperateurComponent
@@ -50,9 +51,10 @@ import { EditInterventionsOperateurComponent } from './components/operateur/subC
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    NgxPageScrollModule,
     RouterModule.forRoot([
       {path: 'home', component: VitrineComponent},
-      {path: 'about', component: AboutComponent},
+      
       {path: 'client', component: ClientComponent},
       {path: 'intervenant', component: IntervenantComponent},
       {path: 'operateur', component: OperateurComponent},
