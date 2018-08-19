@@ -18,6 +18,30 @@ export class EditInterventionsOperateurComponent implements OnInit,OnChanges {
 
    }
 
+
+
+   public saveIntervention() {
+    
+      if (this.currentIntervention.id > 0){
+        let InterToSave = new Intervention(0,"1-1-1999","1-1-1999","rien","toi",0,0);
+        
+        // retransformation du modele/json du formulaire
+        // en veritable objet Livre avec ses méthodes
+        InterToSave.copyFrom(this.currentIntervention);
+  
+        this.InterventionRepository.updateIntervention(InterToSave);
+        this.currentIntervention = new Intervention(0,"1-1-1999","1-1-1999","rien","toi",0,0);
+      }
+ 
+    }
+  public cancelIntervention() {
+    this.currentIntervention = new Intervention(0,"1-1-1999","1-1-1999","rien","toi",0,0);
+  }
+
+
+
+
+
   ngOnInit() {
     this.currentIntervention=new Intervention(0,"1-1-1999","1-1-1999","rien","toi",0,0);
   }
@@ -28,7 +52,7 @@ export class EditInterventionsOperateurComponent implements OnInit,OnChanges {
       this.currentIntervention=new Intervention(0,"1-1-1999","1-1-1999","rien","toi",0,0);
     }
     else{
-      this.InterventionRepository.findById(this.editId).subscribe(Intervention=> { this.currentIntervention=Intervention;
+      this.InterventionRepository.findById(this.editId).subscribe(intervention=> { this.currentIntervention=intervention;
       });
     }
   }

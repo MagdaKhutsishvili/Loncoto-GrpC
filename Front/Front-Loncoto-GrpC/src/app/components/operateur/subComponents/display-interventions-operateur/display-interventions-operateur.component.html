@@ -24,7 +24,7 @@
           <td>{{intervention.id_Materiel}}</td>
           <td>{{intervention.id_Intervenant}}</td>
         <td><button (click)="removeInter(intervention.id)" class="btn btn-danger">remove</button></td>
-         <td><button (click)="editInter(intervention.id)" class="btn btn-warning">edit</button></td>
+         <td><button (click)="editInter(intervention.id)" class="btn btn-warning" pageScroll routerLink='/operateur' href="#editinter">edit</button></td>
         </tr>
       </tbody>
     </table>

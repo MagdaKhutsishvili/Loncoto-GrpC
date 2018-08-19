@@ -23,11 +23,11 @@
         </div>
       </nav>
 
-<header class="masthead text-center text-white d-flex ">
+<header class="masthead text-center text-white d-flex " id="interlist">
   <div class="container my-auto">
     <div class="row">
 
-      <app-display-interventions-operateur></app-display-interventions-operateur>
+      <app-display-interventions-operateur  (editRequired)="editRequested($event)"></app-display-interventions-operateur>
 
     </div></div>
 
@@ -45,11 +45,11 @@
 
 
 
-<section class="bg-primary" id="about">
+<section class="bg-primary" id="editinter">
   <div class="container">
     <div class="row">
       <div class="col-lg-8 mx-auto text-center">
-        <app-edit-interventions-operateur></app-edit-interventions-operateur>
+        <app-edit-interventions-operateur  [editId]="currentEditId"></app-edit-interventions-operateur>
       </div>
     </div>
   </div>

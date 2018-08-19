@@ -14,6 +14,7 @@ export class DisplayInterventionsOperateurComponent implements OnInit {
 
   public lesinterventions: Array<Intervention>;
   public interventionsObservable: Observable<Array<Intervention>>;
+  
   @Output() public editRequired: EventEmitter<number>=new EventEmitter<number>();;
 
   constructor(private repertoireIntervention: InterventionsRepositoryService) { }

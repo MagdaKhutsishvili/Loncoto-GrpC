@@ -27,6 +27,7 @@ import { VitrineComponent } from './components/vitrine/vitrine.component';
 import {DisplayInterventionsOperateurComponent} from './components/operateur/subComponents/display-interventions-operateur/display-interventions-operateur.component';
 import { DisplayPlanningsOperateurComponent } from './components/operateur/subComponents/display-plannings-operateur/display-plannings-operateur.component';
 import { EditInterventionsOperateurComponent } from './components/operateur/subComponents/edit-interventions-operateur/edit-interventions-operateur.component';
+import { InterventionsRepositoryService } from './services/interventions-repository.service';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,7 @@ import { EditInterventionsOperateurComponent } from './components/operateur/subC
       {path: '', redirectTo: '/home', pathMatch:'full'}
     ])
   ],
-  providers: [],
+  providers: [InterventionsRepositoryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

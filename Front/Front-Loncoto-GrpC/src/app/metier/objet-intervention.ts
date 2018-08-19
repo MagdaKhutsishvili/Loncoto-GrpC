@@ -12,7 +12,7 @@ export class Intervention{
                        
                          {}
     
-/*
+
     public copyFrom(other: Intervention){
         this.id=other.id;
         this.datePrevu=other.datePrevu;
@@ -21,7 +21,7 @@ export class Intervention{
         this.commentaire=other.commentaire;
         this.id_Materiel=other.id_Materiel;
         this.id_Intervenant=other.id_Intervenant;
-    }*/
+    }
     public toJson(){
         return {
             datePrevu:this.datePrevu,
