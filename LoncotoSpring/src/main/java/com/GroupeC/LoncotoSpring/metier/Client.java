@@ -23,6 +23,7 @@ import lombok.ToString;
 
 @Getter @Setter @NoArgsConstructor @AllArgsConstructor @ToString(exclude= {"famille"})
 @Entity
+
 public class Client {
 	   @GeneratedValue(strategy=GenerationType.IDENTITY)
 	    @Id private int id;

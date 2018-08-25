@@ -27,14 +27,14 @@ public class Materiel {
 	private String SerialID;
 	private String etat;
 	@ManyToOne	private Article article;
-	@ManyToOne	private Site site;
+	@ManyToOne	private Site lesite;
 	@ManyToOne	private Client client;
 	@OneToMany(mappedBy="materiel",
 			 fetch=FetchType.EAGER) private Set<Intervention> lesinterventions;
 	
 	
 	
-	public Set<Materiel> getLesinterventions() {
+	public Set<Intervention> getLesinterventions() {
 		if ( lesinterventions == null) {
 			lesinterventions = new HashSet<>();
 		}

@@ -1,5 +1,7 @@
 package com.GroupeC.LoncotoSpring.metier;
 
+import java.util.Set;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -20,7 +22,7 @@ public class GroupeIntervenant {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Id				private int id;
 					private String nom;
-	@ManyToMany(mappedBy="groupeIntervenant")			private Intervenant intervenant;
+	@ManyToMany(mappedBy="groupeIntervenants")			private Set<Intervenant> intervenants;
 
 public GroupeIntervenant(int id, String nom) {
 	super();

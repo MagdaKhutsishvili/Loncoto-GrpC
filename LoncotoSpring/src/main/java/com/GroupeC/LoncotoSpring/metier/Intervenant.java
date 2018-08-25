@@ -1,6 +1,10 @@
 package com.GroupeC.LoncotoSpring.metier;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -25,9 +29,9 @@ public class Intervenant {
 					private String prenom;
 					private String email;
 					
-@OneToMany(mappedBy="intervenant")		private Intervention intervention;
+@OneToMany(mappedBy="intervenant")		private Set<Intervention> lesinterventions;
 
-@ManyToMany 					private GroupeIntervenant groupeIntervenant;
+@ManyToMany 					private Set<GroupeIntervenant> groupeIntervenants;
 
 public Intervenant(int id, String nom, String prenom, String email) {
 	super();
@@ -37,5 +41,12 @@ public Intervenant(int id, String nom, String prenom, String email) {
 	this.email = email;
 }
 	
-
+public Set<Intervention> getLesinterventions() {
+	if ( lesinterventions == null) {
+	lesinterventions = new HashSet<>();
+	}
+	return  lesinterventions;
+	}
 }
+
+
