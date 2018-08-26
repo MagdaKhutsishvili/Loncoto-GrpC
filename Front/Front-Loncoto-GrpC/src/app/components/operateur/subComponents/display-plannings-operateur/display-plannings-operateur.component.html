@@ -1,3 +1,100 @@
-<p>
-  display-plannings works!
-</p>
+
+<nav class="navbar navbar-expand-lg navbar-light fixed-top " id="mainNav">
+    <div class="container">
+      <div class="navbar-brand js-scroll-trigger">Bonjour, Opérateur {{nom_operateur}}</div>
+  
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" pageScroll href="#tableauinter"><Table>le Planning</Table></a>
+          </li>
+  
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" pageScroll href="#editer">Créer/Editer</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" routerLink='/home'>Deconnexion</a>
+          </li>
+  
+  
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <header class="masthead text-center  d-flex " id="tableauinter">
+    <div class="container-fluid my-auto " style="height:97%; ">
+      <div class="row">
+        <div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 left_col scroll-view " style="position:fixed; height:97%; ">
+  
+          <!-- sidebar menu -->
+          <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+            <div class="navbar nav_title" style="border: 0;">
+              <div class="site_title"><i class="fa fa-paw"></i> <span>Loncoto</span></div>
+            </div>
+  
+            <div class="menu_section">
+              <h3>General</h3>
+              <ul class="nav side-menu">
+                <li><a routerLink='/operateur'><i class="fa fa-home"></i> Tableau de bord <span class="fa "></span></a> </li>
+                <li><a routerLink='/operateur/planning'><i class="fa fa-edit"></i> Planning <span class="fa "></span></a></li>
+                <li><a routerLink='/operateur/interventions'><i class="fa fa-table"></i> Interventions <span class="fa "></span></a></li>
+                <li><a routerLink='/operateur/referentiel'><i class="fa fa-bar-chart-o"></i> Referentiels <span class="fa "></span></a></li>
+              </ul>
+            </div>
+  
+            <div class="menu_section">
+              <h3>Live On</h3>
+              <ul class="nav side-menu">
+                <li><a routerLink='/operateur' pageScroll href="#messagerie"><i class="fa fa-bug"></i> Messagerie <span class="fa "></span></a></li>
+                <li><a><i class="fa fa-windows"></i> Extras <span class="fa "></span></a></li>
+  
+              
+              </ul>
+            </div>
+            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+          </div>
+          <!-- /sidebar menu -->
+  
+        </div>
+  
+        <div class="col-lg-10 col-sm-10 col-xs-10 col-md-10 placeenhaut">
+ 
+            <calendar-scheduler-view [viewDate]="viewDate"
+            [events]="events"
+            [locale]="locale"
+            [weekStartsOn]="weekStartsOn"
+            [tooltipPlacement]="'top'"
+            [refresh]="refreshSubject"
+            [excludeDays]="excludeDays"
+            [startsWithToday]="startsWithToday"
+            [hourSegments]="2"
+            [dayStartHour]="dayStartHour"
+            [dayEndHour]="dayEndHour"
+            [dayModifier]="dayModifier"
+            [hourModifier]="hourModifier"
+            [segmentModifier]="segmentModifier"
+            [showActions]="true"
+            (dayClicked)="dayClicked($event.day)"
+            (segmentClicked)="segmentClicked('Clicked', $event.segment)"
+            (eventClicked)="eventClicked('Clicked', $event.event)">
+</calendar-scheduler-view>
+  </div>
+      </div>
+    </div>
+  </header>
+  
+  <section class="bg-primary backgroundallpage" id="editer">
+    <div class="col-lg-2 col-sm-2 col-xs-2 col-md-2"></div>
+    <div class="col-lg-10 col-sm-10 col-xs-10 col-md-10 ">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center">
+            <app-edit-interventions-operateur [editId]="currentEditId"></app-edit-interventions-operateur>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+

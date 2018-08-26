@@ -33,7 +33,10 @@
               "src/template-bootstrap/vendor/magnific-popup/magnific-popup.css",
 
               "src/template-bootstrap/css/creative.min.css",
-              "src/template-bootstrap/css/creative.css"
+              "src/template-bootstrap/css/creative.css",
+
+
+              "./node_modules/angular-calendar/css/angular-calendar.css"
 
               
               
@@ -49,7 +52,10 @@
               "src/template-bootstrap/vendor/magnific-popup/jquery.magnific-popup.min.js",
     
         
-              "src/template-bootstrap/js/creative.min.js"
+              "src/template-bootstrap/js/creative.min.js",
+              "node_modules/chart.js/src/chart.js"
+              
+
             ]
           },
           "configurations": {
