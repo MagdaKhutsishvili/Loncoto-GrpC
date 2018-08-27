@@ -27,10 +27,10 @@ public class Site {
 	    @Id private int id;
 	    private String nom;
 	    private String adresse;
-	    @ManyToMany(mappedBy="sites"/*, cascade=CascadeType.REMOVE*/)			private Set<Client> clients;
+	    @ManyToMany(mappedBy="sites")			private Set<Client> clients;
 	    
-	    @OneToMany(mappedBy="site",
-				 fetch=FetchType.EAGER) private Set<Materiel> lesmateriels;
+	    @OneToMany(mappedBy="lesite"
+			) private Set<Materiel> lesmateriels;
 	    
 	    public Set<Materiel> getLesmateriels() {
 			if ( lesmateriels == null) {

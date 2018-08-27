@@ -3,6 +3,11 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 import {NgxPageScrollModule} from 'ngx-page-scroll';
+import { ChartsModule } from 'ng2-charts';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CalendarModule } from 'angular-calendar';
+import { SchedulerModule } from 'angular-calendar-scheduler';
 
 
 import { RouterModule } from "@angular/router";
@@ -28,6 +33,7 @@ import {DisplayInterventionsOperateurComponent} from './components/operateur/sub
 import { DisplayPlanningsOperateurComponent } from './components/operateur/subComponents/display-plannings-operateur/display-plannings-operateur.component';
 import { EditInterventionsOperateurComponent } from './components/operateur/subComponents/edit-interventions-operateur/edit-interventions-operateur.component';
 import { InterventionsRepositoryService } from './services/interventions-repository.service';
+import { DisplayDashboardComponent } from './components/operateur/subComponents/display-dashboard/display-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -46,19 +52,30 @@ import { InterventionsRepositoryService } from './services/interventions-reposit
     VitrineComponent,
     DisplayInterventionsOperateurComponent,
     DisplayPlanningsOperateurComponent,
-    EditInterventionsOperateurComponent
+    EditInterventionsOperateurComponent,
+    DisplayDashboardComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
     NgxPageScrollModule,
+    
+    CalendarModule.forRoot(),
+        SchedulerModule.forRoot({ locale: 'en', headerDateFormat: 'daysRange' }),
+    ChartsModule,
+    BrowserAnimationsModule, 
+    
     RouterModule.forRoot([
       {path: 'home', component: VitrineComponent},
       
       {path: 'client', component: ClientComponent},
       {path: 'intervenant', component: IntervenantComponent},
       {path: 'operateur', component: OperateurComponent},
+      {path: 'operateur/interventions', component: DisplayInterventionsOperateurComponent},
+      {path: 'operateur/planning', component: DisplayPlanningsOperateurComponent},
+      {path: 'operateur/referentiel', component: DisplayReferentielComponent},
+
      // {path: 'edit/:id',component: EditKoComponent},
       {path: '', redirectTo: '/home', pathMatch:'full'}
     ])

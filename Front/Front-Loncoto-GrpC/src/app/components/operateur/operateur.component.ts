@@ -7,17 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OperateurComponent implements OnInit {
 
-  public currentEditId : number;
-
-  public constructor() {
-    this.currentEditId = 0;
-  }
-
-  public editRequested(id: number) {
-    console.log("recus demande edition localisation no " + id);
-    this.currentEditId = id;
-  }
+  constructor() { }
   ngOnInit() {
   }
+
 
 }

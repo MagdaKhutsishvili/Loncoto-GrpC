@@ -4,6 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -27,8 +28,9 @@ public class Intervenant {
 					private String nom;
 					private String prenom;
 					private String email;
-					
-@OneToMany(mappedBy="intervenant")		private  Set<Intervention>  interventions;
+
+@OneToMany(mappedBy="intervenant")		private Set<Intervention> lesinterventions;
+
 
 @ManyToMany 					private Set<GroupeIntervenant> groupeIntervenants;
 
@@ -39,11 +41,15 @@ public Intervenant(int id, String nom, String prenom, String email) {
 	this.prenom = prenom;
 	this.email = email;
 }
-public Set<Intervention> getInterventions() {
-	if ( interventions == null) {
-		interventions = new HashSet<>();
+
+	
+public Set<Intervention> getLesinterventions() {
+	if ( lesinterventions == null) {
+	lesinterventions = new HashSet<>();
 	}
-	return  interventions;
-}
+	return  lesinterventions;
+	}
 
 }
+
+

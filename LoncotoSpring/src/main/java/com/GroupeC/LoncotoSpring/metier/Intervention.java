@@ -28,8 +28,6 @@ public class Intervention {
 					private LocalDate dateEffectue;
 					private String statut;
 					private String commentaire;
-					private int materielId;
-					private int intervenantId;
 	@ManyToOne				private Intervenant intervenant;
 	@ManyToOne 			private Materiel materiel;
 	
@@ -42,8 +40,7 @@ public class Intervention {
 		this.dateEffectue = dateEffectue;
 		this.statut = statut;
 		this.commentaire = commentaire;
-		this.materielId = materielId;
-		this.intervenantId = intervenantId;
+		
 	} 
 	
 	

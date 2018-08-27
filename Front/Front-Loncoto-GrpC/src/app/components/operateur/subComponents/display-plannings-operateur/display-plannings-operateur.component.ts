@@ -5,7 +5,8 @@ import { Intervention } from '../../../../metier/objet-intervention';
 @Component({
   selector: 'app-display-plannings-operateur',
   templateUrl: './display-plannings-operateur.component.html',
-  styleUrls: ['./display-plannings-operateur.component.css']
+  styleUrls: ['./display-plannings-operateur.component.css'],
+
 })
 export class DisplayPlanningsOperateurComponent implements OnInit {
 
@@ -41,5 +42,6 @@ export class DisplayPlanningsOperateurComponent implements OnInit {
   ngOnInit() {
     this.currentIntervention=new Intervention(0,"1-1-1999","1-1-1999","rien","toi",0,0);
   }
+
 
 }

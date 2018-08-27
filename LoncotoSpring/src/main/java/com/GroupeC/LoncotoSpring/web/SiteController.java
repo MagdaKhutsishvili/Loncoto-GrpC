@@ -16,7 +16,7 @@ import com.GroupeC.LoncotoSpring.repositories.SiteRepository;
 
 
 @Controller
-@RequestMapping("/loncogroup-c/materiels")
+@RequestMapping("/loncogroup-c/sites")
 
 public class SiteController {
 
