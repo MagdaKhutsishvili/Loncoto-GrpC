@@ -34,7 +34,7 @@ public class Materiel {
 	
 	
 	
-	public Set<Materiel> getLesinterventions() {
+	public Set<Intervention> getLesinterventions() {
 		if ( lesinterventions == null) {
 			lesinterventions = new HashSet<>();
 		}
