@@ -14,10 +14,6 @@ export class IntervenantComponent implements OnInit {
     this.currentEditId = 0;
   }
 
-  public editRequested(id: number) {
-    console.log("recus demande edition localisation no " + id);
-    this.currentEditId = id;
-  }
   ngOnInit() {
   }
  
