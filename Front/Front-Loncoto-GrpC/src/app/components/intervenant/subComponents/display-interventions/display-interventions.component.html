@@ -1,3 +1,41 @@
-<p>
-  display-interventions works!
-</p>
+
+        <div class="panel panel-danger">
+            <div class="panel-heading">
+              <h2 class="section-heading text-white">Les Interventions</h2>
+            </div>
+            <div class="panel-body">
+        
+              <div class="panel panel-primary">
+                <div class="panel-heading"> {{ title }} </div>
+                <div class="panel-body">
+                  <table class="table table-striped table-hover table-dark" border="1">
+        
+                    <thead>
+                      <tr>
+                        <th>ID</th>
+                        <th>DatePrevu</th>
+                        <th>DateEffectue</th>
+                        <th>Statut</th>
+                        <th>Commentaire</th>
+                        <th>MatérielId</th>
+                        <th>IntervenantId</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let intervention of interventionsObservable | async">
+                        <td>{{intervention.id}}</td>
+                        <td>{{intervention.datePrevu}}</td>
+                        <td>{{intervention.dateEffectue}}</td>
+                        <td>{{intervention.statut}}</td>
+                        <td>{{intervention.commentaire}}</td>
+                        <td>{{intervention.id_Materiel}}</td>
+                        <td>{{intervention.id_Intervenant}}</td>
+                        <td><button (click)="removeInter(intervention.id)" class="btn btn-danger">remove</button></td>
+                        <td><button (click)="editInter(intervention.id)" class="btn btn-warning" pageScroll routerLink='/operateur' href="#editinter">edit</button></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
