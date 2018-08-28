@@ -5,10 +5,12 @@ import { HttpClientModule } from "@angular/common/http";
 import {NgxPageScrollModule} from 'ngx-page-scroll';
 import { ChartsModule } from 'ng2-charts';
 
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CalendarModule } from 'angular-calendar';
-import { SchedulerModule } from 'angular-calendar-scheduler';
 
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import {ScheduleModule} from 'primeng/schedule';
+import { FullCalendarModule } from 'ng-fullcalendar';
 
 import { RouterModule } from "@angular/router";
 
@@ -60,9 +62,9 @@ import { DisplayDashboardComponent } from './components/operateur/subComponents/
     FormsModule,
     HttpClientModule,
     NgxPageScrollModule,
+    ScheduleModule,
+    FullCalendarModule,
     
-    CalendarModule.forRoot(),
-        SchedulerModule.forRoot({ locale: 'en', headerDateFormat: 'daysRange' }),
     ChartsModule,
     BrowserAnimationsModule, 
     

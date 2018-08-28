@@ -36,8 +36,8 @@
               "src/template-bootstrap/css/creative.css",
 
 
-              "./node_modules/angular-calendar/css/angular-calendar.css"
-
+              "./node_modules/angular-calendar/css/angular-calendar.css",
+              "src/template-bootstrap/css/fullcalendar.min.css"
               
               
 

@@ -1,6 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewChild } from '@angular/core';
 import { InterventionsRepositoryService } from '../../../../services/interventions-repository.service';
 import { Intervention } from '../../../../metier/objet-intervention';
+
+import { CalendarComponent } from 'ng-fullcalendar';
+import { Options } from 'fullcalendar';
+
 
 @Component({
   selector: 'app-display-plannings-operateur',
@@ -10,7 +14,15 @@ import { Intervention } from '../../../../metier/objet-intervention';
 })
 export class DisplayPlanningsOperateurComponent implements OnInit {
 
-   
+
+
+
+
+
+
+
+
+
     public currentIntervention : Intervention;
   
     constructor(private InterventionRepository : InterventionsRepositoryService) {
@@ -38,10 +50,29 @@ export class DisplayPlanningsOperateurComponent implements OnInit {
 
 
 
-
+  calendarOptions: Options;
+  @ViewChild(CalendarComponent) ucCalendar: CalendarComponent;
   ngOnInit() {
-    this.currentIntervention=new Intervention(0,"1-1-1999","1-1-1999","rien","toi",0,0);
+    this.calendarOptions = {
+      
+      editable: true,
+      eventLimit: false,
+      height:700,
+      themeSystem: 'jquery-ui',
+      header: {
+        left: 'prev,next today',
+        center: 'title',
+        right: 'month,agendaWeek,agendaDay,listMonth'
+      },
+      events: []
+    };
+
   }
 
 
+  
 }
+  
+  
+    
+

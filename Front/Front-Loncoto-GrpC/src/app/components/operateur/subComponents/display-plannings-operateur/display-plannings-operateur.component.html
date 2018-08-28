@@ -59,26 +59,15 @@
         </div>
   
         <div class="col-lg-10 col-sm-10 col-xs-10 col-md-10 placeenhaut">
- 
-            <calendar-scheduler-view [viewDate]="viewDate"
-            [events]="events"
-            [locale]="locale"
-            [weekStartsOn]="weekStartsOn"
-            [tooltipPlacement]="'top'"
-            [refresh]="refreshSubject"
-            [excludeDays]="excludeDays"
-            [startsWithToday]="startsWithToday"
-            [hourSegments]="2"
-            [dayStartHour]="dayStartHour"
-            [dayEndHour]="dayEndHour"
-            [dayModifier]="dayModifier"
-            [hourModifier]="hourModifier"
-            [segmentModifier]="segmentModifier"
-            [showActions]="true"
-            (dayClicked)="dayClicked($event.day)"
-            (segmentClicked)="segmentClicked('Clicked', $event.segment)"
-            (eventClicked)="eventClicked('Clicked', $event.event)">
-</calendar-scheduler-view>
+          <div class="x_panel" >
+          <div *ngIf="calendarOptions" >
+            <ng-fullcalendar  #ucCalendar [options]="calendarOptions" (eventClick)="eventClick($event.detail)" (eventDrop)="updateEvent($event.detail)"
+                (eventResize)="updateEvent($event.detail)" (clickButton)="clickButton($event.detail)"></ng-fullcalendar>
+        </div>
+        </div>
+
+
+
   </div>
       </div>
     </div>

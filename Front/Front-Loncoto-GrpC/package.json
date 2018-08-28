@@ -26,8 +26,13 @@
     "bootstrap": "^3.3.7",
     "chart.js": "^2.7.2",
     "core-js": "^2.5.4",
+    "daypilot-pro-angular": "https://npm.daypilot.org/daypilot-pro-angular/trial/2018.2.3297.tar.gz",
+    "fullcalendar": "^3.6.1",
+    "ng-fullcalendar": "^1.6.2",
     "ng2-charts": "^1.6.0",
     "ngx-page-scroll": "^5.0.0",
+    "primeicons": "^1.0.0-beta.10",
+    "primeng": "^6.1.2",
     "rxjs": "^6.0.0",
     "zone.js": "^0.8.26"
   },
