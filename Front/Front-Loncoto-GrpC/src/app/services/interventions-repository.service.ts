@@ -19,25 +19,25 @@ export class InterventionsRepositoryService {
 
   public refreshListe():void{
 
-    this.http.get<Array<Intervention>>("http://localhost:3000/interventions").subscribe(data=> {this.interventionSubject.next(data);
+    this.http.get<Array<Intervention>>(`http://localhost:8080/loncogroup-c/intervention`).subscribe(data=> {this.interventionSubject.next(data);
   });
   }
 
   public findById(id:number):Observable<Intervention>{
-    return this.http.get<Intervention>(`http://localhost:3000/interventions/${id}`);
+    return this.http.get<Intervention>(`http://localhost:8080/loncogroup-c/intervention/${id}`);
 
 
   }
 
   public removeIntervention(id:number):void{
-    this.http.delete(`http://localhost:3000/interventions/${id}`)
+    this.http.delete(`http://localhost:8080/loncogroup-c/intervention/${id}`)
                           .subscribe(resp => {this.refreshListe();
                           });
 
 
   }
   public updateIntervention(intervention : Intervention): void {
-    this.http.put(`http://localhost:3000/interventions/${intervention.id}`, intervention.toJson()).subscribe(resp =>{
+    this.http.put(`http://localhost:8080/loncogroup-c/intervention/${intervention.id}`, intervention.toJson()).subscribe(resp =>{
               this.refreshListe();
     });
   }
