@@ -23,26 +23,24 @@ public getIntervenantsAsObservable(): Observable <Array<Intervenant>> {
   public refreshListe():void{
     // requete vers le serveur
     // il rapellera mon subscribe avec des donnees deja converties
-    this.http.get<Array<Intervenant>>("http://localhost:3000/intervenants")
-        .subscribe(data=>{
-          this.intervenantsSubject.next(data)
-        });
-
+ 
+    this.http.get<Array<Intervenant>>(`http://localhost:8080/loncogroup-c/intervention`).subscribe(data=> {this.intervenantsSubject.next(data);
+  });
   }
 
   public findById(id:number):Observable<Intervenant>{
-    return this.http.get<Intervenant>(`http://localhost:3000/intervenants/${id}`);
+    return this.http.get<Intervenant>(`http://localhost:8080/loncogroup-c/intervenants/${id}`);
   }
 
 
   public deleteIntervenant(id:number) : void {
-    this.http.delete(`http://localhost:3000/intervenants/${id}`)
+    this.http.delete(`http://localhost:8080/intervenants/${id}`)
     .subscribe(resp =>{
             this.refreshListe();
     });
   }
   public updateIntervenant(intervenant : Intervenant): void {
-    this.http.put(`http://localhost:3000/intervenants/${intervenant.id}`, intervenant.toJson()).subscribe(resp =>{
+    this.http.put(`http://localhost:8080/intervenants/${intervenant.id}`, intervenant.toJson()).subscribe(resp =>{
               this.refreshListe();
     });
   }
