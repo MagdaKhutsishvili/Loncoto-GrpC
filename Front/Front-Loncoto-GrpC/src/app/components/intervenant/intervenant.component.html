@@ -1,7 +1,7 @@
 
       <nav class="navbar navbar-expand-lg navbar-light fixed-top " id="mainNav">
             <div class="container">
-              <a class="navbar-brand js-scroll-trigger" href="#page-top">Intervenant {{nom_intervenant}}</a>
+             
               <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -15,14 +15,14 @@
                     <a class="nav-link js-scroll-trigger" href="#services">Interventions</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#portfolio">Referentiels</a>
+                    <a class="nav-link js-scroll-trigger" routerLink='/home'><i class="fa fa-power-off"></i> Deconnexion</a>
                   </li>
     
                 </ul>
               </div>
-            </div>
+            </div> <a class="navbar-brand js-scroll-trigger" href="#page-top">Intervenant {{nom_intervenant}}</a>
           </nav>
- <header class="masthead text-center text-white d-flex " id="interlist">
+ <header class="masthead text-center  d-flex " id="interlist">
         
     <div class="container-fluid my-auto" style=" height:97%; ">
         <div class="row">
@@ -97,10 +97,10 @@
       <div class="col-lg-10 col-sm-10 col-xs-10 col-md-10 placeenhaut">
       
     
-    <app-display-interventions></app-display-interventions></div>
+    <app-display-tableau-intervenant></app-display-tableau-intervenant>
       </div>
     </div>
-     
+     </div>
         </header>
         <section class="bg-primary" id="editinter">
         <div class="container">
