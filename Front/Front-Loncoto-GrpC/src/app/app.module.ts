@@ -4,6 +4,7 @@ import { FormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 import {NgxPageScrollModule} from 'ngx-page-scroll';
 import { ChartsModule } from 'ng2-charts';
+import {BsDatepickerModule} from 'ngx-bootstrap/datepicker';
 
 
 
@@ -64,7 +65,7 @@ import { DisplayDashboardComponent } from './components/operateur/subComponents/
     NgxPageScrollModule,
     ScheduleModule,
     FullCalendarModule,
-    
+    BsDatepickerModule.forRoot(),
     ChartsModule,
     BrowserAnimationsModule, 
     

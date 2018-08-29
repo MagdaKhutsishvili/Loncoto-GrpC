@@ -1,3 +1,4 @@
+import { Groupe }from "./objet-groupe";
 export class Intervenant{
     public constructor(public id :number,
                         public nom: string,
