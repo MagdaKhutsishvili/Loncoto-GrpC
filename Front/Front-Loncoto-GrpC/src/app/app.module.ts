@@ -37,6 +37,8 @@ import { DisplayPlanningsOperateurComponent } from './components/operateur/subCo
 import { EditInterventionsOperateurComponent } from './components/operateur/subComponents/edit-interventions-operateur/edit-interventions-operateur.component';
 import { InterventionsRepositoryService } from './services/interventions-repository.service';
 import { DisplayDashboardComponent } from './components/operateur/subComponents/display-dashboard/display-dashboard.component';
+import { DisplayTableauClientComponent } from './components/client/subComponents/display-tableau-client/display-tableau-client.component';
+import { DisplayTableauIntervenantComponent } from './components/intervenant/subComponents/display-tableau-intervenant/display-tableau-intervenant.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +58,9 @@ import { DisplayDashboardComponent } from './components/operateur/subComponents/
     DisplayInterventionsOperateurComponent,
     DisplayPlanningsOperateurComponent,
     EditInterventionsOperateurComponent,
-    DisplayDashboardComponent
+    DisplayDashboardComponent,
+    DisplayTableauClientComponent,
+    DisplayTableauIntervenantComponent
   ],
   imports: [
     BrowserModule,
@@ -73,6 +77,7 @@ import { DisplayDashboardComponent } from './components/operateur/subComponents/
       {path: 'home', component: VitrineComponent},
       
       {path: 'client', component: ClientComponent},
+      {path: 'client/interventions', component: DisplayInterventionsDuclientComponent },
       {path: 'intervenant', component: IntervenantComponent},
       {path: 'operateur', component: OperateurComponent},
       {path: 'operateur/interventions', component: DisplayInterventionsOperateurComponent},

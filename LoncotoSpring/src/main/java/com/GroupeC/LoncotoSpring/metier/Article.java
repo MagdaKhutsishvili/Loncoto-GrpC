@@ -1,6 +1,7 @@
 package com.GroupeC.LoncotoSpring.metier;
 
 import java.time.LocalDate;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -12,6 +13,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -29,7 +32,7 @@ public class Article {
     @ManyToOne	private Catalogue catalogue;
     @OneToMany(mappedBy="article",
 			 fetch=FetchType.EAGER) private Set<Materiel> lesmateriels;
-	
+    @Temporal(TemporalType.DATE) private Date dateCreation;
 	
 	
 	public Set<Materiel> getLesmateriels() {
@@ -46,7 +49,7 @@ public class Article {
 
     
 
-    private LocalDate dateCreation;
+    
     /*
     @ManyToOne private Famille famille;
     
