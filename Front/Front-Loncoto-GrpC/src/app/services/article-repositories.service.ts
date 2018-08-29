@@ -2,13 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Page } from '../metier/page';
-//import { Article } from '../metier/article';
+import { Article } from '../metier/objet-article';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ArticleRepositoryService {
- /* private articlesSubject : BehaviorSubject<Page<Article>>;
+  private articlesSubject : BehaviorSubject<Page<Article>>;
   private noPage : number;
   private taillePage : number;
 
@@ -27,7 +27,7 @@ export class ArticleRepositoryService {
 
    public refreshListe():void{
      this.http.get<Page<Article>>(
-     `http://localhost:8080/customapi/articles?page=${this.noPage}&size=${this.taillePage}`)
+     `http://localhost:8080//loncogroup-c/articles?page=${this.noPage}&size=${this.taillePage}`)
      .subscribe(p => {this.articlesSubject.next(p);
     });
     
@@ -35,5 +35,5 @@ export class ArticleRepositoryService {
 
    public getArticlespageAsObservable(): Observable<Page<Article>>{
      return this.articlesSubject.asObservable();
-   }*/
+   }
 }

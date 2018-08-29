@@ -4,7 +4,7 @@ import { FormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 import {NgxPageScrollModule} from 'ngx-page-scroll';
 import { ChartsModule } from 'ng2-charts';
-import {BsDatepickerModule} from 'ngx-bootstrap/datepicker';
+//import {BsDatepickerModule} from 'ngx-bootstrap/datepicker';
 
 
 
@@ -69,7 +69,7 @@ import { DisplayTableauIntervenantComponent } from './components/intervenant/sub
     NgxPageScrollModule,
     ScheduleModule,
     FullCalendarModule,
-    BsDatepickerModule.forRoot(),
+    //BsDatepickerModule.forRoot(),
     ChartsModule,
     BrowserAnimationsModule, 
     
