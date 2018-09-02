@@ -7,15 +7,22 @@ export class Client{
                        
                          {}
     
-/*
-    public copyFrom(other: Employe){
+
+    public copyFrom(other: Client){
         this.id=other.id;
         this.nom=other.nom;
-        this.prenom=other.prenom;
-        this.salaire=other.salaire;
-        this.poidchaine=other.poidchaine;
         this.email=other.email;
+        this.nbdesite=other.nbdesite;
+       
 
-    }*/
+    }
 
+    public toJson(){
+        return {
+            nom:this.nom,
+            email: this.email,
+            nbdesite: this.nbdesite,
+            
+        };
+    }
 }

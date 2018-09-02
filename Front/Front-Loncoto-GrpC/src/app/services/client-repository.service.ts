@@ -35,4 +35,23 @@ export class ClientRepositoryService {
    public getClientspageAsObservable(): Observable<Page<Client>>{
      return this.clientsSubject.asObservable();
    }
+
+   public findById(id:number):Observable<Client>{
+    return this.http.get<Client>(`http://localhost:8080/loncogroup-c/clients/${id}`);
+
+
+  }
+
+  public removeClient(id:number):void{
+    this.http.delete(`http://localhost:8080/loncogroup-c/clients/${id}`)
+                          .subscribe(resp => {this.refreshListe();
+                          });
+
+
+  }
+  public updateClient(client : Client): void {
+    this.http.put(`http://localhost:8080/loncogroup-c/clients/${client.id}`, client.toJson()).subscribe(resp =>{
+              this.refreshListe();
+    });
+  }
 }

@@ -13,7 +13,7 @@
       <td>{{client.nom}}</td>
       <td>{{client.email}}</td>
       <td>
-        <button type="button" class="btn btn-primary btn-xs" pageScroll  href="#client">
+        <button type="button" (click)="details(client.id)" class="btn btn-primary btn-xs" pageScroll  href="#client">
           <i class="fa fa-user"> </i> Détails
         </button>
       </td>

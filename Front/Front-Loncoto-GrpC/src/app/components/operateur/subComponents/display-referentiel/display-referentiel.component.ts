@@ -16,12 +16,21 @@ export class DisplayReferentielComponent implements OnInit {
   public totalItems:number;
   public currentPage : number;
   public taillePage : number;
- 
+  
+  public currentIdClient : number;
+
+  
+
+  public editClientRequested(id: number) {
+    console.log("recus demande edition localisation no " + id);
+    this.currentIdClient = id;
+  }
 
   
   constructor(private articleRepository: ArticleRepositoryService) {
     //pour le ngfor
     this.articlesSubject= new Subject<Article[]>();
+    this.currentIdClient = 0;
    }
 
   

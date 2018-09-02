@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,EventEmitter, Output } from '@angular/core';
 import { ClientRepositoryService } from '../../../../../../services/client-repository.service';
 import { Subject, Subscription } from 'rxjs';
 import { Client } from '../../../../../../metier/objet-client';
@@ -17,8 +17,9 @@ export class DisplayClientComponent implements OnInit {
   public currentPage : number;
   public taillePage : number;
  
+  @Output() public showdetails: EventEmitter<number>=new EventEmitter<number>();;
 
-  
+
   constructor(private clientRepository: ClientRepositoryService) {
     //pour le ngfor
     this.clientsSubject= new Subject<Client[]>();
@@ -40,6 +41,10 @@ public pageChanged(event){
     this.clientRepository.refreshListe();
   }
 
+  public details(id: number) {
+    this.showdetails.emit(id);
+
+  }
 }
 
 
