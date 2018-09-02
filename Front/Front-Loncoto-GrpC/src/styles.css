@@ -21,6 +21,16 @@
 
 
 }
+.backgroundhalfpage{
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 50%;
+
+
+}
 .backgroundintra{
     background:fixed ;
 }
@@ -785,9 +795,9 @@ html , body{
        text-decoration: none;
        background: transparent
    }
-   .nav.child_menu {
+   /*.nav.child_menu {
        display: none
-   }
+   }*/
    .nav.child_menu li:hover,
    .nav.child_menu li.active {
        background-color: rgba(255, 255, 255, 0.06)
