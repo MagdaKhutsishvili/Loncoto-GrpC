@@ -39,6 +39,8 @@ import { InterventionsRepositoryService } from './services/interventions-reposit
 import { DisplayDashboardComponent } from './components/operateur/subComponents/display-dashboard/display-dashboard.component';
 import { DisplayTableauClientComponent } from './components/client/subComponents/display-tableau-client/display-tableau-client.component';
 import { DisplayTableauIntervenantComponent } from './components/intervenant/subComponents/display-tableau-intervenant/display-tableau-intervenant.component';
+import { DisplayClientComponent } from './components/operateur/subComponents/display-referentiel/displays/display-client/display-client.component';
+import { EditClientComponent } from './components/operateur/subComponents/display-referentiel/displays/edit-client/edit-client.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +62,9 @@ import { DisplayTableauIntervenantComponent } from './components/intervenant/sub
     EditInterventionsOperateurComponent,
     DisplayDashboardComponent,
     DisplayTableauClientComponent,
-    DisplayTableauIntervenantComponent
+    DisplayTableauIntervenantComponent,
+    DisplayClientComponent,
+    EditClientComponent
   ],
   imports: [
     BrowserModule,

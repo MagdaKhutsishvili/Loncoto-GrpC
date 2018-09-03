@@ -1,0 +1,22 @@
+<table class="table table-striped" border="1">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>nom</th>
+      <th>email</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let client of clientsSubject |async">
+      <td>{{client.id}}</td>
+      <td>{{client.nom}}</td>
+      <td>{{client.email}}</td>
+      <td>
+        <button type="button" (click)="details(client.id)" class="btn btn-primary btn-xs" pageScroll  href="#client">
+          <i class="fa fa-user"> </i> Détails
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
