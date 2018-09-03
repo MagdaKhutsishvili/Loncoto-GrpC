@@ -19,6 +19,7 @@ export class Client{
 
     public toJson(){
         return {
+            id:this.id,
             nom:this.nom,
             email: this.email,
             nbdesite: this.nbdesite,

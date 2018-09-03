@@ -9,6 +9,7 @@ import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -38,15 +39,27 @@ public class ClientController {
 	}
 	
 	
+	
 	@RequestMapping(value="/{lid:[0-9]+}", method=RequestMethod.GET,
 			produces=org.springframework.http.MediaType.APPLICATION_JSON_UTF8_VALUE)
 	@ResponseBody
-	@CrossOrigin(origins= {"http://localhost:4200"}, methods= {RequestMethod.GET, RequestMethod.OPTIONS})
-	public Page<Client> findclientById(@PathVariable("lid") int lid, @PageableDefault(page=0, size=5) Pageable pr) {
-		Page<Client> lapage=  new PageImpl<>(
-				clientRepository.findOne(lid),
-				pr,
-				lapage.getTotalElements());
-			return lapage;
+	@CrossOrigin(origins= {"http://localhost:4200"}, methods= {RequestMethod.GET, RequestMethod.GET})
+	public Client findclientById(@PathVariable("lid") int lid) {
+			return clientRepository.findOne(lid) ;
 	}
+	
+	
+	
+	@RequestMapping(value="/save",method=RequestMethod.PUT,produces=org.springframework.http.MediaType.APPLICATION_JSON_UTF8_VALUE)
+	@ResponseBody
+	@CrossOrigin(origins = {"http://localhost:4200"}, methods = {RequestMethod.PUT})
+	
+	public Client updateClient(@RequestBody Client i) {
+		System.out.println(i);
+		return clientRepository.save(i);
+	
+	}
+	
+	
+	
 }

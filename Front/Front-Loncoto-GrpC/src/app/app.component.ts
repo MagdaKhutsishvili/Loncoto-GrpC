@@ -11,7 +11,7 @@ import { DOCUMENT} from '@angular/common';
 export class AppComponent {
   title = 'app';
 
-
+    
   //Page-scroll imports
   @ViewChild('container')
   private container: ElementRef;

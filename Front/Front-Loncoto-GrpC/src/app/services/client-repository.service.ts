@@ -16,7 +16,7 @@ export class ClientRepositoryService {
     //on demarre avec une page vide 
     this.clientsSubject = new BehaviorSubject<Page<Client>>(Page.emptyPage<Client>());
     this.noPage=0;
-    this.taillePage=5;
+    this.taillePage=3;
 
    }
    public setnopage(no:number){
@@ -50,7 +50,7 @@ export class ClientRepositoryService {
 
   }
   public updateClient(client : Client): void {
-    this.http.put(`http://localhost:8080/loncogroup-c/clients/${client.id}`, client.toJson()).subscribe(resp =>{
+    this.http.put(`http://localhost:8080/loncogroup-c/clients/save/`, client.toJson()).subscribe(resp =>{
               this.refreshListe();
     });
   }

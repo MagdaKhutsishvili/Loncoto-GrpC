@@ -36,4 +36,6 @@ public class ArticleController {
 	public Page<Article> findAll(@PageableDefault(page=0, size=5) Pageable pr){
 		return articleRepository.findAll(pr);
 	}
+	
+	
 }

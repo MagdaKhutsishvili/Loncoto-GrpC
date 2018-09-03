@@ -28,12 +28,15 @@ export class EditClientComponent implements OnInit, OnChanges {
         // retransformation du modele/json du formulaire
         // en veritable objet Livre avec ses méthodes
         InterToSave.copyFrom(this.currentClient);
-  
+
+        console.log(InterToSave);
         this.ClientRepository.updateClient(InterToSave);
         this.currentClient = new Client(0,"","",0);
       }
  
     }
+
+
   public cancelClient() {
     this.currentClient = new Client(0,"","",0);
   }
