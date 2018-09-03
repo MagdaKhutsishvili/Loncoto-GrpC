@@ -5,7 +5,7 @@ import { HttpClientModule } from "@angular/common/http";
 import {NgxPageScrollModule} from 'ngx-page-scroll';
 import { ChartsModule } from 'ng2-charts';
 //import {BsDatepickerModule} from 'ngx-bootstrap/datepicker';
-
+import { PaginationModule } from "ngx-bootstrap/pagination";
 
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -72,6 +72,7 @@ import { DisplayTableauIntervenantComponent } from './components/intervenant/sub
     //BsDatepickerModule.forRoot(),
     ChartsModule,
     BrowserAnimationsModule, 
+    PaginationModule.forRoot(),
     
     RouterModule.forRoot([
       {path: 'home', component: VitrineComponent},

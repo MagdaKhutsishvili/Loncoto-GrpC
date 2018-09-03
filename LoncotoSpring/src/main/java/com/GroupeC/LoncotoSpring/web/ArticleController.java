@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.GroupeC.LoncotoSpring.metier.Article;
 import com.GroupeC.LoncotoSpring.repositories.ArticleRepository;
+import com.GroupeC.LoncotoSpring.repositories.ClientRepository;
 
 
 @Controller
@@ -25,7 +26,8 @@ public class ArticleController {
 
 	@Autowired
 	private ArticleRepository articleRepository;
-	
+	@Autowired
+	private ClientRepository clientrepo; 
 	@RequestMapping( method=RequestMethod.GET, 
 			produces=org.springframework.http.MediaType.APPLICATION_JSON_UTF8_VALUE)
 
