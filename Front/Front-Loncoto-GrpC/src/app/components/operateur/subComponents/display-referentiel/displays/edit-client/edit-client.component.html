@@ -1,4 +1,4 @@
-<div class="col-lg-6 bg-success ">
+<div class="col-lg-6"  style="background-color: rgb(95, 104, 182) ">
   <div class="col-lg-8 mx-auto text-center ">
     <div class="well profile_view">
       <div class="col-sm-12 col-lg-12">
@@ -29,7 +29,8 @@
         <div class="col-xs-12 col-sm-6 col-lg-6 emphasis">
           <button type="button" class="btn btn-danger btn-xs"> <i class="fa fa-user">
             </i> <i class="fa fa-comments-o"></i>Modifier </button>
-
+            <button type="button" class="btn btn-info btn-xs" (click)="removeclient()" pageScroll  href="#tableaux"> <i class="fa fa-user">
+            </i> <i class="fa fa-comments-o"></i>Supprimer </button>
           <button type="button" class="btn btn-primary btn-xs">
             <i class="fa fa-user"> </i> Trouver un autre client          </button>
 
@@ -71,7 +72,7 @@
           
 
             <button class="btn btn-warning" (click)="cancelClient()">annuler</button>
-            <button class="btn btn-sucess" (click)="saveClient()" pageScroll  href="#tableaux">save</button>
+            <button class="btn btn-sucess" (click)="saveClient()" pageScroll  href="#tableaux">save/créer</button>
           </form>
 
 

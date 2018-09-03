@@ -45,6 +45,8 @@ public pageChanged(event){
     this.showdetails.emit(id);
 
   }
+
+  
 }
 
 

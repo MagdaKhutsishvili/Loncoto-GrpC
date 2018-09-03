@@ -1,5 +1,8 @@
 package com.GroupeC.LoncotoSpring.web;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
@@ -60,6 +63,24 @@ public class ClientController {
 	
 	}
 	
+	@RequestMapping(value="/save",method=RequestMethod.POST,produces=org.springframework.http.MediaType.APPLICATION_JSON_UTF8_VALUE)
+	@ResponseBody
+	@CrossOrigin(origins = {"http://localhost:4200"}, methods = {RequestMethod.POST})
+	
+	public Client saveIntervention(@RequestBody Client i) {
+		return clientRepository.save(i);
+	}
+	
+	
+	@RequestMapping(value="/remove/{id:[0-9]+}",method=RequestMethod.DELETE,produces=org.springframework.http.MediaType.APPLICATION_JSON_UTF8_VALUE)
+	@ResponseBody
+	@CrossOrigin(origins = {"http://localhost:4200"}, methods = {RequestMethod.DELETE})
+	public Map<String, String> removeIntervention(@PathVariable("id") int id) {
+		clientRepository.delete(id);
+		HashMap<String, String> result = new HashMap<>();
+		result.put("intervention_deleted_id", "" + id);
+		return result;
+	}
 	
 	
 }

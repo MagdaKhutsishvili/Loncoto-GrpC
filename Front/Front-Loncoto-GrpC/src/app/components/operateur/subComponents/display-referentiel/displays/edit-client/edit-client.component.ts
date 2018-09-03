@@ -33,6 +33,17 @@ export class EditClientComponent implements OnInit, OnChanges {
         this.ClientRepository.updateClient(InterToSave);
         this.currentClient = new Client(0,"","",0);
       }
+      else{
+        let InterToSave = new Client(0,"","",0);
+        
+        // retransformation du modele/json du formulaire
+        // en veritable objet Livre avec ses méthodes
+        InterToSave.copyFrom(this.currentClient);
+
+        console.log(InterToSave);
+        this.ClientRepository.createClient(InterToSave);
+        this.currentClient = new Client(0,"","",0);
+      }
  
     }
 
@@ -41,7 +52,11 @@ export class EditClientComponent implements OnInit, OnChanges {
     this.currentClient = new Client(0,"","",0);
   }
 
+public removeclient(){
 
+  this.ClientRepository.removeClient(this.currentClient.id);
+  this.currentClient=new Client(0,"","",0);
+}
 
 
 

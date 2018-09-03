@@ -2088,7 +2088,7 @@ html , body{
        border-left: 1px solid #DBDBDB
    }
    .mail_view {
-       border-left: 1px solid #DBDBDB
+       border-left: 1px solid rgb(216, 162, 46)
    }
    .mail_list {
        width: 100%;

@@ -1,10 +1,10 @@
-<table class="table table-striped" border="1">
+<table class="table table-striped" >
   <thead>
     <tr>
       <th>ID</th>
       <th>nom</th>
       <th>email</th>
-
+      <button class="btn btn-warning" (click)="details(0)"pageScroll href="#client" >Créer</button>
     </tr>
   </thead>
   <tbody>
@@ -13,13 +13,15 @@
       <td>{{client.nom}}</td>
       <td>{{client.email}}</td>
       <td>
-        <button type="button" (click)="details(client.id)" class="btn btn-primary btn-xs" pageScroll  href="#client">
-          <i class="fa fa-user"> </i> Détails
-        </button>
+        <a type="button" (click)="details(client.id)" class=" btn-primary btn-xs" pageScroll href="#client"> 
+          <i class="fa fa-user"> </i> Détails 
+        </a>
       </td>
     </tr>
   </tbody>
 </table>
 <div class="row">
-  <pagination [totalItems]="totalItems" [ngModel]="currentPage" [itemsPerPage]="taillePage" (pageChanged)="pageChanged($event)"></pagination>
+  <pagination style="margin-top: 0px;padding-top: 0px;padding-bottom: 0px;border-bottom: 0px"[totalItems]="totalItems" [ngModel]="currentPage" [itemsPerPage]="taillePage"
+    (pageChanged)="pageChanged($event)"></pagination> 
+    
 </div>

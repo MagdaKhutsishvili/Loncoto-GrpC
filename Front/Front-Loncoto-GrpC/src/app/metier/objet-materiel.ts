@@ -7,15 +7,23 @@ export class Materiel{
                        
                          {}
     
-/*
+
     public copyFrom(other: Materiel){
         this.id=other.id;
-        this.nom=other.nom;
-        this.prenom=other.prenom;
-        this.salaire=other.salaire;
-        this.poidchaine=other.poidchaine;
-        this.email=other.email;
-
-    }*/
-
+        this.numero_de_serie=other.numero_de_serie;
+        this.id_Site=other.id_Site;
+        this.id_Client=other.id_Client;
+        this.id_article=other.id_article;
+       
+    }
+    public toJson(){
+        return {
+            id:this.id,
+            numero_de_serie:this.numero_de_serie,
+            id_Site:this.id_Site,
+            id_Client:this.id_Client,
+            id_article:this.id_article
+        }
+    }
 }
+

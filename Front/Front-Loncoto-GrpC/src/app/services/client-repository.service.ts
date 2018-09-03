@@ -43,7 +43,7 @@ export class ClientRepositoryService {
   }
 
   public removeClient(id:number):void{
-    this.http.delete(`http://localhost:8080/loncogroup-c/clients/${id}`)
+    this.http.delete(`http://localhost:8080/loncogroup-c/clients/remove/${id}`)
                           .subscribe(resp => {this.refreshListe();
                           });
 
@@ -51,6 +51,12 @@ export class ClientRepositoryService {
   }
   public updateClient(client : Client): void {
     this.http.put(`http://localhost:8080/loncogroup-c/clients/save/`, client.toJson()).subscribe(resp =>{
+              this.refreshListe();
+    });
+  }
+
+  public createClient(client : Client): void {
+    this.http.post(`http://localhost:8080/loncogroup-c/clients/save/`, client.toJson()).subscribe(resp =>{
               this.refreshListe();
     });
   }

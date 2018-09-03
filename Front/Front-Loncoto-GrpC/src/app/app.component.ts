@@ -17,8 +17,10 @@ export class AppComponent {
   private container: ElementRef;
 
   constructor(private pageScrollService: PageScrollService, @Inject(DOCUMENT) private document: any) {
+    PageScrollConfig.defaultDuration = 600;
   }
-
+  
+  
   public goToHead2(): void {
       let pageScrollInstance: PageScrollInstance = PageScrollInstance.simpleInstance(this.document, '#head2');
       this.pageScrollService.start(pageScrollInstance);

@@ -41,6 +41,14 @@ import { DisplayTableauClientComponent } from './components/client/subComponents
 import { DisplayTableauIntervenantComponent } from './components/intervenant/subComponents/display-tableau-intervenant/display-tableau-intervenant.component';
 import { DisplayClientComponent } from './components/operateur/subComponents/display-referentiel/displays/display-client/display-client.component';
 import { EditClientComponent } from './components/operateur/subComponents/display-referentiel/displays/edit-client/edit-client.component';
+import { DisplayIntervenantOperateurComponent } from './components/operateur/subComponents/display-referentiel/displays/display-intervenant-operateur/display-intervenant-operateur.component';
+import { EditIntervenantOperateurComponent } from './components/operateur/subComponents/display-referentiel/displays/edit-intervenant-operateur/edit-intervenant-operateur.component';
+import { DisplaySitesOperateurComponent } from './components/operateur/subComponents/display-referentiel/displays/display-sites-operateur/display-sites-operateur.component';
+import { EditSitesOperateurComponent } from './components/operateur/subComponents/display-referentiel/displays/edit-sites-operateur/edit-sites-operateur.component';
+import { DisplayMaterielsOperateurComponent } from './components/operateur/subComponents/display-referentiel/displays/display-materiels-operateur/display-materiels-operateur.component';
+import { EditMaterielsOperateurComponent } from './components/operateur/subComponents/display-referentiel/displays/edit-materiels-operateur/edit-materiels-operateur.component';
+import { DisplayGrpintervenantOperateurComponent } from './components/operateur/subComponents/display-referentiel/displays/display-grpintervenant-operateur/display-grpintervenant-operateur.component';
+import { DisplayCatalogOperateurComponent } from './components/operateur/subComponents/display-referentiel/displays/display-catalog-operateur/display-catalog-operateur.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +72,15 @@ import { EditClientComponent } from './components/operateur/subComponents/displa
     DisplayTableauClientComponent,
     DisplayTableauIntervenantComponent,
     DisplayClientComponent,
-    EditClientComponent
+    EditClientComponent,
+    DisplayIntervenantOperateurComponent,
+    EditIntervenantOperateurComponent,
+    DisplaySitesOperateurComponent,
+    EditSitesOperateurComponent,
+    DisplayMaterielsOperateurComponent,
+    EditMaterielsOperateurComponent,
+    DisplayGrpintervenantOperateurComponent,
+    DisplayCatalogOperateurComponent
   ],
   imports: [
     BrowserModule,
