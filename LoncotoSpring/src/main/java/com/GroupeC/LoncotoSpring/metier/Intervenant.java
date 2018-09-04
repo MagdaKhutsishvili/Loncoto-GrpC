@@ -11,6 +11,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -29,7 +31,7 @@ public class Intervenant {
 					private String prenom;
 					private String email;
 
-@OneToMany(mappedBy="intervenant")		private Set<Intervention> lesinterventions;
+					@JsonIgnore @OneToMany(mappedBy="intervenant")		private Set<Intervention> lesinterventions;
 
 
 @ManyToMany 					private Set<GroupeIntervenant> groupeIntervenants;

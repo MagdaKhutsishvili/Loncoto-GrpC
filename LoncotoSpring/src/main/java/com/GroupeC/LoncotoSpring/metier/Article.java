@@ -16,6 +16,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -30,7 +32,7 @@ public class Article {
     private String nom;
     private String marque;
     @ManyToOne	private Catalogue catalogue;
-    @OneToMany(mappedBy="article",
+    @JsonIgnore @OneToMany(mappedBy="article",
 			 fetch=FetchType.EAGER) private Set<Materiel> lesmateriels;
     @Temporal(TemporalType.DATE) private Date dateCreation;
 	

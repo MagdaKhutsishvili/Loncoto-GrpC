@@ -13,7 +13,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
-
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -32,7 +32,7 @@ public class Client {
 	    private int nbsites;
 	    
 	    @ManyToMany							private Set<Site> sites;
-	    @OneToMany(mappedBy="client",
+	    @JsonIgnore  @OneToMany(mappedBy="client",
 				 fetch=FetchType.EAGER) private Set<Materiel> lesmateriels;
 	    
 	    public Set<Materiel> getLesmateriels() {

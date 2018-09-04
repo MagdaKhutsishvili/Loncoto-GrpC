@@ -8,7 +8,7 @@ import { Intervenant } from '../../../../../../metier/objet-intervenant';
   templateUrl: './edit-intervenant-operateur.component.html',
   styleUrls: ['./edit-intervenant-operateur.component.css']
 })
-export class EditIntervenantOperateurComponent implements OnInit {
+export class EditIntervenantOperateurComponent implements OnInit,OnChanges {
 
   
   @Input() public editIdIntervenant: number;

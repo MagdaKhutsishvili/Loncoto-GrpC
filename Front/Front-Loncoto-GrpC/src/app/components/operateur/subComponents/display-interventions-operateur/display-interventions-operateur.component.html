@@ -111,47 +111,36 @@
       <div class="col-lg-10 col-sm-10 col-xs-10 col-md-10 placeenhaut">
 
         <div class="panel panel-danger">
-          <div class="panel-heading">
-            <h2 class="section-heading text-white">Les Interventions</h2>
-          </div>
+            <div class="page-title">
+                <div class="title_left">
+                  <h3 class="text-white"> Interventions Enregistrées
+                    <small>tous les détails</small>
+                  </h3>
+                </div>
+  
+                <div class="title_right">
+                  <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+                    <div class="input-group">
+                      <input type="text" class="form-control" placeholder="Search for...">
+                      <span class="input-group-btn">
+                        <button class="btn btn-default" type="button">Go!</button>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
           <div class="panel-body">
 
 
-            <table class="table table-striped table-hover table-dark border=4">
-              <thead class="thead-dark">
-                <tr>
-                  <th>Date d'intervention initiale </th>
-                  <th>Date effective de l'intervention</th>
-                  <th>Commentaire</th>
-                  <th>Matériel concerné</th>
-                  <th>Intervenant</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr *ngFor="let intervention of interventionsObservable |async">
-                  <td>{{intervention.datePrevu}}</td>
-                  <td>{{intervention.dateEffectue}}</td>
-                  <td>{{intervention.commentaire}}</td>
-                  <td>{{intervention.id_Materiel}}</td>
-                  <td>{{intervention.id_Intervenant}}</td>
-                  <td>
-                    <button (click)="removeInter(intervention.id)" class="btn btn-danger">remove</button>
-                  </td>
-                  <td>
-                    <button (click)="editInter(intervention.id)" class="btn btn-warning" pageScroll routerLink='/operateur'
-                      href="#editinter">edit</button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+           
             
             <div class="col-md-12 col-sm-12 col-xs-12">
-              <div class="x_panel">
+              <div class="x_panel" style="height: 100%;">
                 <div class="x_title">
-                  <h2>Default Example
-                    <small>Users</small>
+                  <h2>Interventions
+                    <small>dernières mise à jour le 02/09/2018.19:58:02</small>
                   </h2>
-                  <ul class="nav navbar-right panel_toolbox">
+                  <ul class="nav navbar-right panel_toolbox"><button class="btn btn-warning" (click)="details(0)"pageScroll href="#intervention" >Créer une nouvelle</button>
                     <li>
                       <a class="collapse-link">
                         <i class="fa fa-chevron-up"></i>
@@ -168,6 +157,9 @@
                         <li>
                           <a href="#">Settings 2</a>
                         </li>
+                        
+                            
+                        
                       </ul>
                     </li>
                     <li>
@@ -182,106 +174,47 @@
                   <p class="text-muted font-13 m-b-30">
                     DataTables has most features enabled by default, so all you need to do to use it with your own tables is to call the construction
                     function:
-                    <code>$().DataTable();</code>
+                    <code>$().DataTable();</code> 
                   </p>
-                  <table id="datatable" class="table table-striped table-bordered">
-                    <thead>
-                      <tr>
-                        <th>Name</th>
-                        <th>Position</th>
-                        <th>Office</th>
-                        <th>Age</th>
-                        <th>Start date</th>
-                        <th>Salary</th>
-                      </tr>
-                    </thead>
-
-
-                    <tbody>
-                      <tr>
-                        <td>Tiger Nixon</td>
-                        <td>System Architect</td>
-                        <td>Edinburgh</td>
-                        <td>61</td>
-                        <td>2011/04/25</td>
-                        <td>$320,800</td>
-                      </tr>
-                      <tr>
-                        <td>Garrett Winters</td>
-                        <td>Accountant</td>
-                        <td>Tokyo</td>
-                        <td>63</td>
-                        <td>2011/07/25</td>
-                        <td>$170,750</td>
-                      </tr>
-                      <tr>
-                        <td>Ashton Cox</td>
-                        <td>Junior Technical Author</td>
-                        <td>San Francisco</td>
-                        <td>66</td>
-                        <td>2009/01/12</td>
-                        <td>$86,000</td>
-                      </tr>
-                      <tr>
-                        <td>Cedric Kelly</td>
-                        <td>Senior Javascript Developer</td>
-                        <td>Edinburgh</td>
-                        <td>22</td>
-                        <td>2012/03/29</td>
-                        <td>$433,060</td>
-                      </tr>
-                      <tr>
-                        <td>Airi Satou</td>
-                        <td>Accountant</td>
-                        <td>Tokyo</td>
-                        <td>33</td>
-                        <td>2008/11/28</td>
-                        <td>$162,700</td>
-                      </tr>
-                      <tr>
-                        <td>Brielle Williamson</td>
-                        <td>Integration Specialist</td>
-                        <td>New York</td>
-                        <td>61</td>
-                        <td>2012/12/02</td>
-                        <td>$372,000</td>
-                      </tr>
-                      <tr>
-                        <td>Herrod Chandler</td>
-                        <td>Sales Assistant</td>
-                        <td>San Francisco</td>
-                        <td>59</td>
-                        <td>2012/08/06</td>
-                        <td>$137,500</td>
-                      </tr>
-                      <tr>
-                        <td>Rhona Davidson</td>
-                        <td>Integration Specialist</td>
-                        <td>Tokyo</td>
-                        <td>55</td>
-                        <td>2010/10/14</td>
-                        <td>$327,900</td>
-                      </tr>
-                      <tr>
-                        <td>Colleen Hurst</td>
-                        <td>Javascript Developer</td>
-                        <td>San Francisco</td>
-                        <td>39</td>
-                        <td>2009/09/15</td>
-                        <td>$205,500</td>
-                      </tr>
-                      <tr>
-                        <td>Sonya Frost</td>
-                        <td>Software Engineer</td>
-                        <td>Edinburgh</td>
-                        <td>23</td>
-                        <td>2008/12/13</td>
-                        <td>$103,600</td>
-                      </tr>
-
-
-                    </tbody>
-                  </table>
+                  
+                  <table class="table table-striped bordered" >
+                      <thead>
+                        <tr>
+                            <th>Site</th>
+                            <th>Intervenant</th>
+                            <th>Materiel</th>
+                          <th>Date Prévu</th>
+                          <th>Date effectuée</th>
+                          <th>Statut</th>
+                         
+                          
+                          
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let intervention of interventionsSubject |async">
+                          <td>{{intervention.id}}</td>
+                          <td>{{intervention.nom}}</td>
+                          <td>{{intervention.email}}</td>
+                          <td>{{intervention.email}}</td>
+                          <td>{{intervention.email}}</td>
+                          <td>{{intervention.statut}}</td>
+                          <td>
+                            <a type="button" (click)="details(intervention.id)" class=" btn-primary btn-xs" pageScroll href="#editer"> 
+                              <i class="fa fa-user"> </i> Détails 
+                            </a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <div class="row" >
+                      <div class="col-lg-7"></div>
+                      <div class="col-lg-5">
+                      <pagination style="margin-top: 0px;padding-top: 0px;padding-bottom: 0px;border-bottom: 0px"[totalItems]="totalItems" [ngModel]="currentPage" [itemsPerPage]="taillePage"
+                        (pageChanged)="pageChanged($event)"></pagination> 
+                        </div>
+                    </div>
+                  
                 </div>
               </div>
             </div>
@@ -298,12 +231,109 @@
 <section class="bg-primary backgroundallpage" id="editer">
   <div class="col-lg-2 col-sm-2 col-xs-2 col-md-2"></div>
   <div class="col-lg-10 col-sm-10 col-xs-10 col-md-10 ">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 mx-auto text-center">
-          <app-edit-interventions-operateur [editId]="currentEditId"></app-edit-interventions-operateur>
-        </div>
-      </div>
-    </div>
+    
+      
+            <div class="col-lg-6"  style="background-color: rgb(95, 104, 182) ">
+                <div class="col-lg-8 mx-auto text-center ">
+                  <div class="well profile_view">
+                    <div class="col-sm-12 col-lg-12">
+                      <h4 class="brief"><i>Digital Strategist</i></h4>
+                      <div class="left col-xs-7 col-lg-7">
+                        <h2>{{currentIntervention.nom}}</h2>
+                        <p><strong>About: </strong> Web Designer / UI. </p>
+                        <ul class="list-unstyled">
+                          <li><i class="fa fa-building"></i> Address: </li>
+                          <li><i class="fa fa-phone"></i> Phone #: </li>
+                        </ul>
+                      </div>
+                      <div class="right col-xs-5 col-lg-5 text-center">
+                        <img src="../../../../../../../assets/user.png" alt="" class="img-circle img-responsive">
+                      </div>
+                    </div>
+                    <div class="col-xs-12 col-lg-12 bottom text-center">
+                      <div class="col-xs-12 col-sm-6 col-lg-6 emphasis">
+                        <p class="ratings">
+                          <a>4.0</a>
+                          <a href="#"><span class="fa fa-star"></span></a>
+                          <a href="#"><span class="fa fa-star"></span></a>
+                          <a href="#"><span class="fa fa-star"></span></a>
+                          <a href="#"><span class="fa fa-star"></span></a>
+                          <a href="#"><span class="fa fa-star-o"></span></a>
+                        </p>
+                      </div>
+                      <div class="col-xs-12 col-sm-6 col-lg-6 emphasis">
+                        <button type="button" class="btn btn-danger btn-xs"> <i class="fa fa-user">
+                          </i> <i class="fa fa-comments-o"></i>Modifier </button>
+                          <button type="button" class="btn btn-info btn-xs" (click)="removeIntervention()" pageScroll  href="#tableaux"> <i class="fa fa-user">
+                          </i> <i class="fa fa-comments-o"></i>Supprimer </button>
+                        <button type="button" class="btn btn-primary btn-xs">
+                          <i class="fa fa-user"> </i> Trouver un autre Intervention          </button>
+              
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="col-lg-6">
+                <div class="col-lg-8 mx-auto text-center">
+              
+                  <div class=" well">
+              
+                    <div class="panel panel-danger">
+                      <div class="panel-heading">
+                        Modifier/Créer un Nouveau Intervention ? 
+                      </div>
+                      <div class="panel-body">
+              
+              
+                        <form>
+                          <input type="hidden" name="id" id="id" [(ngModel)]="currentIntervention.id" />
+                          <div class="form-group">
+                            <label>Statut</label>
+                            <input type="text" class="form-control" name="nom" id="nom" [(ngModel)]="currentIntervention.statut" />
+                          </div>
+                          <div class="form-group">
+                            <label>Email</label>
+                            <input type="text" class="form-control" name="email" id="email" [(ngModel)]="currentIntervention.email" />
+                          </div>
+              
+                          <div class="form-group">
+                            <label>Nombre de site </label>
+                            <input type="number" class="form-control" name="nombre" id="nombre" [(ngModel)]="currentIntervention.nbdesite"
+                            />
+                          </div>
+                          <div class="form-group">
+                              <label>Nombre de site </label>
+                              <input type="number" class="form-control" name="nombre" id="nombre" [(ngModel)]="currentIntervention.nbdesite"
+                              />
+                            </div>
+                            <div class="form-group">
+                                <label>Nombre de site </label>
+                                <input type="number" class="form-control" name="nombre" id="nombre" [(ngModel)]="currentIntervention.nbdesite"
+                                />
+                              </div>
+                              <div class="form-group">
+                                  <label>Nombre de site </label>
+                                  <input type="number" class="form-control" name="nombre" id="nombre" [(ngModel)]="currentIntervention.nbdesite"
+                                  />
+                                </div>
+              
+                        
+              
+                          <button class="btn btn-warning" (click)="cancelIntervention()">annuler</button>
+                          <button class="btn btn-sucess" (click)="saveIntervention()" pageScroll  href="#tableaux">save/créer</button>
+                        </form>
+              
+              
+                      </div>
+                    </div>
+                  </div>
+              
+              
+                </div>
+              </div>
+      
+    
   </div>
 </section>

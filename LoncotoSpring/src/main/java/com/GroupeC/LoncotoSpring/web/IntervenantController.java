@@ -28,40 +28,40 @@ import com.GroupeC.LoncotoSpring.repositories.IntervenantRepository;
 
 public class IntervenantController {
 	
-		@Autowired
-		
-		private IntervenantRepository intervenantRepository;
-		
-		@RequestMapping(method=RequestMethod.GET,
-				produces=MediaType.APPLICATION_JSON_UTF8_VALUE
-				)
-		@ResponseBody
-		@CrossOrigin(origins= {"http://localhost:4200"}, methods= {RequestMethod.GET, RequestMethod.OPTIONS}) 
-		public Page<Intervenant> findAll(@PageableDefault(page=0, size=5) Pageable pr) {
-		
-			return intervenantRepository.findAll(pr);
-		}
-		
-		
-		@RequestMapping(value="/{lid:[0-9]+}", method=RequestMethod.GET,
-				produces=org.springframework.http.MediaType.APPLICATION_JSON_UTF8_VALUE)
-		@ResponseBody
-		@CrossOrigin(origins= {"http://localhost:4200"}, methods= {RequestMethod.GET, RequestMethod.GET})
-		public Intervenant findclientById(@PathVariable("lid") int lid) {
-				return intervenantRepository.findOne(lid) ;
-		}
-		
-		
-		
-		@RequestMapping(value="/save",method=RequestMethod.PUT,produces=org.springframework.http.MediaType.APPLICATION_JSON_UTF8_VALUE)
-		@ResponseBody
-		@CrossOrigin(origins = {"http://localhost:4200"}, methods = {RequestMethod.PUT})
-		
-		public Intervenant updateClient(@RequestBody Intervenant i) {
-			System.out.println(i);
-			return intervenantRepository.save(i);
-		
-		}
+	@Autowired
+	
+	private IntervenantRepository intervenantRepository;
+	
+	@RequestMapping(method=RequestMethod.GET,
+			produces=MediaType.APPLICATION_JSON_UTF8_VALUE
+			)
+	@ResponseBody
+	@CrossOrigin(origins= {"http://localhost:4200"}, methods= {RequestMethod.GET}) 
+	public Page<Intervenant> findAll(@PageableDefault(page=0, size=5) Pageable pr) {
+	
+		return intervenantRepository.findAll(pr);
+	}
+	
+	
+	@RequestMapping(value="/{lid:[0-9]+}", method=RequestMethod.GET,
+			produces=org.springframework.http.MediaType.APPLICATION_JSON_UTF8_VALUE)
+	@ResponseBody
+	@CrossOrigin(origins= {"http://localhost:4200"}, methods= {RequestMethod.GET, RequestMethod.GET})
+	public Intervenant findclientById(@PathVariable("lid") int lid) {
+			return intervenantRepository.findOne(lid) ;
+	}
+	
+	
+	
+	@RequestMapping(value="/save",method=RequestMethod.PUT,produces=org.springframework.http.MediaType.APPLICATION_JSON_UTF8_VALUE)
+	@ResponseBody
+	@CrossOrigin(origins = {"http://localhost:4200"}, methods = {RequestMethod.PUT})
+	
+	public Intervenant updateClient(@RequestBody Intervenant i) {
+		System.out.println(i);
+		return intervenantRepository.save(i);
+	
+	}
 		
 		@RequestMapping(value="/save",method=RequestMethod.POST,produces=org.springframework.http.MediaType.APPLICATION_JSON_UTF8_VALUE)
 		@ResponseBody

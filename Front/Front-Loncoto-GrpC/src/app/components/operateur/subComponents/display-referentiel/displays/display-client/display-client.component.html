@@ -20,8 +20,10 @@
     </tr>
   </tbody>
 </table>
-<div class="row">
+<div class="row" >
+  <div class="col-lg-7"></div>
+  <div class="col-lg-5">
   <pagination style="margin-top: 0px;padding-top: 0px;padding-bottom: 0px;border-bottom: 0px"[totalItems]="totalItems" [ngModel]="currentPage" [itemsPerPage]="taillePage"
     (pageChanged)="pageChanged($event)"></pagination> 
-    
+    </div>
 </div>

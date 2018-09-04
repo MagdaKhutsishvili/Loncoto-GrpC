@@ -13,6 +13,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -29,7 +31,7 @@ public class Materiel {
 	@ManyToOne	private Article article;
 	@ManyToOne	private Site lesite;
 	@ManyToOne	private Client client;
-	@OneToMany(mappedBy="materiel",
+	@JsonIgnore @OneToMany(mappedBy="materiel",
 			 fetch=FetchType.EAGER) private Set<Intervention> lesinterventions;
 	
 	

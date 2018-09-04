@@ -10,6 +10,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -25,7 +27,7 @@ public class Catalogue {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 				@Id	private int id;
 
-@OneToMany(mappedBy="catalogue")      private Set <Article> articles;
+	@JsonIgnore @OneToMany(mappedBy="catalogue")      private Set <Article> articles;
 
 public Catalogue(int id, int articleId) {
 	super();
