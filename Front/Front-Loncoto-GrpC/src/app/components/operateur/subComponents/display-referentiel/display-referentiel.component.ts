@@ -9,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class DisplayReferentielComponent implements OnInit {
 
   public currentIdClient : number;
+  public currentIdIntervenant : number;
 
   
 
@@ -17,11 +18,16 @@ export class DisplayReferentielComponent implements OnInit {
     this.currentIdClient = id;
   }
 
-  
+  public editIntervenantRequested(id: number) {
+ 
+    this.currentIdIntervenant = id;
+  }
+
   constructor() {
     //pour le ngfor
    
     this.currentIdClient = 0;
+    this.currentIdIntervenant = 0;
    }
 
   

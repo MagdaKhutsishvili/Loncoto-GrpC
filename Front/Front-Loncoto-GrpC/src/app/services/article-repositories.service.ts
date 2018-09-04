@@ -36,4 +36,31 @@ export class ArticleRepositoryService {
    public getArticlespageAsObservable(): Observable<Page<Article>>{
      return this.articlesSubject.asObservable();
    }
+
+
+   public findById(id:number):Observable<Article>{
+    return this.http.get<Article>(`http://localhost:8080/loncogroup-c/articles/${id}`);
+
+
+  }
+
+  public removeArticle(id:number):void{
+    this.http.delete(`http://localhost:8080/loncogroup-c/articles/remove/${id}`)
+                          .subscribe(resp => {this.refreshListe();
+                          });
+
+
+  }
+  public updateArticle(article : Article): void {
+    this.http.put(`http://localhost:8080/loncogroup-c/articles/save/`, article.toJson()).subscribe(resp =>{
+              this.refreshListe();
+    });
+  }
+
+  public createArticle(article : Article): void {
+    this.http.post(`http://localhost:8080/loncogroup-c/articles/save/`, article.toJson()).subscribe(resp =>{
+              this.refreshListe();
+    });
+  }
+
 }

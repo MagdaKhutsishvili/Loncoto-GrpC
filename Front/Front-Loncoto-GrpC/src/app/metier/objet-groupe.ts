@@ -8,12 +8,24 @@ export class Groupe{
                        
                          {}
     
-/*
+
     public copyFrom(other: Groupe){
         this.id=other.id;
         this.nom=other.nom;
         
 
-    }*/
+    }
+
+ 
+    
+
+    public toJson(){
+        return {
+            id:this.id,
+            nom:this.nom,
+         
+            
+        };
+    }
 
 }

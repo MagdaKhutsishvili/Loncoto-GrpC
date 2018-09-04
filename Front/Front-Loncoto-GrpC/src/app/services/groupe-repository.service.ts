@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Groupe } from '../metier/objet-groupe';
+import { Page } from '../metier/page';
 
 @Injectable({
   providedIn: 'root'
@@ -9,43 +10,68 @@ import { Groupe } from '../metier/objet-groupe';
 export class GroupeRepositoryService {
 
   
-  private groupeSubject: BehaviorSubject<Array<Groupe>>
+  private groupesSubject: BehaviorSubject<Page<Groupe>>;
   
+  private noPage : number;
+  private taillePage : number;
+
   //injection du client
   constructor(private http: HttpClient){
-    this.groupeSubject= new BehaviorSubject([]) ;
+    this.groupesSubject= new BehaviorSubject<Page<Groupe>>(Page.emptyPage<Groupe>());
+    this.noPage=0;
+    this.taillePage=5;
 
   }
 
-public getIntervenantsAsObservable(): Observable <Array<Groupe>> {
-  return this.groupeSubject.asObservable();
+public getGroupeAsObservable(): Observable <Page<Groupe>> {
+  return this.groupesSubject.asObservable();
 }
 
-  public refreshListe():void{
-    // requete vers le serveur
-    // il rapellera mon subscribe avec des donnees deja converties
+  
  
-    this.http.get<Array<Groupe>>(`http://localhost:8080/loncogroup-c/groupeintervenant`).subscribe(data=> {this.groupeSubject.next(data);
-  });
-  }
-
-  public findById(id:number):Observable<Groupe>{
-    return this.http.get<Groupe>(`http://localhost:8080/loncogroup-c/groupeintervenant/${id}`);
-  }
 
 
-  public deleteIntervenant(id:number) : void {
-    this.http.delete(`http://localhost:8080/groupeintervenant/${id}`)
-    .subscribe(resp =>{
-            this.refreshListe();
+
+   public setnopage(no:number){
+     this.noPage=no;
+     this.refreshListe();
+   }
+
+   public refreshListe():void{
+     this.http.get<Page<Groupe>>(
+     `http://localhost:8080//loncogroup-c/groupeintervenants?page=${this.noPage}&size=${this.taillePage}`)
+     .subscribe(p => {this.groupesSubject.next(p);
     });
+    
+   }
+
+
+
+
+   public findById(id:number):Observable<Groupe>{
+    return this.http.get<Groupe>(`http://localhost:8080/loncogroup-c/groupeintervenants/${id}`);
+
+
   }
- /*public updateIntervenant(intervenant : Groupe): void {
-    this.http.put(`http://localhost:8080/groupeintervenant/${groupeintervenant.id}`, groupeintervenant.toJson()).subscribe(resp =>{
+
+  public removeGroupe(id:number):void{
+    this.http.delete(`http://localhost:8080/loncogroup-c/groupeintervenants/remove/${id}`)
+                          .subscribe(resp => {this.refreshListe();
+                          });
+
+
+  }
+  public updateGroupe(groupe : Groupe): void {
+    this.http.put(`http://localhost:8080/loncogroup-c/groupeintervenants/save/`, groupe.toJson()).subscribe(resp =>{
               this.refreshListe();
     });
   }
-*/
+
+  public createGroupe(groupe : Groupe): void {
+    this.http.post(`http://localhost:8080/loncogroup-c/groupeintervenants/save/`, groupe.toJson()).subscribe(resp =>{
+              this.refreshListe();
+    });
+  }
  
 
 }

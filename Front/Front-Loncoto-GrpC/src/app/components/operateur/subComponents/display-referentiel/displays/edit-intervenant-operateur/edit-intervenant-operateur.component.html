@@ -1,3 +1,85 @@
-<p>
-  edit-intervenant-operateur works!
-</p>
+<div class="col-lg-6"  style="background-color: rgb(95, 104, 182) ">
+  <div class="col-lg-8 mx-auto text-center ">
+    <div class="well profile_view">
+      <div class="col-sm-12 col-lg-12">
+        <h4 class="brief"><i>Digital Strategist</i></h4>
+        <div class="left col-xs-7 col-lg-7">
+          <h2>{{currentIntervenant.nom}}</h2>
+          <p><strong>About: </strong> Web Designer / UI. </p>
+          <ul class="list-unstyled">
+            <li><i class="fa fa-building"></i> Address: </li>
+            <li><i class="fa fa-phone"></i> Phone #: </li>
+          </ul>
+        </div>
+        <div class="right col-xs-5 col-lg-5 text-center">
+          <img src="../../../../../../../assets/user.png" alt="" class="img-circle img-responsive">
+        </div>
+      </div>
+      <div class="col-xs-12 col-lg-12 bottom text-center">
+        <div class="col-xs-12 col-sm-6 col-lg-6 emphasis">
+          <p class="ratings">
+            <a>4.0</a>
+            <a href="#"><span class="fa fa-star"></span></a>
+            <a href="#"><span class="fa fa-star"></span></a>
+            <a href="#"><span class="fa fa-star"></span></a>
+            <a href="#"><span class="fa fa-star"></span></a>
+            <a href="#"><span class="fa fa-star-o"></span></a>
+          </p>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-lg-6 emphasis">
+          <button type="button" class="btn btn-danger btn-xs"> <i class="fa fa-user">
+            </i> <i class="fa fa-comments-o"></i>Modifier </button>
+            <button type="button" class="btn btn-info btn-xs" (click)="removeintervenant()" pageScroll  href="#tableaux"> <i class="fa fa-user">
+            </i> <i class="fa fa-comments-o"></i>Supprimer </button>
+          <button type="button" class="btn btn-primary btn-xs">
+            <i class="fa fa-user"> </i> Trouver un autre Intervenant          </button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-lg-6">
+  <div class="col-lg-8 mx-auto text-center">
+
+    <div class=" well">
+
+      <div class="panel panel-danger">
+        <div class="panel-heading">
+          Modifier/Créer un Nouveau Intervenant ? 
+        </div>
+        <div class="panel-body">
+
+
+          <form>
+            <input type="hidden" name="id" id="id" [(ngModel)]="currentIntervenant.id" />
+            <div class="form-group">
+              <label>Prenom</label>
+              <input type="text" class="form-control" name="prenom" id="prenom" [(ngModel)]="currentIntervenant.prenom" />
+            </div>
+            <div class="form-group">
+              <label>Nom</label>
+              <input type="text" class="form-control"  name="nom" id="nom" [(ngModel)]="currentIntervenant.nom" />
+            </div>
+
+            <div class="form-group">
+              <label>Email </label>
+              <input type="number" class="form-control"name="email" id="email" [(ngModel)]="currentIntervenant.email"
+              />
+            </div>
+
+          
+
+            <button class="btn btn-warning" (click)="cancelIntervenant()">annuler</button>
+            <button class="btn btn-sucess" (click)="saveIntervenant()" pageScroll  href="#tableaux">save/créer</button>
+          </form>
+
+
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>

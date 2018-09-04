@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,EventEmitter, Output } from '@angular/core';
+import { IntervenantRepositoryService } from '../../../../../../services/intervenant-repository.service';
+import { Subject, Subscription } from 'rxjs';
+import { Intervenant } from '../../../../../../metier/objet-intervenant';
 
 @Component({
   selector: 'app-display-intervenant-operateur',
@@ -7,9 +10,38 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DisplayIntervenantOperateurComponent implements OnInit {
 
-  constructor() { }
+  public intervenantsSubject : Subject<Intervenant[]>
+  private clientsSouscription : Subscription;
+  public totalItems:number;
+  public currentPage : number;
+  public taillePage : number;
+ 
+  @Output() public showdetails: EventEmitter<number>=new EventEmitter<number>();;
 
+
+  constructor(private clientRepository: IntervenantRepositoryService) {
+    //pour le ngfor
+    this.intervenantsSubject= new Subject<Intervenant[]>();
+   }
+
+  
+
+public pageChanged(event){
+  this.clientRepository.setnopage(event.page-1);
+}
   ngOnInit() {
+    this.clientsSouscription=this.clientRepository.getIntervenantsAsObservable().subscribe(p=>{
+      // je reçois les nouvelles pages d'clients
+      this.intervenantsSubject.next(p.content);
+      this.totalItems=p.totalElements;
+      this.currentPage=p.number+1;
+      this.taillePage=p.size;
+    });
+    this.clientRepository.refreshListe();
   }
 
+  public details(id: number) {
+    this.showdetails.emit(id);
+
+  }
 }

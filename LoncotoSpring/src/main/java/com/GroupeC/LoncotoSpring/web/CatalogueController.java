@@ -17,7 +17,7 @@ import com.GroupeC.LoncotoSpring.repositories.CatalogueRepository;
 public class CatalogueController {
 
 	@Controller
-	@RequestMapping("/loncogroup-c/catalogue")
+	@RequestMapping("/loncogroup-c/catalogues")
 	
 	public class catalogueController {
 		

@@ -68,15 +68,39 @@
               </li>
             </ul>
             <ul class="nav child_menu">
-              <li><a pageScroll href="#client">Clients<span class="fa "></span></a></li>
-              <li><a href="index3.html">Intervenants<span class="fa "></span></a></li>
-              
-              <li><a href="index2.html">Sites<span class="fa "></span></a></li>
-              <li><a href="index2.html">Matériels Installés<span class="fa "></span></a></li>
-              <li><a href="index3.html">Groupes d'Intervenants<span class="fa "></span></a></li>
-              <li><a href="index2.html">Le catalogue d'articles<span class="fa "></span></a></li>
+              <li>
+                <a pageScroll href="#client">Clients
+                  <span class="fa "></span>
+                </a>
+              </li>
+              <li>
+                <a href="index3.html">Intervenants
+                  <span class="fa "></span>
+                </a>
+              </li>
+
+              <li>
+                <a href="index2.html">Sites
+                  <span class="fa "></span>
+                </a>
+              </li>
+              <li>
+                <a href="index2.html">Matériels Installés
+                  <span class="fa "></span>
+                </a>
+              </li>
+              <li>
+                <a href="index3.html">Groupes d'Intervenants
+                  <span class="fa "></span>
+                </a>
+              </li>
+              <li>
+                <a href="index2.html">Le catalogue d'articles
+                  <span class="fa "></span>
+                </a>
+              </li>
             </ul>
-         
+
           </div>
 
           <div class="menu_section">
@@ -174,12 +198,12 @@
                   </div>
                   <div class="x_content">
 
-                  
-                  <app-display-client (showdetails)="editClientRequested($event)"></app-display-client>
+
+                    <app-display-client (showdetails)="editClientRequested($event)"></app-display-client>
 
 
-                   
-                 
+
+
 
                   </div>
                 </div>
@@ -221,43 +245,7 @@
                   </div>
                   <div class="x_content">
 
-                    <table class="table table-striped">
-                      <thead>
-                        <tr>
-                          <th>#</th>
-                          <th>First Name</th>
-                          <th>Last Name</th>
-                          <th>Username</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <th scope="row">1</th>
-                          <td>Mark</td>
-                          <td>Otto</td>
-                          <td>@mdo</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">2</th>
-                          <td>Jacob</td>
-                          <td>Thornton</td>
-                          <td>@fat</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">3</th>
-                          <td>Larry</td>
-                          <td>the Bird</td>
-                          <td>@twitter</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">3</th>
-                          <td>Larry</td>
-                          <td>the Bird</td>
-                          <td>@twitter</td>
-                        </tr>
-                        
-                      </tbody>
-                    </table>
+                    <app-display-intervenant-operateur (showdetails)="editIntervenantRequested($event)"></app-display-intervenant-operateur>
 
                   </div>
                 </div>
@@ -435,21 +423,31 @@
       <h1>Client
         <small>Profil</small>
       </h1>
-      </div>
-      <br/><div class="row">
-    <app-edit-client [editIdClient]="currentIdClient"></app-edit-client></div>
+    </div>
+    <br/>
+    <div class="row">
+      <app-edit-client [editIdClient]="currentIdClient"></app-edit-client>
+    </div>
   </div>
 
-  
+
 </section>
 
 
 <section class="bg-info backgroundallpage" id="intervenant">
   <div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 bg-primary"></div>
   <div class="col-lg-10 col-sm-10 col-xs-10 col-md-10 ">
-   
-    <app-edit-client [editIdClient]="currentIdClient"></app-edit-client>
+    <div class="x_title">
+      <h1>Client
+        <small>Profil</small>
+      </h1>
+    </div>
+    <br/>
+    <div class="row">
+      <app-edit-intervenant-operateur [editIdIntervenant]="currentIdIntervenant"></app-edit-intervenant-operateur>
+    </div>
+
   </div>
 
-  
+
 </section>

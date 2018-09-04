@@ -9,15 +9,16 @@ import { InterventionsRepositoryService } from '../../../../services/interventio
   styleUrls: ['./display-interventions-duclient.component.css']
 })
 export class DisplayInterventionsDuclientComponent implements OnInit {
-
+/*
   public interventions : Array<Intervention>;
 public interventionsObservable : Observable<Array<Intervention>>
-
+*/
   constructor(private interventionRepository : InterventionsRepositoryService) { }
 
   ngOnInit() {
-    this.interventionsObservable = this.interventionRepository.getInterventionAsOsbervable();
+    /*this.interventionsObservable = this.interventionRepository.getInterventionsAsObservable();
     this.interventionRepository.refreshListe();
-  }
-
+  
+*/
+}
 }
