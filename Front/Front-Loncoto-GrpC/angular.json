@@ -48,7 +48,10 @@
     
         
               "src/template-bootstrap/js/creative.min.js",
-              "node_modules/chart.js/src/chart.js"
+              "node_modules/chart.js/src/chart.js",
+
+
+              "src/template-bootstrap/jeu/bubble.swf"
               
 
             ]

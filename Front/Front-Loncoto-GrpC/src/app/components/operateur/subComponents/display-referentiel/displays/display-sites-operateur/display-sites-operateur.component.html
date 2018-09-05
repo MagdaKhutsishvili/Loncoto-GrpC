@@ -2,15 +2,13 @@
     <thead>
       <tr>
         <th>nom</th>
-        <th>adresse</th>
-        <th>idclient</th>
+        <th>Client</th>
         <button class="btn btn-warning" (click)="details(0)"pageScroll href="#site" >Créer</button>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let site of sitesSubject |async">
         <td>{{site.nom}}</td>
-        <td>{{site.adresse}}</td>
         <td>{{site.id_Client}}</td>
         <td>
           <a type="button" (click)="details(site.id)" class=" btn-primary btn-xs" pageScroll href="#site"> 

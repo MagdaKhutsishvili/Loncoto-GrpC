@@ -35,6 +35,7 @@
     "primeicons": "^1.0.0-beta.10",
     "primeng": "^6.1.2",
     "rxjs": "^6.0.0",
+    "swfobject-npm": "^2.3.0-1",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {

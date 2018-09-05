@@ -9,9 +9,10 @@
   </thead>
   <tbody>
     <tr *ngFor="let materiel of materielsSubject |async">
-      <td>{{materiel.article}}</td>
+      <td>{{materiel.article.nom}}</td>
       <td>{{materiel.serialID}}</td>
-      <td>{{materiel.lesite}}</td>
+      
+      <td >{{materiel.lesite.nom}}</td>
       <td>
         <a type="button" (click)="details(materiel.id)" class=" btn-primary btn-xs" pageScroll href="#materiel"> 
           <i class="fa fa-user"> </i> Détails 
@@ -22,8 +23,8 @@
 </table>
 <div class="row">
     <div class="col-lg-7"></div>
-    <div class="col-lg-5">
-  <pagination style="margin-top: 0px;padding-top: 0px;padding-bottom: 0px;border-bottom: 0px"[totalItems]="totalItems" [ngModel]="currentPage" [itemsPerPage]="taillePage"
+    <div class="col-lg-5" style="overflow: auto">
+  <pagination [totalItems]="totalItems" [ngModel]="currentPage" [itemsPerPage]="taillePage"
     (pageChanged)="pageChanged($event)"></pagination> 
     </div>
 </div>

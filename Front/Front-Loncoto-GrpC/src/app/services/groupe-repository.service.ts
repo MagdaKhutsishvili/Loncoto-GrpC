@@ -19,7 +19,7 @@ export class GroupeRepositoryService {
   constructor(private http: HttpClient){
     this.groupesSubject= new BehaviorSubject<Page<Groupe>>(Page.emptyPage<Groupe>());
     this.noPage=0;
-    this.taillePage=5;
+    this.taillePage=10;
 
   }
 
