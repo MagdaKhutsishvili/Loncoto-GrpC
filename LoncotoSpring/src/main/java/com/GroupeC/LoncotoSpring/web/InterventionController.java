@@ -1,11 +1,14 @@
 package com.GroupeC.LoncotoSpring.web;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.projection.ProjectionFactory;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
@@ -18,6 +21,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.GroupeC.LoncotoSpring.metier.Intervenant;
 import com.GroupeC.LoncotoSpring.metier.Intervention;
+import com.GroupeC.LoncotoSpring.metier.projections.Evenement;
 import com.GroupeC.LoncotoSpring.repositories.InterventionRepository;
 
 
@@ -29,6 +33,15 @@ public class InterventionController {
 	@Autowired
 	
 	private InterventionRepository interventionRepository;
+	
+	private final ProjectionFactory projectionFactory;
+	
+	@Autowired
+	public InterventionController(ProjectionFactory projectionFactory) {
+		this.projectionFactory = projectionFactory;
+	}
+	
+	
 	
 	@RequestMapping(method=RequestMethod.GET,
 			produces=MediaType.APPLICATION_JSON_UTF8_VALUE
@@ -82,6 +95,23 @@ public class InterventionController {
 	
 	
 	
+	
+	@RequestMapping(value="/evenement",method=RequestMethod.GET,
+			produces=MediaType.APPLICATION_JSON_UTF8_VALUE
+			)
+	@ResponseBody
+	
+	@CrossOrigin(origins= {"http://localhost:4200"}, methods= {RequestMethod.GET, RequestMethod.OPTIONS}) 
+	public List<Evenement> findAllEvenement(@PageableDefault(page=0, size=5) Pageable pr) {
+	
+		Page<Intervention> page =  interventionRepository.findAll(pr);
+		List<Evenement> liste = page.getContent().stream().map(
+				art -> projectionFactory.createProjection(Evenement.class, art))
+				.collect(Collectors.toList());
+
+				
+				return liste;
+	}
 	
 	
 	

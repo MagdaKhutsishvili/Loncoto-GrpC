@@ -1,12 +1,24 @@
 
+import { Materiel } from "./objet-materiel";
+import { Intervenant } from "./objet-intervenant";
+
+
+
 export class Intervention{
+
+
+
+
     public constructor(public id :number,
                         public datePrevu: string,
                         public dateEffectue: string,
                         public statut: string,
                         public commentaire: string,
-                        public id_Materiel: number,
-                        public id_Intervenant: number
+                        public materiel: number,
+                        public intervenant: number,
+                        public title :string,
+                            public start: string,
+                            public end: string
                     )
                          
                        
@@ -19,8 +31,11 @@ export class Intervention{
         this.dateEffectue=other.dateEffectue;
         this.statut=other.statut;
         this.commentaire=other.commentaire;
-        this.id_Materiel=other.id_Materiel;
-        this.id_Intervenant=other.id_Intervenant;
+        this.materiel=other.materiel;
+        this.intervenant=other.intervenant;
+        this.title=other.title;
+        this.start=other.start;
+        this.end=other.end;
     }
     public toJson(){
         return {
@@ -29,8 +44,21 @@ export class Intervention{
             dateEffectue: this.dateEffectue,
             statut: this.statut,
             commentaire:this.commentaire,
-            id_Materiel: this.id_Materiel,
-            id_Intervenant: this.id_Intervenant,
+            materiel: this.materiel,
+            intervenant: this.intervenant,
+            title:this.title,
+            start:this.commentaire,
+            end:this.end,
         };
     }
+
+    public toEvent(){
+        return {
+            title:this.title,
+            start:this.start,
+            end: this.end
+        };
+    }
+
+
 }

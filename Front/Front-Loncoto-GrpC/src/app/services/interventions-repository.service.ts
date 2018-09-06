@@ -3,6 +3,7 @@ import { BehaviorSubject, Observable } from "rxjs";
 import { Intervention } from '../metier/objet-intervention';
 import { HttpClient } from '@angular/common/http';
 import { Page } from '../metier/page';
+import { Evenement } from '../metier/objet-event';
 
 @Injectable({
   providedIn: 'root'
@@ -27,6 +28,9 @@ public getInterventionsAsObservable(): Observable <Page<Intervention>> {
 }
 
   
+public getEvents(): Observable <Evenement[]> {
+  return this.http.get<Evenement[]>(`http://localhost:8080/loncogroup-c/interventions/evenement`);
+}
  
 
 

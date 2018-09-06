@@ -4,6 +4,7 @@ import { Intervention } from '../../../../metier/objet-intervention';
 
 import { CalendarComponent } from 'ng-fullcalendar';
 import { Options } from 'fullcalendar';
+import { Evenement } from '../../../../metier/objet-event';
 
 
 @Component({
@@ -20,39 +21,28 @@ export class DisplayPlanningsOperateurComponent implements OnInit {
 
 
 
-
+  public listevents: Evenement[]=[];
 
 
     public currentIntervention : Intervention;
   
-    constructor(private InterventionRepository : InterventionsRepositoryService) {
+    constructor(private interventionRepository : InterventionsRepositoryService) {
   
   
      }
-     public saveIntervention() {
-    
-      if (this.currentIntervention.id > 0){
-        let InterToSave = new Intervention(0,"1-1-1999","1-1-1999","rien","toi",0,0);
-        
-        // retransformation du modele/json du formulaire
-        // en veritable objet Livre avec ses méthodes
-        InterToSave.copyFrom(this.currentIntervention);
-  
-        this.InterventionRepository.updateIntervention(InterToSave);
-        this.currentIntervention = new Intervention(0,"1-1-1999","1-1-1999","rien","toi",0,0);
-      }
- 
-    }
-  public cancelIntervention() {
-    this.currentIntervention = new Intervention(0,"1-1-1999","1-1-1999","rien","toi",0,0);
-  }
-
+   
 
 
 
   calendarOptions: Options;
   @ViewChild(CalendarComponent) ucCalendar: CalendarComponent;
   ngOnInit() {
+
+    this.interventionRepository.getEvents().subscribe(data=>{
+    
+    
+    
+
     this.calendarOptions = {
       
       editable: true,
@@ -64,13 +54,15 @@ export class DisplayPlanningsOperateurComponent implements OnInit {
         center: 'title',
         right: 'month,agendaWeek,agendaDay,listMonth'
       },
-      events: []
+      events: data
     };
+  });
+    
 
+this.interventionRepository.refreshListe();
   }
 
 
-  
 }
   
   

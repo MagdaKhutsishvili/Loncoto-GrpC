@@ -33,7 +33,9 @@ public class Intervention {
 					private String commentaire;
 	@ManyToOne				private Intervenant intervenant;
 	@ManyToOne 			private Materiel materiel;
-	
+	@Temporal(TemporalType.DATE)			private Date start;
+	@Temporal(TemporalType.DATE)			private Date end;
+											private String title;
 	
 	public Intervention(int id, Date datePrevu, Date dateEffectue, String statut, String commentaire,
 			int materielId, int intervenantId) {
