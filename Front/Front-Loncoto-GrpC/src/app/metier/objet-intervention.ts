@@ -5,8 +5,8 @@ export class Intervention{
                         public dateEffectue: string,
                         public statut: string,
                         public commentaire: string,
-                        public id_Materiel: number,
-                        public id_Intervenant: number
+                        public materiel: number,
+                        public intervenant: number
                     )
                          
                        
@@ -19,8 +19,8 @@ export class Intervention{
         this.dateEffectue=other.dateEffectue;
         this.statut=other.statut;
         this.commentaire=other.commentaire;
-        this.id_Materiel=other.id_Materiel;
-        this.id_Intervenant=other.id_Intervenant;
+        this.materiel=other.materiel;
+        this.intervenant=other.intervenant;
     }
     public toJson(){
         return {
@@ -29,8 +29,16 @@ export class Intervention{
             dateEffectue: this.dateEffectue,
             statut: this.statut,
             commentaire:this.commentaire,
-            id_Materiel: this.id_Materiel,
-            id_Intervenant: this.id_Intervenant,
+            materiel: this.materiel,
+            intervenant: this.intervenant,
+        };
+    }
+    public toEvent(){
+        return {
+            start:this.datePrevu,
+            end: this.dateEffectue,
+            title: this.materiel
+            
         };
     }
 }

@@ -52,6 +52,11 @@ public getMaterielsAsObservable(): Observable <Page<Materiel>> {
 
 
   }
+  public findclientById(id:number):Observable<Materiel>{
+    return this.http.get<Materiel>(`http://localhost:8080/loncogroup-c/materiels/clients/${id}`);
+
+
+  }
 
   public removeMateriel(id:number):void{
     this.http.delete(`http://localhost:8080/loncogroup-c/materiels/remove/${id}`)

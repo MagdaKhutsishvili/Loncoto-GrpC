@@ -1,6 +1,7 @@
 package com.GroupeC.LoncotoSpring.web;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,6 +40,18 @@ public class InterventionController {
 	
 		return interventionRepository.findAll(pr);
 	}
+	
+	
+	@RequestMapping(value="/list", method=RequestMethod.GET,
+			produces=MediaType.APPLICATION_JSON_UTF8_VALUE
+			)
+	@ResponseBody
+	@CrossOrigin(origins= {"http://localhost:4200"}, methods= {RequestMethod.GET, RequestMethod.OPTIONS}) 
+	public List<Intervention> findAlljson() {
+	
+		return interventionRepository.findAll();
+	}
+	
 	
 	@RequestMapping(value="/{lid:[0-9]+}", method=RequestMethod.GET,
 			produces=org.springframework.http.MediaType.APPLICATION_JSON_UTF8_VALUE)

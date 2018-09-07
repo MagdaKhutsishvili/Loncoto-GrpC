@@ -9,6 +9,9 @@ import { Page } from '../metier/page';
 })
 export class InterventionsRepositoryService {
 
+  public listinter:Observable< Intervention[]>;
+  public listevents:Observable< [{}]>;
+
   private interventionsSubject: BehaviorSubject<Page<Intervention>>;
   
   private noPage : number;
@@ -43,6 +46,7 @@ public getInterventionsAsObservable(): Observable <Page<Intervention>> {
     });
     
    }
+
 
 
 

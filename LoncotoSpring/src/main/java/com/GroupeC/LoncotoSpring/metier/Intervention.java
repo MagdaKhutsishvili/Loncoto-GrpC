@@ -27,9 +27,10 @@ public class Intervention {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 
 		@Id			private int id;
-	@Temporal(TemporalType.DATE)			private Date datePrevu;
-	@Temporal(TemporalType.DATE)			private Date dateEffectue;
+	@Temporal(TemporalType.DATE)			private Date start;
+	@Temporal(TemporalType.DATE)			private Date end;
 					private String statut;
+					private String title;
 					private String commentaire;
 	@ManyToOne				private Intervenant intervenant;
 	@ManyToOne 			private Materiel materiel;
@@ -39,8 +40,8 @@ public class Intervention {
 			int materielId, int intervenantId) {
 		super();
 		this.id = id;
-		this.datePrevu = datePrevu;
-		this.dateEffectue = dateEffectue;
+		this.start = datePrevu;
+		this.end = dateEffectue;
 		this.statut = statut;
 		this.commentaire = commentaire;
 		

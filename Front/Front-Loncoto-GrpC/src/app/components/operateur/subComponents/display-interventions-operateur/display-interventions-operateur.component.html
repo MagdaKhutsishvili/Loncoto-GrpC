@@ -194,10 +194,10 @@
                       <tbody>
                         <tr *ngFor="let intervention of interventionsSubject |async">
                           <td>{{intervention.id}}</td>
-                          <td>{{intervention.nom}}</td>
-                          <td>{{intervention.email}}</td>
-                          <td>{{intervention.email}}</td>
-                          <td>{{intervention.email}}</td>
+                          <td>{{intervention.intervenant.nom}}</td>
+                          <td>{{intervention.materiel.article.marque}}</td>
+                          <td>{{intervention.datePrevu}}</td>
+                          <td>{{intervention.dateEffectue}}</td>
                           <td>{{intervention.statut}}</td>
                           <td>
                             <a type="button" (click)="details(intervention.id)" class=" btn-primary btn-xs" pageScroll href="#editer"> 

@@ -4,6 +4,9 @@ import { Intervention } from '../../../../metier/objet-intervention';
 
 import { CalendarComponent } from 'ng-fullcalendar';
 import { Options } from 'fullcalendar';
+import { Subject, Subscription } from 'rxjs';
+import { Evenement } from '../../../../metier/objet-evenement';
+import { PlanningService } from '../../../../services/planning.service';
 
 
 @Component({
@@ -15,45 +18,46 @@ import { Options } from 'fullcalendar';
 export class DisplayPlanningsOperateurComponent implements OnInit {
 
 
-
-
-
-
-
-
-
-
-    public currentIntervention : Intervention;
-  
-    constructor(private InterventionRepository : InterventionsRepositoryService) {
-  
-  
-     }
-     public saveIntervention() {
-    
-      if (this.currentIntervention.id > 0){
-        let InterToSave = new Intervention(0,"1-1-1999","1-1-1999","rien","toi",0,0);
-        
-        // retransformation du modele/json du formulaire
-        // en veritable objet Livre avec ses méthodes
-        InterToSave.copyFrom(this.currentIntervention);
-  
-        this.InterventionRepository.updateIntervention(InterToSave);
-        this.currentIntervention = new Intervention(0,"1-1-1999","1-1-1999","rien","toi",0,0);
-      }
+  public interventionsSubject : Subject<Intervention[]>
+  private interventionsSouscription : Subscription;
  
-    }
-  public cancelIntervention() {
-    this.currentIntervention = new Intervention(0,"1-1-1999","1-1-1999","rien","toi",0,0);
-  }
+  public listevents:Intervention[];
+  
+ 
 
-
-
+  constructor(private interventionRepository: InterventionsRepositoryService, private eventsRepository:PlanningService) {
+    //pour le ngfor
+    this.interventionsSubject= new Subject<Intervention[]>();
+ 
+   }
 
   calendarOptions: Options;
   @ViewChild(CalendarComponent) ucCalendar: CalendarComponent;
   ngOnInit() {
+
+
+    this.interventionsSouscription=this.interventionRepository.getInterventionsAsObservable().subscribe(p=>{
+      // je reçois les nouvelles pages d'Interventions
+      
+      this.interventionsSubject.next(p.content);
+      this.listevents=p.content;
+      
+     }
+    );
+    
+
+     
+      
+  
+
+
+
+    this.interventionRepository.refreshListe();
+    
+
+
     this.calendarOptions = {
+      
       
       editable: true,
       eventLimit: false,
@@ -64,8 +68,15 @@ export class DisplayPlanningsOperateurComponent implements OnInit {
         center: 'title',
         right: 'month,agendaWeek,agendaDay,listMonth'
       },
-      events: []
+
+
+
+      events: this.listevents
+      
+
     };
+   
+   
 
   }
 

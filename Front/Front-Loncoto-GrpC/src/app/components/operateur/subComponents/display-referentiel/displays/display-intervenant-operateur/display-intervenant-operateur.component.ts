@@ -19,7 +19,7 @@ export class DisplayIntervenantOperateurComponent implements OnInit {
   @Output() public showdetails: EventEmitter<number>=new EventEmitter<number>();;
 
 
-  constructor(private clientRepository: IntervenantRepositoryService) {
+  constructor(private intervenantRepository: IntervenantRepositoryService) {
     //pour le ngfor
     this.intervenantsSubject= new Subject<Intervenant[]>();
    }
@@ -27,17 +27,17 @@ export class DisplayIntervenantOperateurComponent implements OnInit {
   
 
 public pageChanged(event){
-  this.clientRepository.setnopage(event.page-1);
+  this.intervenantRepository.setnopage(event.page-1);
 }
   ngOnInit() {
-    this.clientsSouscription=this.clientRepository.getIntervenantsAsObservable().subscribe(p=>{
+    this.clientsSouscription=this.intervenantRepository.getIntervenantsAsObservable().subscribe(p=>{
       // je reçois les nouvelles pages d'clients
       this.intervenantsSubject.next(p.content);
       this.totalItems=p.totalElements;
       this.currentPage=p.number+1;
       this.taillePage=p.size;
     });
-    this.clientRepository.refreshListe();
+    this.intervenantRepository.refreshListe();
   }
 
   public details(id: number) {
