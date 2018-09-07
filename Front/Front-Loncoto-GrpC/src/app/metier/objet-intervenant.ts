@@ -3,7 +3,8 @@ export class Intervenant{
     public constructor(public id :number,
                         public nom: string,
                         public prenom: string,
-                        public email: string
+                        public email: string,
+                        public color: string
                          )
                          
                        
@@ -15,6 +16,7 @@ export class Intervenant{
         this.nom=other.nom;
         this.prenom=other.prenom;
         this.email=other.email;
+        this.color=other.color;
         
 
     }
@@ -24,7 +26,8 @@ public toJson(){
         id:this.id,
         nom:this.nom,
         prenom: this.prenom,
-        email: this.email
+        email: this.email,
+        color: this.color
     };
 }
 

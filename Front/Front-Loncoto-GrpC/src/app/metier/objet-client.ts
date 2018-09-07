@@ -2,7 +2,10 @@ export class Client{
     public constructor(public id :number,
                         public nom: string,
                         public email: string,
-                         public nbdesite: number)
+                         public nbdesite: number,
+                        
+                        
+                        )
                          
                        
                          {}
