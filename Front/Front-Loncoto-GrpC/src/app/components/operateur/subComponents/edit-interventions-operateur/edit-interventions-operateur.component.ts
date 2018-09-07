@@ -23,19 +23,19 @@ export class EditInterventionsOperateurComponent implements OnInit,OnChanges {
    public saveIntervention() {
     
       if (this.currentIntervention.id > 0){
-        let InterToSave = new Intervention(0,"1-1-1999","1-1-1999","rien","toi",0,0);
+        let InterToSave = new Intervention(0,"1-1-1999","1-1-1999","rien","toi",0,0,"","1-1-1999","1-1-1999");
         
         // retransformation du modele/json du formulaire
         // en veritable objet Livre avec ses méthodes
         InterToSave.copyFrom(this.currentIntervention);
   
         this.InterventionRepository.updateIntervention(InterToSave);
-        this.currentIntervention = new Intervention(0,"1-1-1999","1-1-1999","rien","toi",0,0);
+        this.currentIntervention = new Intervention(0,"1-1-1999","1-1-1999","rien","toi",0,0,"","1-1-1999","1-1-1999");
       }
  
     }
   public cancelIntervention() {
-    this.currentIntervention = new Intervention(0,"1-1-1999","1-1-1999","rien","toi",0,0);
+    this.currentIntervention = new Intervention(0,"1-1-1999","1-1-1999","rien","toi",0,0,"","1-1-1999","1-1-1999");
   }
 
 
@@ -43,13 +43,13 @@ export class EditInterventionsOperateurComponent implements OnInit,OnChanges {
 
 
   ngOnInit() {
-    this.currentIntervention=new Intervention(0,"1-1-1999","1-1-1999","rien","toi",0,0);
+    this.currentIntervention=new Intervention(0,"1-1-1999","1-1-1999","rien","toi",0,0,"","1-1-1999","1-1-1999");
   }
 
   ngOnChanges(changes:any){
     
     if (this.editId==0){
-      this.currentIntervention=new Intervention(0,"1-1-1999","1-1-1999","rien","toi",0,0);
+      this.currentIntervention=new Intervention(0,"1-1-1999","1-1-1999","rien","toi",0,0,"","1-1-1999","1-1-1999");
     }
     else{
       this.InterventionRepository.findById(this.editId).subscribe(intervention=> { this.currentIntervention=intervention;

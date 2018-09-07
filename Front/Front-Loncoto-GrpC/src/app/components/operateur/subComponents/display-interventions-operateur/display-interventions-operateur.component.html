@@ -193,7 +193,7 @@
                       </thead>
                       <tbody>
                         <tr *ngFor="let intervention of interventionsSubject |async">
-                          <td>{{intervention.id}}</td>
+                          <td>{{intervention.materiel.lesite.nom}}</td>
                           <td>{{intervention.intervenant.nom}}</td>
                           <td>{{intervention.materiel.article.marque}}</td>
                           <td>{{intervention.datePrevu}}</td>
@@ -239,7 +239,7 @@
                     <div class="col-sm-12 col-lg-12">
                       <h4 class="brief"><i>Digital Strategist</i></h4>
                       <div class="left col-xs-7 col-lg-7">
-                        <h2>{{currentIntervention.nom}}</h2>
+                        <h2>{{currentIntervention.title}}</h2>
                         <p><strong>About: </strong> Web Designer / UI. </p>
                         <ul class="list-unstyled">
                           <li><i class="fa fa-building"></i> Address: </li>
@@ -289,35 +289,32 @@
               
                         <form>
                           <input type="hidden" name="id" id="id" [(ngModel)]="currentIntervention.id" />
+                         
                           <div class="form-group">
-                            <label>Statut</label>
-                            <input type="text" class="form-control" name="nom" id="nom" [(ngModel)]="currentIntervention.statut" />
+                            <label>Intervenant</label>
+                           
+                          <select name="intervenant" [(ngModel)]="currentIntervention.intervenant" *ngFor="let intervenant of intervenantsSubject |async">
+                            <option value="intervenant.id">{{intervenant.nom}} {{intervenant.prenom}}</option>
+                      
+                        </select>
+
                           </div>
+                          
                           <div class="form-group">
-                            <label>Email</label>
-                            <input type="text" class="form-control" name="email" id="email" [(ngModel)]="currentIntervention.email" />
-                          </div>
-              
-                          <div class="form-group">
-                            <label>Nombre de site </label>
-                            <input type="number" class="form-control" name="nombre" id="nombre" [(ngModel)]="currentIntervention.nbdesite"
+                            <label>Materiel</label>
+                            <input type="number" class="form-control" name="matos" id="matos" [(ngModel)]="currentIntervention.materiel"
                             />
                           </div>
                           <div class="form-group">
-                              <label>Nombre de site </label>
-                              <input type="number" class="form-control" name="nombre" id="nombre" [(ngModel)]="currentIntervention.nbdesite"
+                              <label>Date Prévu</label>
+                              <input type="date" class="form-control" name="date" id="date" [(ngModel)]="currentIntervention.datePrevu"  [(ngModel)]="currentIntervention.start" [(ngModel)]="currentIntervention.end"
                               />
                             </div>
                             <div class="form-group">
-                                <label>Nombre de site </label>
-                                <input type="number" class="form-control" name="nombre" id="nombre" [(ngModel)]="currentIntervention.nbdesite"
-                                />
-                              </div>
-                              <div class="form-group">
-                                  <label>Nombre de site </label>
-                                  <input type="number" class="form-control" name="nombre" id="nombre" [(ngModel)]="currentIntervention.nbdesite"
-                                  />
-                                </div>
+                              <label>Titre</label>
+                              <input type="text" class="form-control" name="title" id="title" [(ngModel)]="currentIntervention.title"
+                              />
+                            </div>
               
                         
               

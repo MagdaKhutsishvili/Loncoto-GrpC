@@ -4,9 +4,7 @@ import { Intervention } from '../../../../metier/objet-intervention';
 
 import { CalendarComponent } from 'ng-fullcalendar';
 import { Options } from 'fullcalendar';
-import { Subject, Subscription } from 'rxjs';
-import { Evenement } from '../../../../metier/objet-evenement';
-import { PlanningService } from '../../../../services/planning.service';
+import { Evenement } from '../../../../metier/objet-event';
 
 
 @Component({
@@ -18,43 +16,29 @@ import { PlanningService } from '../../../../services/planning.service';
 export class DisplayPlanningsOperateurComponent implements OnInit {
 
 
-  public interventionsSubject : Subject<Intervention[]>
-  private interventionsSouscription : Subscription;
- 
-  public listevents:Intervention[];
+  public listevents: Evenement[]=[];
+
+
+    public currentIntervention : Intervention;
   
+    constructor(private interventionRepository : InterventionsRepositoryService) {
+  
+  
+     }
+   
+
+
  
 
-  constructor(private interventionRepository: InterventionsRepositoryService, private eventsRepository:PlanningService) {
-    //pour le ngfor
-    this.interventionsSubject= new Subject<Intervention[]>();
- 
-   }
 
   calendarOptions: Options;
   @ViewChild(CalendarComponent) ucCalendar: CalendarComponent;
   ngOnInit() {
 
-
-    this.interventionsSouscription=this.interventionRepository.getInterventionsAsObservable().subscribe(p=>{
-      // je reçois les nouvelles pages d'Interventions
-      
-      this.interventionsSubject.next(p.content);
-      this.listevents=p.content;
-      
-     }
-    );
+    this.interventionRepository.getEvents().subscribe(data=>{
     
-
-     
-      
-  
-
-
-
-    this.interventionRepository.refreshListe();
     
-
+    
 
     this.calendarOptions = {
       
@@ -68,20 +52,15 @@ export class DisplayPlanningsOperateurComponent implements OnInit {
         center: 'title',
         right: 'month,agendaWeek,agendaDay,listMonth'
       },
-
-
-
-      events: this.listevents
-      
-
+      events: data
     };
-   
-   
+  });
+    
 
+this.interventionRepository.refreshListe();
   }
 
 
-  
 }
   
   

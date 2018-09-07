@@ -1,12 +1,24 @@
 
+import { Materiel } from "./objet-materiel";
+import { Intervenant } from "./objet-intervenant";
+
+
+
 export class Intervention{
+
+
+
+
     public constructor(public id :number,
                         public datePrevu: string,
                         public dateEffectue: string,
                         public statut: string,
                         public commentaire: string,
                         public materiel: number,
-                        public intervenant: number
+                        public intervenant: number,
+                        public title :string,
+                            public start: string,
+                            public end: string
                     )
                          
                        
@@ -21,6 +33,9 @@ export class Intervention{
         this.commentaire=other.commentaire;
         this.materiel=other.materiel;
         this.intervenant=other.intervenant;
+        this.title=other.title;
+        this.start=other.start;
+        this.end=other.end;
     }
     public toJson(){
         return {
@@ -31,14 +46,19 @@ export class Intervention{
             commentaire:this.commentaire,
             materiel: this.materiel,
             intervenant: this.intervenant,
+            title:this.title,
+            start:this.commentaire,
+            end:this.end,
         };
     }
+
     public toEvent(){
         return {
-            start:this.datePrevu,
-            end: this.dateEffectue,
-            title: this.materiel
-            
+            title:this.title,
+            start:this.start,
+            end: this.end
         };
     }
+
+
 }
