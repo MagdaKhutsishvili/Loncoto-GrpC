@@ -24,10 +24,14 @@ export class IntervenantRepositoryService {
   }
 
 public getIntervenantsAsObservable(): Observable <Page<Intervenant>> {
+  this.taillePage=3;
   return this.intervenantsSubject.asObservable();
 }
 
-  
+public getIntervenantsAsObservable2(): Observable <Page<Intervenant>> {
+  this.taillePage=1000;
+  return this.intervenantsSubject.asObservable();
+}
  
 
 

@@ -27,10 +27,9 @@ public class Intervention {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 
 		@Id			private int id;
-	@Temporal(TemporalType.DATE)			private Date start;
-	@Temporal(TemporalType.DATE)			private Date end;
+
 					private String statut;
-					private String title;
+				
 					private String commentaire;
 	@ManyToOne				private Intervenant intervenant;
 	@ManyToOne 			private Materiel materiel;

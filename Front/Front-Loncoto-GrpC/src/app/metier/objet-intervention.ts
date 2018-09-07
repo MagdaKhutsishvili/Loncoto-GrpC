@@ -14,8 +14,8 @@ export class Intervention{
                         public dateEffectue: string,
                         public statut: string,
                         public commentaire: string,
-                        public materiel: number,
-                        public intervenant: number,
+                        public materiel: Materiel,
+                        public intervenant: Intervenant,
                         public title :string,
                             public start: string,
                             public end: string
@@ -47,7 +47,7 @@ export class Intervention{
             materiel: this.materiel,
             intervenant: this.intervenant,
             title:this.title,
-            start:this.commentaire,
+            start:this.start,
             end:this.end,
         };
     }

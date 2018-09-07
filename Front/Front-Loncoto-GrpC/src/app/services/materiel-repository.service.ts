@@ -23,10 +23,15 @@ export class MaterielRepositoryService {
   }
 
 public getMaterielsAsObservable(): Observable <Page<Materiel>> {
+  this.taillePage=3;
   return this.materielsSubject.asObservable();
 }
 
-  
+public getMaterielsAsObservable2(): Observable <Page<Materiel>> {
+  this.taillePage=1000;
+  return this.materielsSubject.asObservable();
+}
+
  
 
 

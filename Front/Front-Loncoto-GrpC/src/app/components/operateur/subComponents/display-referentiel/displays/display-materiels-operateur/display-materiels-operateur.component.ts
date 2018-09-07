@@ -11,7 +11,7 @@ import { Materiel } from '../../../../../../metier/objet-materiel';
 })
 export class DisplayMaterielsOperateurComponent implements OnInit {
   public materielsSubject : Subject<Materiel[]>
-  private clientsSouscription : Subscription;
+  private materielsSouscription : Subscription;
   public totalItems:number;
   public currentPage : number;
   public taillePage : number;
@@ -22,7 +22,7 @@ export class DisplayMaterielsOperateurComponent implements OnInit {
 
 
 
-  constructor(private clientRepository: MaterielRepositoryService) {
+  constructor(private materielRepository: MaterielRepositoryService) {
     //pour le ngfor
     this.materielsSubject= new Subject<Materiel[]>();
    }
@@ -30,17 +30,17 @@ export class DisplayMaterielsOperateurComponent implements OnInit {
   
 
 public pageChanged(event){
-  this.clientRepository.setnopage(event.page-1);
+  this.materielRepository.setnopage(event.page-1);
 }
   ngOnInit() {
-    this.clientsSouscription=this.clientRepository.getMaterielsAsObservable().subscribe(p=>{
-      // je reçois les nouvelles pages d'clients
+    this.materielsSouscription=this.materielRepository.getMaterielsAsObservable().subscribe(p=>{
+      // je reçois les nouvelles pages d'materiels
       this.materielsSubject.next(p.content);
       this.totalItems=p.totalElements;
       this.currentPage=p.number+1;
       this.taillePage=p.size;
     });
-    this.clientRepository.refreshListe();
+    this.materielRepository.refreshListe();
   }
 
   public details(id: number) {

@@ -52,7 +52,8 @@ export class DisplayPlanningsOperateurComponent implements OnInit {
         center: 'title',
         right: 'month,agendaWeek,agendaDay,listMonth'
       },
-      events: data
+      events: data,
+   
     };
   });
     
