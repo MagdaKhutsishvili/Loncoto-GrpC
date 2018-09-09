@@ -32,9 +32,20 @@ export class ClientRepositoryService {
     
    }
 
-   public getClientspageAsObservable(): Observable<Page<Client>>{
-     return this.clientsSubject.asObservable();
+
+
+   public getClientspageAsObservable2(): Observable <Page<Client>>{
+   return this.http.get<Page<Client>>(
+      `http://localhost:8080//loncogroup-c/clients?page=${this.noPage}&size=${1000}`);
+     
+
    }
+
+
+   public getClientAsObservable(): Observable <Page<Client>> {
+    return this.clientsSubject.asObservable();
+  }
+  
 
    public findById(id:number):Observable<Client>{
     return this.http.get<Client>(`http://localhost:8080/loncogroup-c/clients/${id}`);

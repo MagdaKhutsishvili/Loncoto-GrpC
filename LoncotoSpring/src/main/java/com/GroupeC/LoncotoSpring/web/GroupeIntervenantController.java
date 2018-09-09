@@ -35,7 +35,7 @@ public class GroupeIntervenantController {
 		
 		
 		
-		
+		/*
 		@RequestMapping(value = "/intervenant/{id:[0-9]+}", method = RequestMethod.GET, produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
 		@ResponseBody
 		@CrossOrigin(origins = {"http://localhost:4200"}, methods = {RequestMethod.GET})
@@ -43,7 +43,7 @@ public class GroupeIntervenantController {
 			return groupeIntervenantRepository.findByIntervenant_Id(id);
 		}
 		
-		
+		*/
 		
 		
 		

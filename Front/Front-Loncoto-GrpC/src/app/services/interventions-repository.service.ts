@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { Page } from '../metier/page';
 import { Evenement } from '../metier/objet-event';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -55,10 +56,11 @@ public getEvents(): Observable <Evenement[]> {
 
    public findintervenantById(id:number):Observable<Intervention[]>{
     return this.http.get<Intervention[]>(`http://localhost:8080/loncogroup-c/interventions/intervenant/${id}`);
-
-
   }
 
+  public findMaterielById(id:number):Observable<Intervention[]>{
+    return this.http.get<Intervention[]>(`http://localhost:8080/loncogroup-c/interventions/materiels/${id}`);
+  }
 
    public findById(id:number):Observable<Intervention>{
     return this.http.get<Intervention>(`http://localhost:8080/loncogroup-c/interventions/${id}`);

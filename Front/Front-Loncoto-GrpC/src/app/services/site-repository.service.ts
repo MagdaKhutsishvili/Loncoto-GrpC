@@ -27,6 +27,13 @@ public getSitesAsObservable(): Observable <Page<Site>> {
 }
 
   
+public getSiteAsObservable2(): Observable <Page<Site>> {
+  return this.http.get<Page<Site>>(
+    `http://localhost:8080//loncogroup-c/sites?page=${this.noPage}&size=${1000}`)
+    
+   }
+
+
  
 
 

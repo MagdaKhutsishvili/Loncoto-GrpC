@@ -11,7 +11,7 @@ import com.GroupeC.LoncotoSpring.metier.Intervention;
 
 public interface GroupeIntervenantRepository extends PagingAndSortingRepository<GroupeIntervenant, Integer> {
 
-	
-	@Query("select i from GroupeIntervenant i where i.intervenant.id = :idintervenant")
-	public List<GroupeIntervenant> findByIntervenant_Id(@Param("idintervenant") int idintervenant);
+	/*
+	@Query("select i from GroupeIntervenant,Intervenant i where i.groupe_intervenant.intervenant.id = :idintervenant")
+	public List<GroupeIntervenant> findByIntervenant_Id(@Param("idintervenant") int idintervenant);*/
 }

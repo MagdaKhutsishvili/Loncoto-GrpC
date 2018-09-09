@@ -36,6 +36,10 @@ export class ArticleRepositoryService {
    public getArticlespageAsObservable(): Observable<Page<Article>>{
      return this.articlesSubject.asObservable();
    }
+   public getArticlespageAsObservable2(): Observable<Page<Article>>{
+    this.taillePage=1000;
+    return this.articlesSubject.asObservable();
+  }
 
 
    public findById(id:number):Observable<Article>{

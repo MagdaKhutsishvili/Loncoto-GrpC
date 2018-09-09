@@ -3,6 +3,7 @@ import { BehaviorSubject, Observable } from "rxjs";
 import { Materiel } from '../metier/objet-materiel';
 import { HttpClient } from '@angular/common/http';
 import { Page } from '../metier/page';
+import { Site } from '../metier/objet-site';
 
 @Injectable({
   providedIn: 'root'
@@ -59,6 +60,12 @@ public getMaterielsAsObservable2(): Observable <Page<Materiel>> {
   }
   public findclientById(id:number):Observable<Materiel[]>{
     return this.http.get<Materiel[]>(`http://localhost:8080/loncogroup-c/materiels/clients/${id}`);
+
+
+  }
+
+  public findsiteById(id:number):Observable<Materiel[]>{
+    return this.http.get<Materiel[]>(`http://localhost:8080/loncogroup-c/sites/clients/${id}`);
 
 
   }

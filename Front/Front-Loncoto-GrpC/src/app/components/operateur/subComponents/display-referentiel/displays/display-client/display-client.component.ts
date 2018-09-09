@@ -31,7 +31,7 @@ public pageChanged(event){
   this.clientRepository.setnopage(event.page-1);
 }
   ngOnInit() {
-    this.clientsSouscription=this.clientRepository.getClientspageAsObservable().subscribe(p=>{
+    this.clientsSouscription=this.clientRepository.getClientAsObservable().subscribe(p=>{
       // je reçois les nouvelles pages d'clients
       this.clientsSubject.next(p.content);
       this.totalItems=p.totalElements;

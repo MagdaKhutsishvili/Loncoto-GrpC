@@ -47,11 +47,17 @@ public class InterventionController {
 	@RequestMapping(value = "/intervenant/{id:[0-9]+}", method = RequestMethod.GET, produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
 	@ResponseBody
 	@CrossOrigin(origins = {"http://localhost:4200"}, methods = {RequestMethod.GET})
-	public List<Intervention> findMaterielByClient(@PathVariable("id") int id){
+	public List<Intervention> findInterventionByIntervenant(@PathVariable("id") int id){
 		return interventionRepository.findByIntervenant_Id(id);
 	}
 	
 	
+	@RequestMapping(value = "/materiels/{id:[0-9]+}", method = RequestMethod.GET, produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
+	@ResponseBody
+	@CrossOrigin(origins = {"http://localhost:4200"}, methods = {RequestMethod.GET})
+	public List<Intervention> findInterventionByMateriel(@PathVariable("id") int id){
+		return interventionRepository.findByMateriel_Id(id);
+	}
 	
 	
 	

@@ -43,6 +43,15 @@ public class MaterielController {
 	}
 	
 	
+	
+	@RequestMapping(value = "/sites/{id:[0-9]+}", method = RequestMethod.GET, produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
+	@ResponseBody
+	@CrossOrigin(origins = {"http://localhost:4200"}, methods = {RequestMethod.GET})
+	public List<Materiel> findMaterielBySite(@PathVariable("id") int id){
+		return materielRepository.findByClient_Id(id);
+	}
+	
+	
 	@RequestMapping( method=RequestMethod.GET, 
 			produces=org.springframework.http.MediaType.APPLICATION_JSON_UTF8_VALUE)
 
