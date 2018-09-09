@@ -1,6 +1,7 @@
 package com.GroupeC.LoncotoSpring.web;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.GroupeC.LoncotoSpring.metier.Article;
 import com.GroupeC.LoncotoSpring.metier.GroupeIntervenant;
+import com.GroupeC.LoncotoSpring.metier.Intervention;
 import com.GroupeC.LoncotoSpring.repositories.GroupeIntervenantRepository;
 
 
@@ -29,6 +31,19 @@ public class GroupeIntervenantController {
 		@Autowired
 		
 		private GroupeIntervenantRepository groupeIntervenantRepository;
+		
+		
+		
+		
+		
+		@RequestMapping(value = "/intervenant/{id:[0-9]+}", method = RequestMethod.GET, produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
+		@ResponseBody
+		@CrossOrigin(origins = {"http://localhost:4200"}, methods = {RequestMethod.GET})
+		public List<GroupeIntervenant> findMaterielByClient(@PathVariable("id") int id){
+			return groupeIntervenantRepository.findByIntervenant_Id(id);
+		}
+		
+		
 		
 		
 		

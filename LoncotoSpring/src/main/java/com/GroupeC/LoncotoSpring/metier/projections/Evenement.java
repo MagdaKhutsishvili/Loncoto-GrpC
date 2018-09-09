@@ -12,5 +12,6 @@ public interface Evenement {
 	String getTitle();
 	Date getStart();
 	Date getEnd();
+	String getColor();
 
 }

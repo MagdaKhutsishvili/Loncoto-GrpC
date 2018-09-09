@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.GroupeC.LoncotoSpring.metier.Intervenant;
 import com.GroupeC.LoncotoSpring.metier.Intervention;
+import com.GroupeC.LoncotoSpring.metier.Materiel;
 import com.GroupeC.LoncotoSpring.metier.projections.Evenement;
 import com.GroupeC.LoncotoSpring.repositories.InterventionRepository;
 
@@ -43,12 +44,23 @@ public class InterventionController {
 	
 	
 	
+	@RequestMapping(value = "/intervenant/{id:[0-9]+}", method = RequestMethod.GET, produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
+	@ResponseBody
+	@CrossOrigin(origins = {"http://localhost:4200"}, methods = {RequestMethod.GET})
+	public List<Intervention> findMaterielByClient(@PathVariable("id") int id){
+		return interventionRepository.findByIntervenant_Id(id);
+	}
+	
+	
+	
+	
+	
 	@RequestMapping(method=RequestMethod.GET,
 			produces=MediaType.APPLICATION_JSON_UTF8_VALUE
 			)
 	@ResponseBody
 	@CrossOrigin(origins= {"http://localhost:4200"}, methods= {RequestMethod.GET, RequestMethod.OPTIONS}) 
-	public Page<Intervention> findAll(@PageableDefault(page=0, size=5) Pageable pr) {
+	public Page<Intervention> findAll(@PageableDefault(page=0, size=10) Pageable pr) {
 	
 		return interventionRepository.findAll(pr);
 	}
@@ -114,7 +126,7 @@ public class InterventionController {
 	@ResponseBody
 	
 	@CrossOrigin(origins= {"http://localhost:4200"}, methods= {RequestMethod.GET, RequestMethod.OPTIONS}) 
-	public List<Evenement> findAllEvenement(@PageableDefault(page=0, size=5) Pageable pr) {
+	public List<Evenement> findAllEvenement(@PageableDefault(page=0, size=1000) Pageable pr) {
 	
 		Page<Intervention> page =  interventionRepository.findAll(pr);
 		List<Evenement> liste = page.getContent().stream().map(

@@ -18,7 +18,8 @@ export class Intervention{
                         public intervenant: Intervenant,
                         public title :string,
                             public start: string,
-                            public end: string
+                            public end: string,
+                            public color: string,
                     )
                          
                        
@@ -36,6 +37,7 @@ export class Intervention{
         this.title=other.title;
         this.start=other.start;
         this.end=other.end;
+        this.color=other.color;
     }
     public toJson(){
         return {
@@ -49,6 +51,7 @@ export class Intervention{
             title:this.title,
             start:this.start,
             end:this.end,
+            color:this.color,
         };
     }
 

@@ -3,7 +3,7 @@
 }
 
 .fond1{
-    background-color: rgba(42, 44, 190, 0.849);
+    background-color: rgba(0, 4, 255, 0.849);
 }
 .placeenhaut{
     padding-top: 50px;
@@ -18,9 +18,81 @@
     -o-background-size: cover;
     background-size: cover;
     height: 100%;
+    
 
 
 }
+.fondintervention{
+    
+    background: linear-gradient(rgba(226, 221, 221, 0.7),rgba(226, 221, 221,0.7)),url("./assets/fondIntervention2.jpeg");
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100%;
+
+}
+
+
+.fondIntervenant{
+    
+    background: linear-gradient(rgba(25, 50, 102, 0.7),rgba(25, 50, 102, 0.7)),url("./assets/fondIntervenant.jpeg");
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100%;
+}
+
+
+.fondMateriel{
+    
+    background: linear-gradient(rgba(81, 85, 38, 0.7),rgba(81, 85, 38, 0.7)),url("./assets/datacenter.jpg");
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100%;
+}
+
+.fondSite{
+    
+    background: linear-gradient(rgba(75, 8, 8, 0.7),rgba(75, 8, 8, 0.7)),url("./assets/Site-img.jpg");
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100%;
+}
+
+.fondClient{
+    
+    background: linear-gradient(rgba(131, 131, 131, 0.7),rgba(131, 131, 131,0.7)),url("./assets/fondClient.jpg");
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100%;
+
+}
+
+.fondGroups{
+    
+    background: linear-gradient(rgba(17, 28, 37, 0.7),rgba(17, 28, 37,0.7)),url("./assets/groups.jpg");
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100%;
+
+}
+
 .backgroundhalfpage{
     background-position: center center;
     -webkit-background-size: cover;

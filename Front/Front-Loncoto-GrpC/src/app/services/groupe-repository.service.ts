@@ -23,12 +23,18 @@ export class GroupeRepositoryService {
 
   }
 
+
+  public findintervenantById(id:number):Observable<Groupe[]>{
+    return this.http.get<Groupe[]>(`http://localhost:8080/loncogroup-c/groupeintervenants/intervenant/${id}`);
+
+
+  }
+
+
+
 public getGroupeAsObservable(): Observable <Page<Groupe>> {
   return this.groupesSubject.asObservable();
 }
-
-  
- 
 
 
 

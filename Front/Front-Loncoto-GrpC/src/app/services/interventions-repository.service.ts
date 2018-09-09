@@ -22,7 +22,7 @@ export class InterventionsRepositoryService {
   constructor(private http: HttpClient){
     this.interventionsSubject= new BehaviorSubject<Page<Intervention>>(Page.emptyPage<Intervention>());
     this.noPage=0;
-    this.taillePage=5;
+    this.taillePage=10;
 
   }
 
@@ -53,6 +53,11 @@ public getEvents(): Observable <Evenement[]> {
 
 
 
+   public findintervenantById(id:number):Observable<Intervention[]>{
+    return this.http.get<Intervention[]>(`http://localhost:8080/loncogroup-c/interventions/intervenant/${id}`);
+
+
+  }
 
 
    public findById(id:number):Observable<Intervention>{

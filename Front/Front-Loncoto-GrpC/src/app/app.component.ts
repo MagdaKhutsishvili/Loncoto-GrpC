@@ -1,6 +1,8 @@
 import { Component , Inject, ViewChild, ElementRef } from '@angular/core';
 import { PageScrollConfig, PageScrollService, PageScrollInstance } from 'ngx-page-scroll';
 import { DOCUMENT} from '@angular/common';
+import { Intervenant } from './metier/objet-intervenant';
+import { Client } from './metier/objet-client';
 
 
 @Component({
@@ -10,7 +12,8 @@ import { DOCUMENT} from '@angular/common';
 })
 export class AppComponent {
   title = 'app';
-
+private selectintervenant : Intervenant;
+private selectclient : Client;
     
   //Page-scroll imports
   @ViewChild('container')

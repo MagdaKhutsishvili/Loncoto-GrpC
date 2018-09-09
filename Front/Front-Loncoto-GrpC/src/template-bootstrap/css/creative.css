@@ -8,10 +8,17 @@ body {
   font-family: 'Merriweather', 'Helvetica Neue', Arial, sans-serif;
 }
 
+.hrbleu{
+  color:rgb(49, 37, 221);
+}
+.text-info2{
+  color:rgb(49, 37, 221);
+}
+
 hr {
   max-width: 50px;
   border-width: 3px;
-  border-color: #F05F40;
+  border-color: rgb(49, 37, 221);
 }
 
 hr.light {
@@ -48,6 +55,10 @@ h6 {
 
 .text-faded {
   color: rgba(255, 255, 255, 0.7);
+}
+
+.text-faded2 {
+  color: rgba(20, 15, 15, 0.7);
 }
 
 section {
@@ -234,7 +245,7 @@ header.masthead p {
   text-align: center;
   opacity: 0;
   color: #fff;
-  background: rgba(240, 95, 64, 0.9);
+  background: rgba(248, 224, 87, 0.9);
   -webkit-transition: all 0.2s;
   -moz-transition: all 0.2s;
   transition: all 0.2s;
@@ -302,6 +313,22 @@ header.masthead p {
   border-color: #F05F40;
 }
 
+.btn-primary4 {
+  background-color: rgb(49, 37, 221);
+  border-color: rgb(49, 37, 221);
+  color: #fff;
+}
+.btn-primary2 {
+  background-color: rgb(179, 178, 178);
+  border-color: rgb(179, 178, 178);
+  color:#212529;
+}
+.btn-primary3 {
+  background-color: rgb(248, 224, 87);
+  border-color: rgb(248, 224, 87);
+  color: #212529;
+}
+
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
   color: #fff;
   background-color: #ee4b28 !important;
@@ -310,3 +337,4 @@ header.masthead p {
 .btn-primary:active, .btn-primary:focus {
   box-shadow: 0 0 0 0.2rem rgba(240, 95, 64, 0.5) !important;
 }
+

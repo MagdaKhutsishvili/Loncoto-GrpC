@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.repository.query.Param;
 
@@ -14,4 +15,7 @@ public interface InterventionRepository extends PagingAndSortingRepository<Inter
 
 	
 	public List<Intervention> findAll();
+	
+	@Query("select i from Intervention i where i.intervenant.id = :idintervenant")
+	public List<Intervention> findByIntervenant_Id(@Param("idintervenant") int idintervenant);
 }

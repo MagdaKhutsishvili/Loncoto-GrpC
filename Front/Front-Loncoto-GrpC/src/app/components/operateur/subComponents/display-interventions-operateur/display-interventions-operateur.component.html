@@ -91,16 +91,16 @@
 
             </ul>
           </div>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
         </div>
 
 
@@ -141,7 +141,8 @@
                     <small>dernières mise à jour le 02/09/2018.19:58:02</small>
                   </h2>
                   <ul class="nav navbar-right panel_toolbox">
-                    <button class="btn btn-warning" (click)="details(0)" pageScroll href="#intervention">Créer une nouvelle</button>
+                    <button class="btn btn-warning" (click)="details(0)" pageScroll href="#intervention">Créer une
+                      nouvelle</button>
                     <li>
                       <a class="collapse-link">
                         <i class="fa fa-chevron-up"></i>
@@ -173,7 +174,8 @@
                 </div>
                 <div class="x_content">
                   <p class="text-muted font-13 m-b-30">
-                    DataTables has most features enabled by default, so all you need to do to use it with your own tables is to call the construction
+                    DataTables has most features enabled by default, so all you need to do to use it with your own
+                    tables is to call the construction
                     function:
                     <code>$().DataTable();</code>
                   </p>
@@ -201,7 +203,8 @@
                         <td>{{intervention.end}}</td>
                         <td>{{intervention.statut}}</td>
                         <td>
-                          <a type="button" (click)="details(intervention.id)" class=" btn-primary btn-xs" pageScroll href="#editer">
+                          <a type="button" (click)="details(intervention.id)" class=" btn-primary btn-xs" pageScroll
+                            href="#editer">
                             <i class="fa fa-user"> </i> Détails
                           </a>
                         </td>
@@ -211,8 +214,8 @@
                   <div class="row">
                     <div class="col-lg-7"></div>
                     <div class="col-lg-5">
-                      <pagination style="margin-top: 0px;padding-top: 0px;padding-bottom: 0px;border-bottom: 0px" [totalItems]="totalItems" [ngModel]="currentPage"
-                        [itemsPerPage]="taillePage" (pageChanged)="pageChanged($event)"></pagination>
+                      <pagination style="margin-top: 0px;padding-top: 0px;padding-bottom: 0px;border-bottom: 0px"
+                        [totalItems]="totalItems" [ngModel]="currentPage" [itemsPerPage]="taillePage" (pageChanged)="pageChanged($event)"></pagination>
                     </div>
                   </div>
 
@@ -229,116 +232,165 @@
   </div>
 </header>
 
-<section class="bg-primary backgroundallpage" id="editer">
+<section class=" backgroundallpage fondintervention" id="editer">
   <div class="col-lg-2 col-sm-2 col-xs-2 col-md-2"></div>
   <div class="col-lg-10 col-sm-10 col-xs-10 col-md-10 ">
+    <div class="x_title">
+      <h1>Compte-rendu
+        <small>détail</small>
+      </h1>
+    </div>
 
-
-    <div class="col-lg-6" style="background-color: rgb(95, 104, 182) ">
-      <div class="col-lg-8 mx-auto text-center ">
+    <div class="col-lg-7" style="background-color: rgba(255, 255, 255, 0.7) ">
+      <div class="col-lg-12 mx-auto  ">
         <div class="well profile_view">
           <div class="col-sm-12 col-lg-12">
-            <h4 class="brief">
-              <i>Digital Strategist</i>
-            </h4>
-            <div class="left col-xs-7 col-lg-7">
-              <h2>{{currentIntervention.title}}</h2>
-              <p>
-                <strong>About: </strong> Web Designer / UI. </p>
-              <ul class="list-unstyled">
-                <li>
-                  <i class="fa fa-building"></i> Address: </li>
-                <li>
-                  <i class="fa fa-phone"></i> Phone #: </li>
-              </ul>
-            </div>
-            <div class="right col-xs-5 col-lg-5 text-center">
-              <img src="../../../../../../../assets/user.png" alt="" class="img-circle img-responsive">
-            </div>
+            <h3><I><strong>Fiche-Intervention n° {{currentIntervention.id}}</strong></I></h3> 
+              <div class="x_content">
+                  <table class="table " >
+                      <tbody>
+                          <tr>
+                              <td>Date : </td><td>{{currentIntervention.start}}</td>
+                          </tr>
+                          <tr>
+                              <td>Statut : </td><td>{{currentIntervention.statut}}</td>
+                          </tr>
+                          <tr>
+                              <td>Intervenant : </td><td>{{currentIntervention.intervenant.prenom}} {{currentIntervention.intervenant.nom}}</td>
+                          </tr>
+                        <tr>
+                          <td>Site : </td><td>{{currentIntervention.materiel.lesite.nom}}</td>
+                        </tr>
+                        <tr>
+                            <td>Client : </td><td>{{currentIntervention.materiel.client.nom}}</td>
+                          </tr>
+                        <tr>
+                            <td>Materiel - serial : </td><td>{{currentIntervention.materiel.serialID}} </td>
+                        </tr>
+                        <tr>
+                            <td>Materiel - modèle: </td><td>{{currentIntervention.materiel.article.marque}} - {{currentIntervention.materiel.article.nom}}</td>
+                        </tr>
+                        <tr>
+                            <td>Commentaire:</td><td>{{currentIntervention.commentaire}}</td>
+                        </tr>
+                     
+                      </tbody>
+                    </table>
+
+              </div>
+
           </div>
-          <div class="col-xs-12 col-lg-12 bottom text-center">
-            <div class="col-xs-12 col-sm-6 col-lg-6 emphasis">
-              <p class="ratings">
-                <a>4.0</a>
-                <a href="#">
-                  <span class="fa fa-star"></span>
-                </a>
-                <a href="#">
-                  <span class="fa fa-star"></span>
-                </a>
-                <a href="#">
-                  <span class="fa fa-star"></span>
-                </a>
-                <a href="#">
-                  <span class="fa fa-star"></span>
-                </a>
-                <a href="#">
-                  <span class="fa fa-star-o"></span>
-                </a>
-              </p>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-lg-6 emphasis">
+          <div class="col-xs-12 col-lg-12 bottom text-center" style="padding-top: 10%">
+
+
+            <div class="col-xs-12 col-sm-6 col-lg-12 emphasis">
+
               <button type="button" class="btn btn-danger btn-xs">
-                <i class="fa fa-user">
-                </i>
-                <i class="fa fa-comments-o"></i>Modifier </button>
+                <i class="fa fa-user"> </i><i class="fa fa-comments-o" (click)="envoyerFormulaire(currentIntervention.id)"></i>Modifier</button>
+
               <button type="button" class="btn btn-info btn-xs" (click)="removeIntervention()" pageScroll href="#tableaux">
-                <i class="fa fa-user">
-                </i>
-                <i class="fa fa-comments-o"></i>Supprimer </button>
-              <button type="button" class="btn btn-primary btn-xs">
-                <i class="fa fa-user"> </i> Trouver un autre Intervention </button>
+                <i class="fa fa-user"></i> <i class="fa fa-comments-o"></i>Supprimer</button>
+
+              <button type="button" class="btn btn-primary btn-xs" pageScroll href="#tableauinter">
+                <i class="fa fa-user"> </i>Revenir à la liste</button>
 
             </div>
+
           </div>
         </div>
       </div>
     </div>
 
-    <div class="col-lg-6">
-      <div class="col-lg-8 mx-auto text-center">
+    <div class="col-lg-5"  >
+      <div class="col-lg-8 mx-auto ">
 
-        <div class=" well">
+        <div class=" well ">
 
           <div class="panel panel-danger">
-            <div class="panel-heading">
-              Modifier/Créer un Nouveau Intervention ?
-            </div>
+             <h3><I><strong>Modifier/Créer une nouvelle intervention ?</strong></I></h3>
+              
+            
             <div class="panel-body">
 
 
               <form>
                 <input type="hidden" name="id" id="id" [(ngModel)]="currentIntervention.id" />
 
+                <div class="form-group" style="overflow:visible">
+                    <label>Materiel</label>
+                    <select name="materiel" [(ngModel)]="currentIntervention.materiel">
+                      <option *ngFor="let materiel of materielsSubject |async" [ngValue]="materiel">Site
+                        :{{materiel.lesite.nom}} - {{materiel.article.marque}} -- {{materiel.article.nom}}
+                        {{materiel.article.serialID}}</option>
+                    </select>
+                  </div>
+
                 <div class="form-group">
-                  <label>Intervenant</label>
+                    <label>Date : </label>
+                    <input type="date" class="form-control" name="date" id="date" [(ngModel)]="currentIntervention.datePrevu"
+                      [(ngModel)]="currentIntervention.start" [(ngModel)]="currentIntervention.end" />
+                  </div>
+
+                  <div class="form-group">
+                      <label>Statut : </label>
+                      <select name="statut" [(ngModel)]="currentIntervention.statut">
+                        <option value="En Attente">En Attente</option>
+                        <option value="Reprogrammée">Reprogrammée</option>
+                        <option value="Terminée">Terminée</option>
+                      </select>
+                    </div>
+
+                <div class="form-group">
+                  <label>Intervenant : </label>
                   <select name="intervenant" [(ngModel)]="currentIntervention.intervenant">
-                    <option  *ngFor="let intervenant of intervenantsSubject |async" [ngValue]="intervenant" >{{intervenant.nom}} {{intervenant.prenom}}</option>
+                    <option *ngFor="let intervenant of intervenantsSubject |async" [ngValue]="intervenant">{{intervenant.nom}}
+                      {{intervenant.prenom}}</option>
                   </select>
                 </div>
 
+         
                 <div class="form-group">
-                  <label>Materiel</label>
-                  <select name="materiel" [(ngModel)]="currentIntervention.materiel">
-                    <option  *ngFor="let materiel of materielsSubject |async" [ngValue]="materiel" >Site :{{materiel.lesite.nom}} - {{materiel.article.marque}} -- {{materiel.article.nom}} {{materiel.article.serialID}}</option>
-                  </select>
+                    <label>Client : </label>
+                    <table style="background-color: rgba(255, 255, 255, 0.7) ">{{currentIntervention.materiel.client.nom}}</table>
+                  </div>
+
+              <div class="form-group">
+                  <label>Materiel - Serial:</label>
+                  <table style="background-color: rgba(255, 255, 255, 0.7) ">{{currentIntervention.materiel.serialID}}</table>
                 </div>
 
-      
+
+              <div class="form-group">
+                    <label>Commentaire</label>
+                    <input type="text" class="form-control" name="commentaire" id="commentaire" [(ngModel)]="currentIntervention.commentaire"
+                 />
+                  </div>
+  
+                 
+
+
+
+                  
+               
+
+
+                
+
+
+            
+
+                <!--
                 <div class="form-group">
-                  <label>Date</label>
-                  <input type="date" class="form-control" name="date" id="date" [(ngModel)]="currentIntervention.datePrevu" [(ngModel)]="currentIntervention.start"
-                    [(ngModel)]="currentIntervention.end" />
-                </div>
-                <div class="form-group">
-                  <label>Titre</label>
-                  <input type="text" class="form-control" name="title" id="title" [(ngModel)]="currentIntervention.title" />
-                </div>
+                  <label>titre</label>
+                  <input type="text" class="form-control" name="title" id="title" [(ngModel)]="currentIntervention.title" 
+                    />
+                </div>-->
+
 
 
 
                 <button class="btn btn-warning" (click)="cancelIntervention()">annuler</button>
-                <button class="btn btn-sucess" (click)="saveIntervention()" pageScroll href="#tableaux">save/créer</button>
+                <button class="btn btn-sucess" (click)="saveIntervention()" pageScroll href="#tableauinter">save/créer</button>
               </form>
 
 

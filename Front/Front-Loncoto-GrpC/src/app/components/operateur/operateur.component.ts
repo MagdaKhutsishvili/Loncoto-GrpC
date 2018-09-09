@@ -7,7 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OperateurComponent implements OnInit {
 
-  constructor() { }
+  public currentIdintervention : number;
+  
+  
+  
+  public editInterventionRequested(id: number) {
+ 
+    this.currentIdintervention = id;
+      
+
+  }
+  
+  
+  constructor() {   this.currentIdintervention = 0;}
+
+
+
+
   ngOnInit() {
   }
 

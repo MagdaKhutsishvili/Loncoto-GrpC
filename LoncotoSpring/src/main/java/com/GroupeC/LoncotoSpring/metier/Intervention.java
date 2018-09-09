@@ -36,6 +36,7 @@ public class Intervention {
 	@Temporal(TemporalType.DATE)			private Date start;
 	@Temporal(TemporalType.DATE)			private Date end;
 											private String title;
+											private String color;
 	
 	public Intervention(int id, Date datePrevu, Date dateEffectue, String statut, String commentaire,
 			int materielId, int intervenantId) {

@@ -33,7 +33,8 @@ export class DisplayInterventionsOperateurComponent implements OnInit{
   public currentPage : number;
   public taillePage : number;
   public currentIntervention : Intervention;
-  public editIdIntervention: number;
+
+  
   
   public currentIntervenant : Intervenant;
   public currentMateriel : Materiel;
@@ -73,16 +74,28 @@ public pageChanged(event){
 
 
 
-    this.currentIntervention=new Intervention(0,"","","En Attente","",this.currentMateriel,this.currentIntervenant,"","","");
+    this.currentIntervention=new Intervention(0,"","","En Attente","",this.currentMateriel,this.currentIntervenant,"","","","");
+
+    
     this.interventionRepository.refreshListe();
     this.intervenantnRepository.refreshListe();
     this.materielRepository.refreshListe();
   }
 
   public details(id: number) {
-    this.editIdIntervention=id;
-    this.interventionRepository.findById(this.editIdIntervention).subscribe(Intervention=> { this.currentIntervention=Intervention;
+    
+    this.interventionRepository.findById(id).subscribe(Intervention=> { this.currentIntervention=Intervention;
     });
+  }
+
+
+
+  public envoyerFormulaire(id: number){
+    
+
+    this.interventionRepository.findById(id).subscribe(Intervention=> { this.currentIntervention=Intervention;
+    });
+    this.currentIntervention=new Intervention(0,"","","En Attente","",this.currentMateriel,this.currentIntervenant,"","","","");
   }
 
   
@@ -90,39 +103,57 @@ public pageChanged(event){
   public saveIntervention() {
     
     if (this.currentIntervention.id > 0){
-      let InterToSave = new Intervention(0,"","","En Attente","",this.currentMateriel,this.currentIntervenant,"","","");
+      let InterToSave = new Intervention(0,"","","En Attente","",this.currentMateriel,this.currentIntervenant,"","","","");
       
       // retransformation du modele/json du formulaire
       // en veritable objet Livre avec ses méthodes
       InterToSave.copyFrom(this.currentIntervention);
-
+      if (InterToSave.statut=="En Attente"){
+        InterToSave.color='red'
+      }
+      if (InterToSave.statut=="Reprogrammée"){
+        InterToSave.color='orange'
+      }
+      if (InterToSave.statut=="Terminée"){
+        InterToSave.color='green'
+      }
       console.log(InterToSave);
       this.interventionRepository.updateIntervention(InterToSave);
-      this.currentIntervention = new Intervention(0,"","","En Attente","",this.currentMateriel,this.currentIntervenant,"","","");
+      this.currentIntervention = new Intervention(0,"","","En Attente","",this.currentMateriel,this.currentIntervenant,"","","","");
     }
     else{
-      let InterToSave = new Intervention(0,"","","En Attente","",this.currentMateriel,this.currentIntervenant,"","","");
+      let InterToSave = new Intervention(0,"","","En Attente","",this.currentMateriel,this.currentIntervenant,"","","","");
       
       // retransformation du modele/json du formulaire
       // en veritable objet Livre avec ses méthodes
       InterToSave.copyFrom(this.currentIntervention);
-
+      InterToSave.title="Intervention de "+this.currentIntervention.intervenant.prenom+this.currentIntervention.intervenant.nom+" sur "+this.currentIntervention.materiel.article.marque+"- Site : "+this.currentIntervention.materiel.lesite.nom;
+      if (InterToSave.statut=="En Attente"){
+        InterToSave.color='red'
+      }
+      if (InterToSave.statut=="Reprogrammée"){
+        InterToSave.color='orange'
+      }
+      if (InterToSave.statut=="Terminée"){
+        InterToSave.color='green'
+      }
+      
       console.log(InterToSave);
       this.interventionRepository.createIntervention(InterToSave);
-      this.currentIntervention = new Intervention(0,"","","En Attente","",this.currentMateriel,this.currentIntervenant,"","","");
+      this.currentIntervention = new Intervention(0,"","","En Attente","",this.currentMateriel,this.currentIntervenant,"","","","");
     }
 
   }
 
 
 public cancelIntervention() {
-  this.currentIntervention = new Intervention(0,"","","En Attente","",this.currentMateriel,this.currentIntervenant,"","","");
+  this.currentIntervention = new Intervention(0,"","","En Attente","",this.currentMateriel,this.currentIntervenant,"","","","");
 }
 
 public removeIntervention(){
 
 this.interventionRepository.removeIntervention(this.currentIntervention.id);
-this.currentIntervention=new Intervention(0,"","","En Attente","",this.currentMateriel,this.currentIntervenant,"","","");
+this.currentIntervention=new Intervention(0,"","","En Attente","",this.currentMateriel,this.currentIntervenant,"","","","");
 }
 
 

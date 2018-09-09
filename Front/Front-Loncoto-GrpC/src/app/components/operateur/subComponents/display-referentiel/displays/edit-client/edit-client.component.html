@@ -1,29 +1,64 @@
-<div class="col-lg-6"  style="background-color: rgb(143, 150, 214) ">
+<div class="col-lg-8" style="background-color: rgba(255, 255, 255, 0.5) ">
   <div class="col-lg-12 mx-auto text-center ">
     <div class="well profile_view">
       <div class="col-sm-12 col-lg-12">
-        <h4 class="brief"><i>  |</i></h4>
-        <div class="right col-xs-5 col-lg-5 text-center">
-            <img src="../../../../../../../assets/user.png" alt="" class="img-circle img-responsive">
-          </div>
-        <div class="left col-xs-7 col-lg-7">
-          <h2>{{currentClient.nom}}</h2>
         
-          <ul class="list-unstyled">
-            <li><i class="fa fa-building"></i> Address E-mail: </li>
-            <span>{{currentClient.email}}</span>
-          </ul>
+        <div class="right col-xs-5 col-lg-5 text-center">
+          <img src="../../../../../../../assets/user.png" alt="" class="img-circle img-responsive">
         </div>
-       
+        <h3><I><strong>Fiche-Client n° {{currentClient.id}}</strong></I></h3>
+        <div class="x_content" style="height: 300px;overflow:auto">
+          <table class="table text-left" style="overflow:auto">
+            <tbody>
+              <tr>
+                <td>Nom : </td>
+                <td>{{currentClient.nom}}</td>
+              </tr>
+              <tr>
+                <td>E-mail : </td>
+                <td>{{currentClient.email}}</td>
+              </tr>
+              <tr>
+                <td>Materiels : </td>
+                <td>
+                  <table class="table table-striped text-left">
+                    <thead>
+                      <td><strong>Serial</strong></td>
+                      <td><strong>Site</strong></td>
+                      <td><strong>Marque et modèle</strong></td>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let materiel of materielclient " >
+                     
+                        <td><a pageScroll href="#materiel" (click)="editermateriel(materiel.id)" style="color:black">{{materiel.serialID}}</a></td><td>{{materiel.lesite.nom}}</td>
+                        <td>{{materiel.article.marque}} - {{materiel.article.nom}}</td>
+                        
+                       
+                   </tr>
+                </tbody>
+              </table>
+          </td>
+          </tr>
+
+
+          </tbody>
+          </table>
+
+        </div>
       </div>
       <div class="col-xs-12 col-lg-12 bottom text-center" style="padding-top: 10%">
-        
+
         <div class="col-xs-12 col-sm-6 col-lg-12 emphasis">
-          <button type="button" class="btn btn-danger btn-xs"> <i class="fa fa-user" >
+
+          <button type="button" class="btn btn-danger btn-xs"> <i class="fa fa-user">
             </i> <i class="fa fa-comments-o"></i>Modifier </button>
-            <button type="button" class="btn btn-info btn-xs" (click)="removeclient()" pageScroll  href="#tableaux"> <i class="fa fa-user">
+
+
+          <button type="button" class="btn btn-info btn-xs" (click)="removeclient()" pageScroll href="#tableaux"> <i
+              class="fa fa-user">
             </i> <i class="fa fa-comments-o"></i>Supprimer </button>
-          <button type="button" class="btn btn-primary btn-xs">
+
+          <button type="button" class="btn btn-primary btn-xs" pageScroll href="#tableaux">
             <i class="fa fa-user"> </i> Trouver un autre client</button>
 
         </div>
@@ -32,14 +67,14 @@
   </div>
 </div>
 
-<div class="col-lg-6" >
-  <div class="col-lg-8 mx-auto text-center">
+<div class="col-lg-4">
+  <div class="col-lg-8 mx-auto text-center" style="padding-top: 10%">
 
     <div class=" well">
 
       <div class="panel panel-danger">
         <div class="panel-heading">
-          Modifier/Créer un Nouveau Client ? 
+          <h3><I><strong>Modifier/Créer un Nouveau Client ?</strong></I></h3>
         </div>
         <div class="panel-body">
 
@@ -55,16 +90,10 @@
               <input type="text" class="form-control" name="email" id="email" [(ngModel)]="currentClient.email" />
             </div>
 
-            <div class="form-group">
-              <label>Nombre de site </label>
-              <input type="number" class="form-control" name="nombre" id="nombre" [(ngModel)]="currentClient.nbdesite"
-              />
-            </div>
 
-          
 
             <button class="btn btn-warning" (click)="cancelClient()">annuler</button>
-            <button class="btn btn-sucess" (click)="saveClient()" pageScroll  href="#tableaux">save/créer</button>
+            <button class="btn btn-sucess" (click)="saveClient()" pageScroll href="#tableaux">save/créer</button>
           </form>
 
 

@@ -1,9 +1,13 @@
+import { Article } from "./objet-article";
+import { Site } from "./objet-site";
+import { Client } from "./objet-client";
+
 export class Materiel{
     public constructor(public id :number,
                         public serialID : String,
-                        public lesite : number,
-                         public client: number,
-                         public article: number)
+                        public lesite : Site,
+                         public client: Client,
+                         public article: Article)
                        
                          {}
     
