@@ -48,7 +48,7 @@ public class MaterielController {
 	@ResponseBody
 	@CrossOrigin(origins = {"http://localhost:4200"}, methods = {RequestMethod.GET})
 	public List<Materiel> findMaterielBySite(@PathVariable("id") int id){
-		return materielRepository.findByClient_Id(id);
+		return materielRepository.findBySite_Id(id);
 	}
 	
 	
