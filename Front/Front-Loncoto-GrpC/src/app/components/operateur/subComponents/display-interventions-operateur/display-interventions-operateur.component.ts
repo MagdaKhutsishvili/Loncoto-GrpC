@@ -157,7 +157,10 @@ this.currentIntervention=new Intervention(0,"","","En Attente","",this.currentMa
 }
 
 
+public generer_intervention_preventive(){
+ 
 
+}
 
 }
 

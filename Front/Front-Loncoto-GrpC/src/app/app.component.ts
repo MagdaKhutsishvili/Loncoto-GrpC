@@ -12,18 +12,30 @@ import { Client } from './metier/objet-client';
 })
 export class AppComponent {
   title = 'app';
-private selectintervenant : Intervenant;
-private selectclient : Client;
+public selectintervenant : Intervenant= new Intervenant(0,"","","","purple");
+public selectclient : Client;
     
+
+
   //Page-scroll imports
   @ViewChild('container')
   private container: ElementRef;
 
   constructor(private pageScrollService: PageScrollService, @Inject(DOCUMENT) private document: any) {
     PageScrollConfig.defaultDuration = 600;
+
+
+
   }
+
+
+
+
   
-  
+
+
+
+    /*    Besoin pour ng page scroll   */
   public goToHead2(): void {
       let pageScrollInstance: PageScrollInstance = PageScrollInstance.simpleInstance(this.document, '#head2');
       this.pageScrollService.start(pageScrollInstance);
