@@ -6,7 +6,7 @@ import {NgxPageScrollModule} from 'ngx-page-scroll';
 import { ChartsModule } from 'ng2-charts';
 //import {BsDatepickerModule} from 'ngx-bootstrap/datepicker';
 import { PaginationModule } from "ngx-bootstrap/pagination";
-
+import { NgxSmartModalModule } from 'ngx-smart-modal';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -49,6 +49,9 @@ import { DisplayMaterielsOperateurComponent } from './components/operateur/subCo
 import { EditMaterielsOperateurComponent } from './components/operateur/subComponents/display-referentiel/displays/edit-materiels-operateur/edit-materiels-operateur.component';
 import { DisplayGrpintervenantOperateurComponent } from './components/operateur/subComponents/display-referentiel/displays/display-grpintervenant-operateur/display-grpintervenant-operateur.component';
 import { DisplayCatalogOperateurComponent } from './components/operateur/subComponents/display-referentiel/displays/display-catalog-operateur/display-catalog-operateur.component';
+
+
+
 
 @NgModule({
   declarations: [
@@ -93,6 +96,7 @@ import { DisplayCatalogOperateurComponent } from './components/operateur/subComp
     ChartsModule,
     BrowserAnimationsModule, 
     PaginationModule.forRoot(),
+    NgxSmartModalModule.forRoot(),
     
     RouterModule.forRoot([
       {path: 'home', component: VitrineComponent},

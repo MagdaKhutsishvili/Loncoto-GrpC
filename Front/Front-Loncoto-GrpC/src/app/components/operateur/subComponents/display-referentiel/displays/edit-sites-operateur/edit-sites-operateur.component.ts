@@ -15,7 +15,7 @@ export class EditSitesOperateurComponent implements OnInit {
 
   @Input() public editIdSite: number;
   public currentSite : Site;
-  public interventionsmateriels : Materiel[];
+  public materielssite : Materiel[];
 
   constructor(private SiteRepository : SiteRepositoryService,private MaterielRepository : MaterielRepositoryService) {
 
@@ -36,7 +36,7 @@ export class EditSitesOperateurComponent implements OnInit {
         console.log(InterToSave);
         this.SiteRepository.updateSite(InterToSave);
         this.currentSite = new Site(0,"","",0);
-        this.interventionsmateriels=[];
+        this.materielssite=[];
       }
       else{
         let InterToSave = new Site(0,"","",0);
@@ -48,7 +48,7 @@ export class EditSitesOperateurComponent implements OnInit {
         console.log(InterToSave);
         this.SiteRepository.createSite(InterToSave);
         this.currentSite = new Site(0,"","",0);
-        this.interventionsmateriels=[];
+        this.materielssite=[];
       }
  
     }
@@ -56,35 +56,35 @@ export class EditSitesOperateurComponent implements OnInit {
 
   public cancelSite() {
     this.currentSite = new Site(0,"","",0);
-    this.interventionsmateriels=[];
+    this.materielssite=[];
   }
 
 public removeSite(){
 
   this.SiteRepository.removeSite(this.currentSite.id);
   this.currentSite=new Site(0,"","",0);
-  this.interventionsmateriels=[];
+  this.materielssite=[];
 }
 
 
 
   ngOnInit() {
     this.currentSite=new Site(0,"","",0);
-    this.interventionsmateriels=[];
+    this.materielssite=[];
   }
 
   ngOnChanges(changes:any){
     
     if (this.editIdSite==0){
       this.currentSite=new Site(0,"","",0);
-      this.interventionsmateriels=[];
+      this.materielssite=[];
     }
     else{
       
       this.SiteRepository.findById(this.editIdSite).subscribe(Site=> { this.currentSite=Site;
       });
     
-      this.MaterielRepository.findsiteById(this.editIdSite).subscribe(Materiels=> { this.interventionsmateriels=Materiels;
+      this.MaterielRepository.findsiteById(this.editIdSite).subscribe(Materiels=> { this.materielssite=Materiels;
       });
     
     }

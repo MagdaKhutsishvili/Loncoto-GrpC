@@ -16,6 +16,7 @@ export class EditIntervenantOperateurComponent implements OnInit,OnChanges {
 
   
   @Input() public editIdIntervenant: number;
+  
   @Output() public editidintervention: EventEmitter<number>=new EventEmitter<number>();
 
   public currentIntervenant : Intervenant;

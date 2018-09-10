@@ -81,6 +81,7 @@ public removeclient(){
     else{
       this.ClientRepository.findById(this.editIdClient).subscribe(Client=> { this.currentClient=Client;
       });
+      
       this.MaterielRepository.findclientById(this.editIdClient).subscribe(Materiels=> { this.materielclient=Materiels;
       });console.log(this.materielclient);
 

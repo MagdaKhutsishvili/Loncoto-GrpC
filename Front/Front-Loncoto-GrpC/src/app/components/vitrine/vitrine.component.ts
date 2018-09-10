@@ -1,7 +1,6 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
 
-
-
+import { NgxSmartModalService } from 'ngx-smart-modal';
 @Component({
   selector: 'app-vitrine',
   templateUrl: './vitrine.component.html',
@@ -9,11 +8,13 @@ import { Component, OnInit} from '@angular/core';
 })
 export class VitrineComponent implements OnInit {
 
-  
+  constructor(public ngxSmartModalService: NgxSmartModalService) {
+  }
 
   ngOnInit() {
   }
 
 
  
+
  }

@@ -20,8 +20,8 @@ public interface MaterielRepository extends PagingAndSortingRepository<Materiel,
 	@Query("select i from Materiel i where i.client.id = :idclient")
 	public List<Materiel> findByClient_Id(@Param("idclient") int idclient);
 	
-	@Query("select i from Materiel i where i.site.id = :idsite")
-	public List<Materiel> findBySite_Id(@Param("idclient") int idsite);
+	@Query("select i from Materiel i where i.lesite.id = :idsite")
+	public List<Materiel> findBySite_Id(@Param("idsite") int idsite);
 	
 }
 

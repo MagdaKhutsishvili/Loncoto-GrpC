@@ -65,7 +65,7 @@ public getMaterielsAsObservable2(): Observable <Page<Materiel>> {
   }
 
   public findsiteById(id:number):Observable<Materiel[]>{
-    return this.http.get<Materiel[]>(`http://localhost:8080/loncogroup-c/sites/clients/${id}`);
+    return this.http.get<Materiel[]>(`http://localhost:8080/loncogroup-c/materiels/sites/${id}`);
 
 
   }

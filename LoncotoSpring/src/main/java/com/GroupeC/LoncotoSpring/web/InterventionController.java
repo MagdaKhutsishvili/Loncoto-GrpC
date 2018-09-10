@@ -143,6 +143,23 @@ public class InterventionController {
 				return liste;
 	}
 	
+
+	@RequestMapping(value="/evenement/intervenant/{id:[0-9]+}",method=RequestMethod.GET,
+			produces=MediaType.APPLICATION_JSON_UTF8_VALUE
+			)
+	@ResponseBody
+	
+	@CrossOrigin(origins= {"http://localhost:4200"}, methods= {RequestMethod.GET, RequestMethod.OPTIONS}) 
+	public List<Evenement> findAllEvenementBy_Intervenant(@PageableDefault(page=0, size=1000) Pageable pr,@PathVariable("id") int id) {
+	
+		
+		List<Evenement> liste = interventionRepository.findByIntervenant_Id(id).stream().map(
+				art -> projectionFactory.createProjection(Evenement.class, art))
+				.collect(Collectors.toList());
+
+				
+				return liste;
+	}
 	
 	
 	

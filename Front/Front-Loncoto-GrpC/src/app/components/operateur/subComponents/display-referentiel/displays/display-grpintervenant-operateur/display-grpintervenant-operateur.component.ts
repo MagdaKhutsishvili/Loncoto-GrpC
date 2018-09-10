@@ -91,7 +91,7 @@ this.currentGroupe=new Groupe(0,"");
 
 
 
-
+/*
 ngOnChanges(changes:any){
   
   if (this.editIdGroupe==0){
@@ -101,7 +101,7 @@ ngOnChanges(changes:any){
     this.GroupeRepository.findById(this.editIdGroupe).subscribe(Groupe=> { this.currentGroupe=Groupe;
     });
   }
-}
+}*/
 }
 
 

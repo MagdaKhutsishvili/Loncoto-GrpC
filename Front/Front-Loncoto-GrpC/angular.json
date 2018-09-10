@@ -39,13 +39,14 @@
             ],
             "scripts": [
               "src/template-bootstrap/vendor/jquery/jquery.min.js",
+              "src/template-bootstrap/vendor/bootstrap/js/bootstrap.min.js",
               "src/template-bootstrap/vendor/bootstrap/js/bootstrap.bundle.min.js",
               
     
         
               "src/template-bootstrap/vendor/jquery-easing/jquery.easing.min.js",
               "src/template-bootstrap/vendor/scrollreveal/scrollreveal.min.js",
-              "src/template-bootstrap/vendor/magnific-popup/jquery.magnific-popup.min.js",
+              /*"src/template-bootstrap/vendor/magnific-popup/jquery.magnific-popup.min.js",*/
     
         
               "src/template-bootstrap/js/creative.min.js",

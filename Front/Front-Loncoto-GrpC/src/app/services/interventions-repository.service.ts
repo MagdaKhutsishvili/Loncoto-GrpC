@@ -36,7 +36,10 @@ public getEvents(): Observable <Evenement[]> {
   return this.http.get<Evenement[]>(`http://localhost:8080/loncogroup-c/interventions/evenement`);
 }
  
-
+ 
+public getEventsbyIntervenant(id:number): Observable <Evenement[]> {
+  return this.http.get<Evenement[]>(`http://localhost:8080/loncogroup-c/interventions/evenement/intervenant/${id}`);
+}
 
 
    public setnopage(no:number){
