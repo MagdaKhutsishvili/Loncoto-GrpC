@@ -60,9 +60,18 @@
   
         <div class="col-lg-10 col-sm-10 col-xs-10 col-md-10 placeenhaut">
           <div class="x_panel" >
+            
+            <label>Afficher par Intervenant :</label>
+            <select name="intervenant" [(ngModel)]="selectintervenant" >
+            <option *ngFor="let intervenant of intervenantsSubject |async" [ngValue]="intervenant" >{{intervenant.nom}}
+              {{intervenant.prenom}}</option>
+          </select><button class="btn btn-warning" (click)="eventbyintervenant()">Séléctionner</button>
+          <button class="btn btn-warning" (click)="loadevents()">Afficher Tout </button>
+
           <div *ngIf="calendarOptions" >
             <ng-fullcalendar  #ucCalendar [options]="calendarOptions" (eventClick)="eventClick($event.detail)" (eventDrop)="updateEvent($event.detail)"
-                (eventResize)="updateEvent($event.detail)" (clickButton)="clickButton($event.detail)"></ng-fullcalendar>
+                (eventResize)="updateEvent($event.detail)" (clickButton)="clickButton($event.detail)" [(eventsModel)]="events"></ng-fullcalendar>
+                
         </div>
         </div>
        

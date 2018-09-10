@@ -1,8 +1,12 @@
 .x_panel{
-    background: #ddd8b9;
+    background: hsl(152, 44%, 81%);
     opacity:0.95;
 }
 .tile-stats{
-    background: #ddd8b9;
+    background :hsl(152, 44%, 81%);
     opacity: 0.95;
+}
+
+.title{
+    color:black;
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Intervenant } from '../../metier/objet-intervenant';
+import { IntervenantRepositoryService } from '../../services/intervenant-repository.service';
 
 @Component({
   selector: 'app-intervenant',
@@ -6,15 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./intervenant.component.css']
 })
 export class IntervenantComponent implements OnInit {
-
- 
+public Intervenantconnected: Intervenant=new Intervenant(0,"","","","purple");
   public currentEditId : number;
 
-  public constructor() {
+ constructor( private intervenantRepositoryService: IntervenantRepositoryService) {
     this.currentEditId = 0;
   }
 
   ngOnInit() {
+   this.intervenantRepositoryService.findById(
+     this.intervenantRepositoryService.setintervenant_toconnect()).subscribe(Intervenant=> { this.Intervenantconnected=Intervenant;
+   },);
   }
  
 }

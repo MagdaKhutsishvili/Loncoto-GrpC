@@ -11,9 +11,10 @@ import { Page } from '../metier/page';
 export class IntervenantRepositoryService {
 
   private intervenantsSubject: BehaviorSubject<Page<Intervenant>>;
-  
+
   private noPage : number;
   private taillePage : number;
+private idconnected:number=0;
 
   //injection du client
   constructor(private http: HttpClient){
@@ -77,4 +78,11 @@ public getIntervenantsAsObservable2(): Observable <Page<Intervenant>> {
     });
   }
 
+public getintervenant_toconnect(id:number){
+  this.idconnected=id;
+}
+
+public setintervenant_toconnect(){
+  return this.idconnected;
+}
 }

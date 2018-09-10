@@ -71,29 +71,18 @@
                    
                     <div >
                        
-                          <canvas style="height:200px; width:450px;" baseChart
-                                  [datasets]="barChartData"
-                                  [labels]="barChartLabels"
-                                  [options]="barChartOptions"
-                                  [legend]="barChartLegend"
-                                  [chartType]="barChartType"
-                                  (chartHover)="chartHovered($event)"
-                                  (chartClick)="chartClicked($event)"></canvas>
+                        <canvas baseChart width="400" height="200" [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions"
+                        [colors]="lineChartColors" [legend]="lineChartLegend" [chartType]="lineChartType" (chartHover)="chartHovered($event)"
+                        (chartClick)="chartClicked($event)"></canvas>
                       
                         <button (click)="randomize()">Update</button>
                       </div>
 
                       <div >
                        
-                          <canvas style="height:200px; width:450px;" baseChart
-                                  [datasets]="barChartData"
-                                  [labels]="barChartLabels"
-                                  [options]="barChartOptions"
-                                  [legend]="barChartLegend"
-                                  [chartType]="barChartType"
-                                  (chartHover)="chartHovered($event)"
-                                  (chartClick)="chartClicked($event)"></canvas>
-                      
+                          <canvas baseChart width="400" height="200" [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions"
+                          [colors]="lineChartColors" [legend]="lineChartLegend" [chartType]="lineChartType" (chartHover)="chartHovered($event)"
+                          (chartClick)="chartClicked($event)"></canvas>
                         <button (click)="randomize()">Update</button>
                       </div>
 
@@ -130,14 +119,9 @@
                     <div class="row" style="border-bottom: 1px solid #E0E0E0; padding-bottom: 5px; margin-bottom: 5px;">
                         <div >
                        
-                            <canvas style="height:200px; width:900px;" baseChart
-                                    [datasets]="barChartData"
-                                    [labels]="barChartLabels"
-                                    [options]="barChartOptions"
-                                    [legend]="barChartLegend"
-                                    [chartType]="barChartType"
-                                    (chartHover)="chartHovered($event)"
-                                    (chartClick)="chartClicked($event)"></canvas>
+                           <canvas  baseChart width="800" height="200" [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions"
+                    [colors]="lineChartColors" [legend]="lineChartLegend" [chartType]="lineChartType" (chartHover)="chartHovered($event)"
+                    (chartClick)="chartClicked($event)"></canvas>
                         
                           <button (click)="randomize()">Update</button>
                         </div>

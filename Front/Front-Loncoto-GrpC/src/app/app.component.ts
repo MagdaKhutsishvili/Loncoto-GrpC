@@ -1,8 +1,7 @@
 import { Component , Inject, ViewChild, ElementRef } from '@angular/core';
 import { PageScrollConfig, PageScrollService, PageScrollInstance } from 'ngx-page-scroll';
 import { DOCUMENT} from '@angular/common';
-import { Intervenant } from './metier/objet-intervenant';
-import { Client } from './metier/objet-client';
+
 
 
 @Component({
@@ -12,9 +11,6 @@ import { Client } from './metier/objet-client';
 })
 export class AppComponent {
   title = 'app';
-public selectintervenant : Intervenant= new Intervenant(0,"","","","purple");
-public selectclient : Client;
-    
 
 
   //Page-scroll imports

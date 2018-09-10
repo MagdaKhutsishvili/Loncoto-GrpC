@@ -41,11 +41,14 @@
         <p class="text-faded mb-5">Je suis </p>
         <a class="btn btn-primary4 btn-xl js-scroll-trigger" (click)="ngxSmartModalService.getModal('connexionclient').open()" >Un Client</a>
    <a class="btn btn-primary2 btn-xl js-scroll-trigger" routerLink='/operateur'>Un Opérateur</a>
-    <a class="btn btn-primary3 btn-xl js-scroll-trigger" (click)="ngxSmartModalService.getModal('connexionintervenant').open()" >Un intervenant</a>
+    <a class="btn btn-primary3 btn-xl js-scroll-trigger" style="color:black" (click)="ngxSmartModalService.getModal('connexionintervenant').open()" >Un intervenant</a>
     
     <ngx-smart-modal style="color:black;text-align: left" #connexionclient identifier="connexionclient">
         <h2>Se Connecter
-            <small>Client: </small>
+            <small>Client: <select name="client" [(ngModel)]="currentclient">
+                <option *ngFor="let client of clientsSubject |async"  [ngValue]="client">{{client.nom}}
+                  </option>
+              </select> </small>
           </h2>
           <table>
               <tr>
@@ -58,29 +61,34 @@
 
           </table>
      
-      <button routerLink='/client' style="text-align: center" class="btn btn-primary4">Connexion</button>
+      <button routerLink='/client' style="text-align: center" (click)="connexionclient.close()"  (click)="connectclient(currentclient.id)" class="btn btn-primary4">Connexion</button>
       
     </ngx-smart-modal>
-    <ngx-smart-modal style="color:black;text-align: left" #connexionclient identifier="connexionintervenant">
+
+
+
+
+
+    <ngx-smart-modal style="color:black;text-align: left" #connexionintervenant identifier="connexionintervenant">
         <h2>Se Connecter
             <small>Intervenant:  
-              <select name="intervenant" [ngModel]="selectintervenant">
-                <option *ngFor="let intervenant of intervenantsSubject |async" [ngValue]="intervenant">{{intervenant.nom}}
-                  {{intervenant.prenom}}</option>
+              <select name="intervenant" [(ngModel)]="currentintervenant">
+                <option *ngFor="let intervenant of intervenantsSubject |async"  [ngValue]="intervenant">{{intervenant.prenom}} {{intervenant.nom}}
+                  </option>
               </select></small>
           </h2>
           <table>
               <tr>
-                <td>Identifiant : </td><td><input type="text"></td>
+                <td>Identifiant : </td><td><input type="text" value="xxxxxx@loncoto.fr"></td>
               </tr>
               <tr>
-                  <td>Mot de Passe :</td><td><input type="text"></td>
+                  <td>Mot de Passe :</td><td><input type="password" value="xxxxxxxx"></td>
                 </tr>
   
 
           </table>
      
-      <button routerLink='/intervenant' style="text-align: center" (click)="essayerintervenant()" class="btn btn-primary3">Connexion</button>
+      <button routerLink='/intervenant' (click)="connexionintervenant.close()" (click)="connectintervenant(currentintervenant.id)"style="text-align: center" class="btn btn-primary3">Connexion</button>
       
     </ngx-smart-modal>
 

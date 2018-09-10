@@ -11,6 +11,7 @@ export class ClientRepositoryService {
   private clientsSubject : BehaviorSubject<Page<Client>>;
   private noPage : number;
   private taillePage : number;
+private idconnected : number=0;
 
   constructor(private http: HttpClient) {
     //on demarre avec une page vide 
@@ -71,4 +72,16 @@ export class ClientRepositoryService {
               this.refreshListe();
     });
   }
+
+
+
+
+  public getclient_toconnect(id:number){
+    this.idconnected=id;
+  }
+  
+  public setclient_toconnect():number{
+    return this.idconnected;
+  }
+
 }

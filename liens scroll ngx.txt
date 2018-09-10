@@ -1,3 +1,8 @@
 https://www.npmjs.com/package/ngx-page-scroll
 c'est le module que j'ai utilisé pour remplacer les ancres du template avec angular. 
 Il suffit juste de lancer la commande "npm install ngx-page-scroll --save" pour l'obtenir.
+
+
+
+
+http://www.carbonatethis.com/sort-table-columns-with-angular-and-typescript/
