@@ -4,6 +4,8 @@ import { Intervention } from '../../../../metier/objet-intervention';
 import { InterventionsRepositoryService } from '../../../../services/interventions-repository.service';
 import { Options } from 'fullcalendar';
 import { CalendarComponent } from 'ng-fullcalendar';
+import { IntervenantRepositoryService } from '../../../../services/intervenant-repository.service';
+import { Intervenant } from '../../../../metier/objet-intervenant';
 
 @Component({
   selector: 'app-display-plannings',
@@ -11,13 +13,13 @@ import { CalendarComponent } from 'ng-fullcalendar';
   styleUrls: ['./display-plannings.component.css']
 })
 export class DisplayPlanningsComponent implements OnInit {
+  public Intervenantconnected: Intervenant=new Intervenant(0,"","","","purple");
 
-  public listevents: Evenement[]=[];
 
 
   public currentIntervention : Intervention;
 
-  constructor(private interventionRepository : InterventionsRepositoryService) {
+  constructor(private interventionRepository : InterventionsRepositoryService,private intervenantRepositoryService: IntervenantRepositoryService) {
 
 
    }
@@ -26,10 +28,15 @@ calendarOptions: Options;
 @ViewChild(CalendarComponent) ucCalendar: CalendarComponent;
 ngOnInit() {
 
-  this.interventionRepository.getEvents().subscribe(data=>{
   
-  
-  
+  this.intervenantRepositoryService.findById(
+    this.intervenantRepositoryService.setintervenant_toconnect()).subscribe(Intervenant=> { this.Intervenantconnected=Intervenant;
+  },);
+
+
+
+
+  this.interventionRepository.getEventsbyIntervenant(this.intervenantRepositoryService.setintervenant_toconnect()).subscribe(data=>{
 
   this.calendarOptions = {
 
@@ -50,7 +57,20 @@ ngOnInit() {
   
 
 this.interventionRepository.refreshListe();
+
+
+
+
+
+
 }
+
+
+
+
+
+  
+
 
 
 }

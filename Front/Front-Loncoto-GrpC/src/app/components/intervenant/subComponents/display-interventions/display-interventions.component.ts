@@ -13,6 +13,7 @@ import { MaterielRepositoryService } from '../../../../services/materiel-reposit
   styleUrls: ['./display-interventions.component.css']
 })
 export class DisplayInterventionsComponent implements OnInit {
+
   public interventionsSubject : Subject<Intervention[]>
   private interventionsSouscription : Subscription;
   public intervenantsSubject : Subject<Intervenant[]>
@@ -45,25 +46,23 @@ public pageChanged(event){
   this.interventionRepository.setnopage(event.page-1);
 }
   ngOnInit() {
-    this.interventionsSouscription=this.interventionRepository.getInterventionsAsObservable().subscribe(p=>{
+
+    
+    this.interventionsSouscription=this.interventionRepository.findintervenantById(this.intervenantnRepository.setintervenant_toconnect()).subscribe(
       // je reçois les nouvelles pages d'Interventions
-      this.interventionsSubject.next(p.content);
-      this.totalItems=p.totalElements;
-      this.currentPage=p.number+1;
-      this.taillePage=p.size;
+      intervntions=> { this.interventionsSubject.next(intervntions);
     });
-    this.intervenantsSouscription=this.intervenantnRepository.getIntervenantsAsObservable2().subscribe(p=>{
-      // je reçois les nouvelles pages d'Interventions
-      this.intervenantsSubject.next(p.content);
-      
-    });
+
+
+
     this.materielsSouscription=this.materielRepository.getMaterielsAsObservable2().subscribe(p=>{
       // je reçois les nouvelles pages d'Interventions
       this.materielsSubject.next(p.content);
       
     });
 
-
+ 
+   
 
 
     this.currentIntervention=new Intervention(0,"","","En Attente","",this.currentMateriel,this.currentIntervenant,"","","","");
