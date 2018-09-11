@@ -100,14 +100,19 @@ import { DisplayCatalogOperateurComponent } from './components/operateur/subComp
     
     RouterModule.forRoot([
       {path: 'home', component: VitrineComponent},
-      
-      {path: 'client', component: ClientComponent},
-      {path: 'client/interventions', component: DisplayInterventionsDuclientComponent },
-      {path: 'intervenant', component: IntervenantComponent},
+
       {path: 'operateur', component: OperateurComponent},
       {path: 'operateur/interventions', component: DisplayInterventionsOperateurComponent},
       {path: 'operateur/planning', component: DisplayPlanningsOperateurComponent},
       {path: 'operateur/referentiel', component: DisplayReferentielComponent},
+
+      {path: 'client/message', component: SignalementNvProblemeComponent},
+      {path: 'client', component: ClientComponent},
+      {path: 'client/interventions', component: DisplayInterventionsDuclientComponent },
+
+      {path: 'intervenant', component: IntervenantComponent},
+      {path: 'intervenant/interventions', component: DisplayInterventionsComponent},
+      {path: 'intervenant/planning', component: DisplayPlanningsComponent},
 
      // {path: 'edit/:id',component: EditKoComponent},
       {path: '', redirectTo: '/home', pathMatch:'full'}

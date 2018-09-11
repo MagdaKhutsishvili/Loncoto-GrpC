@@ -16,9 +16,15 @@ public Intervenantconnected: Intervenant=new Intervenant(0,"","","","purple");
   }
 
   ngOnInit() {
+/*à l'inititation du composant ( donc à la "connexion")  , 
+je vais chercher avec un findbyid l'intervenant séléctionner dans l'authentification    */
+
+
    this.intervenantRepositoryService.findById(
      this.intervenantRepositoryService.setintervenant_toconnect()).subscribe(Intervenant=> { this.Intervenantconnected=Intervenant;
    },);
+
+
   }
  
 }

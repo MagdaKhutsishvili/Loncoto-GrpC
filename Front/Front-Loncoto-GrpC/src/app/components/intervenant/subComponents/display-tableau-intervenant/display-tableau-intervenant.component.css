@@ -1,12 +1,15 @@
 .x_panel{
-    background: hsl(152, 44%, 81%);
+    background: #ddd8b9;
     opacity:0.95;
 }
 .tile-stats{
-    background :hsl(152, 44%, 81%);
+    background: #ddd8b9;
     opacity: 0.95;
 }
 
-.title{
-    color:black;
+.x_content[_ngcontent-c2] {
+    background-color: #8f9fbc;
+}
+.x_panel[_ngcontent-c2] {
+    background: #bd86aa9c;
 }

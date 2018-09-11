@@ -1,6 +1,8 @@
 import { Component, OnInit, OnChanges, Input } from '@angular/core';
 import { Intervention } from '../../../../metier/objet-intervention';
 import { InterventionsRepositoryService } from '../../../../services/interventions-repository.service';
+import { Materiel } from '../../../../metier/objet-materiel';
+import { Intervenant } from '../../../../metier/objet-intervenant';
 
 
 @Component({
@@ -10,37 +12,53 @@ import { InterventionsRepositoryService } from '../../../../services/interventio
 })
 export class EditInterventionsComponent implements OnInit {
 
+public currentMateriel :Materiel;
+public currentIntervenant:Intervenant;
+  @Input() public editId: number;
+  public currentIntervention : Intervention;
 
- 
+  constructor(private InterventionRepository : InterventionsRepositoryService) {
+
+
+   }
+
+
+
+   public saveIntervention() {
+    
+      if (this.currentIntervention.id > 0){
+        let InterToSave = new Intervention(0,"","","En Attente","",this.currentMateriel,this.currentIntervenant,"","","","");
+        
+        // retransformation du modele/json du formulaire
+        // en veritable objet Livre avec ses méthodes
+        InterToSave.copyFrom(this.currentIntervention);
   
-  constructor() { }
+        this.InterventionRepository.updateIntervention(InterToSave);
+        this.currentIntervention = new Intervention(0,"","","En Attente","",this.currentMateriel,this.currentIntervenant,"","","","");
+      }
+ 
+    }
+  public cancelIntervention() {
+    this.currentIntervention = new Intervention(0,"","","En Attente","",this.currentMateriel,this.currentIntervenant,"","","","");
+  }
+
+
+
+
 
   ngOnInit() {
-    
-  }/*
+    this.currentIntervention=new Intervention(0,"","","En Attente","",this.currentMateriel,this.currentIntervenant,"","","","");
+  }
+
   ngOnChanges(changes:any){
+    
     if (this.editId==0){
-      this.currentIntervention=new Intervention(0,"rien","aucun",10.0);
+      this.currentIntervention=new Intervention(0,"","","En Attente","",this.currentMateriel,this.currentIntervenant,"","","","");
     }
-    else {
-      this.interventionRepository.findById(this.editId).subscribe(intervention=>{
-        this.currentIntervention=intervention;
+    else{
+      this.InterventionRepository.findById(this.editId).subscribe(intervention=> { this.currentIntervention=intervention;
       });
     }
-
   }
 
-  public saveIntervention(){
-    if (this.currentIntervention.id>0){
-      let interventionToSave=new Intervention(0,"","",0);
-      
-      interventionToSave.copyfrom(this.currentIntervention);
-      
-      this.interventionRepository.updateLivre(livreToSave);
-      this.currentLivre=new Livre(0,"rien","aucun",10.0);
-    }
-  }
-
-}
-*/
 }

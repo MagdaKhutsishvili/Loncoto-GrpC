@@ -1,71 +1,83 @@
-<div id="CalenderModalNew" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
 
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-          <h4 class="modal-title" id="myModalLabel">New Calendar Entry</h4>
-        </div>
-        <div class="modal-body">
-          <div id="testmodal" style="padding: 5px 20px;">
-            <form id="antoform" class="form-horizontal calender" role="form">
-              <div class="form-group">
-                <label class="col-sm-3 control-label">Title</label>
-                <div class="col-sm-9">
-                  <input type="text" class="form-control" id="title" name="title">
-                </div>
-              </div>
-              <div class="form-group">
-                <label class="col-sm-3 control-label">Description</label>
-                <div class="col-sm-9">
-                  <textarea class="form-control" style="height:55px;" id="descr" name="descr"></textarea>
-                </div>
-              </div>
-            </form>
+<nav class="navbar navbar-expand-lg navbar-light fixed-top " id="mainNav">
+  <div class="container">
+   
+
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" pageScroll href="#tableauinter"><Table>le Planning</Table></a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" pageScroll href="#editer">Créer/Editer</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" routerLink='/home'><i class="fa fa-power-off"></i> Deconnexion</a>
+        </li>
+
+
+      </ul>
+    </div>
+  </div> <div class="navbar-brand js-scroll-trigger">Bonjour, {{Intervenantconnected.prenom}}</div>
+</nav>
+
+<header class="masthead text-center  d-flex " id="tableauinter">
+  <div class="container-fluid my-auto " style="height:97%; ">
+    <div class="row">
+      <div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 left_col scroll-view " style="position:fixed; height:100%; ">
+
+        <!-- sidebar menu -->
+        <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+         
+            <h3 class="titre">Loncoto</h3>
+         
+
+          <div class="menu_section">
+            <h3>General</h3>
+            <ul class="nav side-menu">
+              <li><a routerLink='/intervenant'><i class="fa fa-home"></i> Tableau de bord <span class="fa "></span></a> </li>
+              <li><a routerLink='/intervenant/planning'><i class="fa fa-edit"></i> Planning <span class="fa "></span></a></li>
+              <li><a routerLink='/intervenant/interventions'><i class="fa fa-table"></i> Interventions <span class="fa "></span></a></li>
+            
+            </ul>
           </div>
+
+          <div class="menu_section">
+            <h3>Live On</h3>
+            <ul class="nav side-menu">
+              <li><a routerLink='/intervenant/message' pageScroll href="#messagerie"><i class="fa fa-bug"></i> Messagerie <span class="fa "></span></a></li>
+              <li><a><i class="fa fa-windows"></i> Extras <span class="fa "></span></a></li>
+
+            
+            </ul>
+          </div>
+          <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default antoclose" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary antosubmit">Save changes</button>
+      </div>
+
+      <div class="col-lg-10 col-sm-10 col-xs-10 col-md-10 placeenhaut">
+        <div class="x_panel" >
+        <div *ngIf="calendarOptions" >
+          <ng-fullcalendar  #ucCalendar [options]="calendarOptions" (eventClick)="eventClick($event.detail)" (eventDrop)="updateEvent($event.detail)"
+              (eventResize)="updateEvent($event.detail)" (clickButton)="clickButton($event.detail)"></ng-fullcalendar>
+      </div>
+      </div>
+
+</div>
+    </div>
+  </div>
+</header>
+
+<section class="bg-primary backgroundallpage" id="editer">
+  <div class="col-lg-2 col-sm-2 col-xs-2 col-md-2"></div>
+  <div class="col-lg-10 col-sm-10 col-xs-10 col-md-10 ">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto text-center">
         </div>
       </div>
     </div>
   </div>
-  <div id="CalenderModalEdit" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
+</section>
 
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-          <h4 class="modal-title" id="myModalLabel2">Edit Calendar Entry</h4>
-        </div>
-        <div class="modal-body">
-
-          <div id="testmodal2" style="padding: 5px 20px;">
-            <form id="antoform2" class="form-horizontal calender" role="form">
-              <div class="form-group">
-                <label class="col-sm-3 control-label">Title</label>
-                <div class="col-sm-9">
-                  <input type="text" class="form-control" id="title2" name="title2">
-                </div>
-              </div>
-              <div class="form-group">
-                <label class="col-sm-3 control-label">Description</label>
-                <div class="col-sm-9">
-                  <textarea class="form-control" style="height:55px;" id="descr2" name="descr"></textarea>
-                </div>
-              </div>
-
-            </form>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default antoclose2" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary antosubmit2">Save changes</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div id="fc_create" data-toggle="modal" data-target="#CalenderModalNew"></div>
-  <div id="fc_edit" data-toggle="modal" data-target="#CalenderModalEdit"></div>
