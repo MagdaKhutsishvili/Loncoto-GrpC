@@ -245,8 +245,12 @@
       <div class="col-lg-12 mx-auto  ">
         <div class="well profile_view">
           <div class="col-sm-12 col-lg-12">
-            <h3><I><strong>Fiche-Intervention n° {{currentIntervention.id}}</strong></I></h3> 
               <div class="x_content">
+
+                 
+            <h3><I><strong>Fiche-Intervention n° {{currentIntervention.id}}</strong></I></h3> 
+             
+                  
                   <table class="table " >
                       <tbody>
                           <tr>
@@ -275,10 +279,62 @@
                         </tr>
                      
                       </tbody>
+                     
+                      
                     </table>
+                 
+                    
+
+                  
+                 
+                  <div style="position: absolute; left: -1000px; top: 0;" >
+                      <kendo-pdf-export #pdfoperateur paperSize="A4" margin="2cm"  >
+                          <div class="text-right"> 
+                            <div class="site_title" ><i class="fa fa-paw" style="color: blue"></i> <span style="color: blue">Loncoto</span></div>
+                          
+                          </div>
+            <h3><I><strong>Fiche-Intervention n° {{currentIntervention.id}}</strong></I></h3> 
+             
+                  
+            <table class="table " >
+                <tbody>
+                    <tr>
+                        <td>Date : </td><td>{{currentIntervention.start}}</td>
+                    </tr>
+                    <tr>
+                        <td>Statut : </td><td>{{currentIntervention.statut}}</td>
+                    </tr>
+                    <tr>
+                        <td>Intervenant : </td><td>{{currentIntervention.intervenant.prenom}} {{currentIntervention.intervenant.nom}}</td>
+                    </tr>
+                  <tr>
+                    <td>Site : </td><td>{{currentIntervention.materiel.lesite.nom}}</td>
+                  </tr>
+                  <tr>
+                      <td>Client : </td><td>{{currentIntervention.materiel.client.nom}}</td>
+                    </tr>
+                  <tr>
+                      <td>Materiel - serial : </td><td>{{currentIntervention.materiel.serialID}} </td>
+                  </tr>
+                  <tr>
+                      <td>Materiel - modèle: </td><td>{{currentIntervention.materiel.article.marque}} - {{currentIntervention.materiel.article.nom}}</td>
+                  </tr>
+                  <tr>
+                      <td>Commentaire:</td><td>{{currentIntervention.commentaire}}</td>
+                  </tr>
+               
+                </tbody>
+               
+                
+              </table>
+              <p style="font-size: 75% ;">Export fait le {{curDate | date:'yyyy-MM-dd'}} par {{currentIntervention.materiel.client.nom}}
+
+                   </p>
+                      </kendo-pdf-export>
+                    </div>
 
               </div>
-
+          
           </div>
           <div class="col-xs-12 col-lg-12 bottom text-center" style="padding-top: 10%">
 
@@ -293,7 +349,9 @@
 
               <button type="button" class="btn btn-primary btn-xs" pageScroll href="#tableauinter">
                 <i class="fa fa-user"> </i>Revenir à la liste</button>
-
+                <button kendo-button (click)="pdfoperateur.saveAs('ExportedIntervention.pdf')" class="btn btn-warning btn-xs">
+                  Exporter le PDF
+                </button>
             </div>
 
           </div>

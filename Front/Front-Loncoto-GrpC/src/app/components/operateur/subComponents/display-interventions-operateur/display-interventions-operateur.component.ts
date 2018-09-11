@@ -18,7 +18,7 @@ import { MaterielRepositoryService } from '../../../../services/materiel-reposit
 })
 export class DisplayInterventionsOperateurComponent implements OnInit{
 
-
+  curDate=new Date();
 
   public interventionsSubject : Subject<Intervention[]>
   private interventionsSouscription : Subscription;

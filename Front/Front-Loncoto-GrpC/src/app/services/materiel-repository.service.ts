@@ -49,7 +49,13 @@ public getMaterielsAsObservable2(): Observable <Page<Materiel>> {
     });
     
    }
-
+   public refreshListe2():void{
+    this.http.get<Page<Materiel>>(
+    `http://localhost:8080//loncogroup-c/materiels?page=${this.noPage}&size=${1000}`)
+    .subscribe(p => {this.materielsSubject.next(p);
+   });
+   
+  }
 
 
 

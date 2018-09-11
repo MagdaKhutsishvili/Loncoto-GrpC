@@ -51,7 +51,7 @@ import { DisplayGrpintervenantOperateurComponent } from './components/operateur/
 import { DisplayCatalogOperateurComponent } from './components/operateur/subComponents/display-referentiel/displays/display-catalog-operateur/display-catalog-operateur.component';
 
 
-
+import { PDFExportModule } from '@progress/kendo-angular-pdf-export';
 
 @NgModule({
   declarations: [
@@ -97,6 +97,7 @@ import { DisplayCatalogOperateurComponent } from './components/operateur/subComp
     BrowserAnimationsModule, 
     PaginationModule.forRoot(),
     NgxSmartModalModule.forRoot(),
+    PDFExportModule,
     
     RouterModule.forRoot([
       {path: 'home', component: VitrineComponent},
