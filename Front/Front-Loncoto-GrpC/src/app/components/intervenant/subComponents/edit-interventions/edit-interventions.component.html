@@ -16,8 +16,6 @@
                   <option  *ngFor="let materiel of materielsSubject |async" [ngValue]="materiel" >Site :{{materiel.lesite.nom}} - {{materiel.article.marque}} -- {{materiel.article.nom}} {{materiel.article.serialID}}</option>
                 </select>
               </div>
-
-    
               <div class="form-group">
                 <label>Date Prevu</label>
                 <input type="date" class="form-control" name="date" id="date" [(ngModel)]="currentIntervention.datePrevu" [(ngModel)]="currentIntervention.start"

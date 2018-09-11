@@ -1,119 +1,129 @@
 
       <nav class="navbar navbar-expand-lg navbar-light fixed-top " id="mainNav">
-            <div class="container">
+        <div class="container">
+         
+          <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+            aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="#about">Planning</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="#services">Interventions</a>
+              </li>
              
-              <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
-                  <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#about">Planning</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#services">Interventions</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" routerLink='/home'><i class="fa fa-power-off"></i> Deconnexion</a>
-                  </li>
-    
-                </ul>
-              </div>
-            </div> <a class="navbar-brand js-scroll-trigger" href="#page-top">Bonjour, {{Intervenantconnected.prenom}}</a>
-          </nav>
- <header class="masthead text-center  d-flex " id="interlist" >
-        
-    <div class="container-fluid my-auto" style=" height:97%; ">
-        <div class="row">
-    <div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 left_col scroll-view " style="position:fixed; height:97%;color:black ">
-        <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
-          <div class="navbar nav_title" style="border: 0;">
-            <div class="site_title">
-              <i class="fa fa-paw"></i>
-              <span style="color:black">Loncoto</span>
-            </div>
-          </div>
-      
-          <div class="menu_section">
-              <h3>General</h3>
-              <ul class="nav side-menu">
-                <li>
-                  <a routerLink='/intervenant'>
-                    <i class="fa fa-home"></i> Tableau de bord
-                    <span class="fa "></span>
-                  </a>
-                </li>
-                <li>
-                  <a routerLink='/intervenant/planning'>
-                    <i class="fa fa-edit"></i> Planning
-                    <span class="fa "></span>
-                  </a>
-                </li>
-                <li>
-                  <a routerLink='/intervenant/interventions'>
-                    <i class="fa fa-table"></i> Interventions
-                    <span class="fa "></span>
-                  </a>
-                </li>
-               
-               
-              </ul>
-            </div>
-        
-      
-          <div class="menu_section">
-            <h3>Live On</h3>
-            <ul class="nav side-menu">
-              <li>
-                <a routerLink='/operateur' pageScroll href="#messagerie"style="color:black">
-                  <i class="fa fa-bug"></i> Messagerie
-                  <span class="fa "></span>
-                </a>
-              </li>
-              <li>
-                <a style="color:black">
-                  <i class="fa fa-windows"></i> Extras
-                  <span class="fa "></span>
-                </a>
-              </li>
+
             </ul>
           </div>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-        </div>
-      </div>
-      <div class="col-lg-10 col-sm-10 col-xs-10 col-md-10 placeenhaut">
-      
+        </div> 
+      </nav>
+<header class="masthead text-center  d-flex " id="interlist">
     
-    <app-display-tableau-intervenant></app-display-tableau-intervenant>
+<div class="container-fluid my-auto" style=" height:97%; ">
+    <div class="row">
+<div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 left_col scroll-view " style="position:fixed; height:100%; ">
+    <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+      
+          <div class="logo">
+            
+              
+              <h3 class="titre">Loncoto</h3>
+           
+          </div>
+          <br>
+          <h4><a class="navbar-brand js-scroll-trigger" href="#page-top">Bonjour, {{Intervenantconnected.nom}}</a></h4>
+          <br>
+          <br>
+  
+      <div class="menu_section">
+        <h3>General</h3>
+        <ul class="nav side-menu">
+          <li>
+            <a routerLink='/intervenant'>
+              <i class="fa fa-home"></i> Tableau de bord
+              <span class="fa "></span>
+            </a>
+          </li>
+          <li>
+            <a routerLink='/intervenant/planning'>
+              <i class="fa fa-edit"></i> Planning
+              <span class="fa "></span>
+            </a>
+          </li>
+          <li>
+            <a routerLink='/intervenant/interventions'>
+              <i class="fa fa-table"></i> Interventions
+              <span class="fa "></span>
+            </a>
+          </li>
+         
+         
+        </ul>
       </div>
+  
+      <div class="menu_section">
+        <h3>Live On</h3>
+        <ul class="nav side-menu">
+          <li>
+            <a routerLink='/intervenant/message' pageScroll href="#messagerie">
+              <i class="fa fa-bug"></i> Messagerie
+              <span class="fa "></span>
+            </a>
+          </li>
+          <li>
+            <a>
+              <i class="fa fa-windows"></i> Extras
+              <span class="fa "></span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" routerLink='/home'><i class="fa fa-power-off"></i> Deconnexion</a>
+          </li>
+        </ul>
+      </div>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
     </div>
-     </div>
-        </header>
-        <section class="bg-primary" id="editinter">
-        <div class="container">
-        <div class="row">
-        <div class="col-lg-8 mx-auto text-center">
-            <app-edit-interventions></app-edit-interventions>
-        </div>
-        </div>
-        </div>
-        </section>
+  </div>
+ 
+  <div class="col-lg-10 col-sm-10 col-xs-10 col-md-10 placeenhaut">
+  
+
+<app-display-tableau-intervenant></app-display-tableau-intervenant>
+
+  </div>
+</div>
+ </div>
+    </header>
     
-    
+    <section class="bg-primary" id="editinter">
+    <div class="container">
+    <div class="row">
+    <div class="col-lg-8 mx-auto text-center">
       
-      
-   
-    
-    
-    
+
+    </div>
+    </div>
+    </div>
+    </section>
+
+
+  
+  
+  
+
+
+
+
 

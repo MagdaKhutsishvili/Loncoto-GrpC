@@ -1,6 +1,25 @@
 .left_col {
-    background: rgb(252, 255, 235);
+    background: #55457a;
     }
     
-    /*  74624c  */
-    .a{color:black}
+    .x_panel{
+        background: #cee2ff;;
+    }
+   
+    .titre {
+        font-family: 'Abril Fatface', cursive;
+    }
+    .left_col {
+        background-color: #666699;
+        }
+        
+        .titre {
+            font-family: 'Abril Fatface', cursive;
+        }
+        .bg-primary {
+            background-color: #55457a !important;
+        }
+        .main_menu_side{
+            height: 100%;
+           
+        }

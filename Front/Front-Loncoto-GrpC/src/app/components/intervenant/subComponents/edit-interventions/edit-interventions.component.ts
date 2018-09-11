@@ -16,6 +16,7 @@ public currentMateriel :Materiel;
 public currentIntervenant:Intervenant;
   @Input() public editId: number;
   public currentIntervention : Intervention;
+  MaterielRepository: any;
 
   constructor(private InterventionRepository : InterventionsRepositoryService) {
 
@@ -42,12 +43,9 @@ public currentIntervenant:Intervenant;
     this.currentIntervention = new Intervention(0,"","","En Attente","",this.currentMateriel,this.currentIntervenant,"","","","");
   }
 
-
-
-
-
   ngOnInit() {
     this.currentIntervention=new Intervention(0,"","","En Attente","",this.currentMateriel,this.currentIntervenant,"","","","");
+
   }
 
   ngOnChanges(changes:any){
@@ -60,5 +58,6 @@ public currentIntervenant:Intervenant;
       });
     }
   }
+
 
 }

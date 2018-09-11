@@ -85,8 +85,6 @@ public pageChanged(event){
     if (this.currentIntervention.id > 0){
       let InterToSave = new Intervention(0,"","","En Attente","",this.currentMateriel,this.currentIntervenant,"","","","");
       
-      // retransformation du modele/json du formulaire
-      // en veritable objet Livre avec ses méthodes
       InterToSave.copyFrom(this.currentIntervention);
 
       console.log(InterToSave);
@@ -96,8 +94,7 @@ public pageChanged(event){
     else{
       let InterToSave = new Intervention(0,"","","En Attente","",this.currentMateriel,this.currentIntervenant,"","","","");
       
-      // retransformation du modele/json du formulaire
-      // en veritable objet Livre avec ses méthodes
+     
       InterToSave.copyFrom(this.currentIntervention);
 
       console.log(InterToSave);

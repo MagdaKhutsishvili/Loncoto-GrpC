@@ -49,6 +49,7 @@ import { DisplayMaterielsOperateurComponent } from './components/operateur/subCo
 import { EditMaterielsOperateurComponent } from './components/operateur/subComponents/display-referentiel/displays/edit-materiels-operateur/edit-materiels-operateur.component';
 import { DisplayGrpintervenantOperateurComponent } from './components/operateur/subComponents/display-referentiel/displays/display-grpintervenant-operateur/display-grpintervenant-operateur.component';
 import { DisplayCatalogOperateurComponent } from './components/operateur/subComponents/display-referentiel/displays/display-catalog-operateur/display-catalog-operateur.component';
+import { MessageIntervenantComponent } from './components/intervenant/subComponents/message-intervenant/message-intervenant.component';
 
 
 
@@ -83,7 +84,8 @@ import { DisplayCatalogOperateurComponent } from './components/operateur/subComp
     DisplayMaterielsOperateurComponent,
     EditMaterielsOperateurComponent,
     DisplayGrpintervenantOperateurComponent,
-    DisplayCatalogOperateurComponent
+    DisplayCatalogOperateurComponent,
+    MessageIntervenantComponent
   ],
   imports: [
     BrowserModule,
@@ -113,7 +115,7 @@ import { DisplayCatalogOperateurComponent } from './components/operateur/subComp
       {path: 'intervenant', component: IntervenantComponent},
       {path: 'intervenant/interventions', component: DisplayInterventionsComponent},
       {path: 'intervenant/planning', component: DisplayPlanningsComponent},
-
+      {path: 'intervenant/message', component: MessageIntervenantComponent},
      // {path: 'edit/:id',component: EditKoComponent},
       {path: '', redirectTo: '/home', pathMatch:'full'}
     ])

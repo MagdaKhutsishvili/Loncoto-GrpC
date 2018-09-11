@@ -1,7 +1,20 @@
 .left_col {
-background: #55457a;
-}
-
-.x_panel{
-    background: #cee2ff;;
-}
+    background: #55457a;
+    }
+    
+    .x_panel{
+        background: #cee2ff;;
+    }
+    #modalClient {
+        background-color: transparent;
+    }
+    .titre {
+        font-family: 'Abril Fatface', cursive;
+    }
+    .bg-primary {
+        background-color: #55457a !important;
+    }
+    .main_menu_side{
+        height: 100%;
+       
+    }
