@@ -14,7 +14,7 @@ export class IntervenantRepositoryService {
 
   private noPage : number;
   private taillePage : number;
-private idconnected:number=0;
+
 
   //injection du client
   constructor(private http: HttpClient){
@@ -78,9 +78,18 @@ public getIntervenantsAsObservable2(): Observable <Page<Intervenant>> {
     });
   }
 
+
+
+  private idconnected:number=0;
+
 public getintervenant_toconnect(id:number){
   this.idconnected=id;
 }
+
+
+
+
+
 
 public setintervenant_toconnect(){
   return this.idconnected;
