@@ -8,6 +8,7 @@ import { MaterielRepositoryService } from '../../../../services/materiel-reposit
 import { IntervenantRepositoryService } from '../../../../services/intervenant-repository.service';
 import { ClientRepositoryService } from '../../../../services/client-repository.service';
 import { Client } from '../../../../metier/objet-client';
+import { NgxSmartModalService } from 'ngx-smart-modal';
 
 @Component({
   selector: 'app-display-interventions-duclient',
@@ -34,7 +35,7 @@ export class DisplayInterventionsDuclientComponent implements OnInit {
 
   public Clientconnected: Client=new Client(0,"","",0);
 
-  constructor(private clientRepository: ClientRepositoryService, private interventionRepository: InterventionsRepositoryService,private materielRepository: MaterielRepositoryService,private intervenantnRepository: IntervenantRepositoryService) {
+  constructor(public ngxSmartModalService: NgxSmartModalService,private clientRepository: ClientRepositoryService, private interventionRepository: InterventionsRepositoryService,private materielRepository: MaterielRepositoryService,private intervenantnRepository: IntervenantRepositoryService) {
     //pour le ngfor
     this.interventionsSubject= new Subject<Intervention[]>();
     this.intervenantsSubject= new Subject<Intervenant[]>();
@@ -88,4 +89,12 @@ public pageChanged(event){
   }
 
 
-  }}
+  }
+
+public genererpdf(id:number){
+  this.interventionRepository.findById(id).subscribe(Intervention=> { this.currentIntervention=Intervention;
+  });
+}
+
+
+}

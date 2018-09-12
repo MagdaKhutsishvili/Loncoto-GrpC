@@ -13,80 +13,63 @@ import { Intervenant } from '../../../../metier/objet-intervenant';
   styleUrls: ['./display-plannings.component.css']
 })
 export class DisplayPlanningsComponent implements OnInit {
-  public Intervenantconnected: Intervenant=new Intervenant(0,"","","","purple");
-<<<<<<< HEAD
-  public listevents: Evenement[]=[];
-=======
-
->>>>>>> eb5a205a688ac8025d124db39ee3b8126bcd91f6
+  public Intervenantconnected: Intervenant = new Intervenant(0, "", "", "", "purple");
+  public listevents: Evenement[] = [];
 
 
-  public currentIntervention : Intervention;
+  public currentIntervention: Intervention;
 
-<<<<<<< HEAD
-  constructor(private interventionRepository : InterventionsRepositoryService,private intervenantRepositoryService: IntervenantRepositoryService)  {
-=======
-  constructor(private interventionRepository : InterventionsRepositoryService,private intervenantRepositoryService: IntervenantRepositoryService) {
->>>>>>> eb5a205a688ac8025d124db39ee3b8126bcd91f6
+  constructor(private interventionRepository: InterventionsRepositoryService, private intervenantRepositoryService: IntervenantRepositoryService) {
 
 
-   }
+  }
 
-calendarOptions: Options;
-@ViewChild(CalendarComponent) ucCalendar: CalendarComponent;
-ngOnInit() {
-  this.intervenantRepositoryService.findById(
-    this.intervenantRepositoryService.setintervenant_toconnect()).subscribe(Intervenant=> { this.Intervenantconnected=Intervenant;
-  },);
+  calendarOptions: Options;
+  @ViewChild(CalendarComponent) ucCalendar: CalendarComponent;
+  ngOnInit() {
+    this.intervenantRepositoryService.findById(
+      this.intervenantRepositoryService.setintervenant_toconnect()).subscribe(Intervenant => {
+      this.Intervenantconnected = Intervenant;
+      }, );
 
-<<<<<<< HEAD
-  this.interventionRepository.getEventsbyIntervenant(this.intervenantRepositoryService.setintervenant_toconnect()).subscribe(data=>{
-  
-=======
->>>>>>> eb5a205a688ac8025d124db39ee3b8126bcd91f6
-  
-  this.intervenantRepositoryService.findById(
-    this.intervenantRepositoryService.setintervenant_toconnect()).subscribe(Intervenant=> { this.Intervenantconnected=Intervenant;
-  },);
+
+    this.interventionRepository.getEventsbyIntervenant(this.intervenantRepositoryService.setintervenant_toconnect()).subscribe(data => {
+
+
+      this.intervenantRepositoryService.findById(
+        this.intervenantRepositoryService.setintervenant_toconnect()).subscribe(Intervenant => {
+        this.Intervenantconnected = Intervenant;
+        }, );
 
 
 
 
-  this.interventionRepository.getEventsbyIntervenant(this.intervenantRepositoryService.setintervenant_toconnect()).subscribe(data=>{
+      this.interventionRepository.getEventsbyIntervenant(this.intervenantRepositoryService.setintervenant_toconnect()).subscribe(data => {
 
-  this.calendarOptions = {
+        this.calendarOptions = {
 
-    editable: true,
-    eventLimit: false,
-    height:700,
-    themeSystem: 'jquery-ui',
-    header: {
-      left: 'prev,next today',
-      center: 'title',
-      right: 'month,agendaWeek,agendaDay,listMonth'
-    },
-    events: data,
-    
- 
-  };
-});
-  
-
-this.interventionRepository.refreshListe();
+          editable: true,
+          eventLimit: false,
+          height: 700,
+          themeSystem: 'jquery-ui',
+          header: {
+            left: 'prev,next today',
+            center: 'title',
+            right: 'month,agendaWeek,agendaDay,listMonth'
+          },
+          events: data,
 
 
+        };
+      });
 
 
+      this.interventionRepository.refreshListe();
 
 
-}
+ });
 
 
-
-
-
-  
-
-
+      }
 
 }

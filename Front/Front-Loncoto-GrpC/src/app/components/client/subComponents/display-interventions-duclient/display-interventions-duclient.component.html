@@ -110,11 +110,87 @@
                           <td>{{intervention.commentaire}}</td>
                           <td>{{intervention.materiel.id}}</td>
                           <td>{{intervention.intervenant.id}}</td>
+                          <td><button (click)="genererpdf(intervention.id)" (click)="ngxSmartModalService.getModal('pdfclient').open()" class="btn btn-warning btn-xs">
+                            Exporter le PDF
+                          </button></td>
+                          <ngx-smart-modal style="color:black;text-align: left" #pdfclient identifier="pdfclient">
+                            <div style="position: absolute;  top: 0;">
+                              <kendo-pdf-export #pdfoperateur paperSize="A4" margin="2cm">
+                                <div class="text-right">
+                                  <div class="site_title">
+                                    <i class="fa fa-paw" style="color: blue"></i>
+                                    <span style="color: blue">Loncoto</span>
+                                  </div>
+                      
+                                </div>
+                                <h3>
+                                  <I>
+                                    <strong>Fiche-Intervention n° {{intervention.id}}</strong>
+                                  </I>
+                                </h3>
+                      
+                      
+                                <table class="table ">
+                                  <tbody>
+                                    <tr>
+                                      <td>Date : </td>
+                                      <td>{{intervention.start}}</td>
+                                    </tr>
+                                    <tr>
+                                      <td>Statut : </td>
+                                      <td>{{intervention.statut}}</td>
+                                    </tr>
+                                    <tr>
+                                      <td>Intervenant : </td>
+                                      <td>{{intervention.intervenant.prenom}} {{intervention.intervenant.nom}}</td>
+                                    </tr>
+                                    <tr>
+                                      <td>Site : </td>
+                                      <td>{{intervention.materiel.lesite.nom}}</td>
+                                    </tr>
+                                    <tr>
+                                      <td>Client : </td>
+                                      <td>{{intervention.materiel.client.nom}}</td>
+                                    </tr>
+                                    <tr>
+                                      <td>Materiel - serial : </td>
+                                      <td>{{intervention.materiel.serialID}} </td>
+                                    </tr>
+                                    <tr>
+                                      <td>Materiel - modèle: </td>
+                                      <td>{{intervention.materiel.article.marque}} - {{intervention.materiel.article.nom}}</td>
+                                    </tr>
+                                    <tr>
+                                      <td>Commentaire:</td>
+                                      <td>{{intervention.commentaire}}</td>
+                                    </tr>
+                      
+                                  </tbody>
+                      
+                      
+                                </table>
+                                <p style="font-size: 75% ;">Export fait le {{curDate | date:'yyyy-MM-dd'}} par {{intervention.materiel.client.nom}}
+                      
+                                </p>
+                              </kendo-pdf-export>
+                              <button style="text-align: center" (click)="pdfclient.close()" kendo-button (click)="pdfoperateur.saveAs('ExportedIntervention.pdf')" class="btn btn-primary4">telecharger</button>
 
+                            </div>
+                         
+                         
+                          
+                        </ngx-smart-modal>
                         </tr>
                       </tbody>
                     </table>
                   </div>
+
+               
+                  
+     
+
+
+                  
                     <div class="clearfix">
                     <div class="col-lg-8 mx-auto text-center">
                       <pagination style="margin-top: 0px;padding-top: 0px;padding-bottom: 0px;border-bottom: 0px" [totalItems]="totalItems" [ngModel]="currentPage"

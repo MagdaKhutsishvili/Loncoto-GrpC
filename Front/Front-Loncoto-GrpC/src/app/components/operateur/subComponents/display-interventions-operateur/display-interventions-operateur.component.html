@@ -291,7 +291,9 @@
 
 
 
-
+              <button kendo-button (click)="pdfoperateur.saveAs('ExportedIntervention.pdf')" class="btn btn-warning btn-xs">
+                Exporter le PDF
+              </button>
 
               <div style="position: absolute; left: -1000px; top: 0;">
                 <kendo-pdf-export #pdfoperateur paperSize="A4" margin="2cm">
@@ -372,9 +374,7 @@
 
               <button type="button" class="btn btn-primary btn-xs" pageScroll href="#tableauinter">
                 <i class="fa fa-user"> </i>Revenir à la liste</button>
-              <button kendo-button (click)="pdfoperateur.saveAs('ExportedIntervention.pdf')" class="btn btn-warning btn-xs">
-                Exporter le PDF
-              </button>
+             
             </div>
 
           </div>
