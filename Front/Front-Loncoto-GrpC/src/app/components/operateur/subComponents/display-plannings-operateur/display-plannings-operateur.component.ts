@@ -26,7 +26,7 @@ export class DisplayPlanningsOperateurComponent implements OnInit {
 
   private listeintervenant: Intervenant[]=[];
 public debutprev:Date;
-public finprev: Date;
+public daterandom: Date;
 public mois : number;
 
   public listevents: Evenement[]=[];
@@ -52,7 +52,7 @@ public selectintervenant: Intervenant=new Intervenant(0,"","","","purple");
   calendarOptions: Options;
   @ViewChild(CalendarComponent) ucCalendar: CalendarComponent;
   ngOnInit() {  
-    
+    this.debutprev=new Date(Date.now());
 
 
 
@@ -120,23 +120,29 @@ public eventbyintervenant(){
   
      this.listematos=p.content; 
     });
-this.mois=this.debutprev.getMonth();
+
 
       for (let materiel of this.listematos  ){
-        this.finprev=new Date();
-        this.finprev.setDate(Math.random() *28+1);
-        this.finprev.setMonth( this.mois);
-        this.finprev.setFullYear(this.debutprev.getFullYear());
-        this.interventionRepository.createIntervention(
+        this.daterandom=new Date();
+        this.daterandom.setDate(Math.random() *28+1);
+        this.daterandom.setMonth( this.debutprev.getMonth());
+        this.daterandom.setFullYear(this.debutprev.getFullYear());
+       console.log(
           new Intervention(0,"","","Préventive","Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, iusto est nemo earum velit ab"+ 
           "Voluptatibus incidunt architecto eius sapiente laboriosam aut dolores velit repellendus assumenda"+ 
           "tenetur! Hic, nisi necessitatibus!",materiel,
           this.listeintervenant[Math.floor((Math.random() * this.listeintervenant.length) )],
-          "Intervention Preventive sur"+materiel.article.nom,this.finprev.toLocaleDateString(),this.finprev.toLocaleDateString(),"purple"));
+          "Intervention Preventive sur"+materiel.article.nom,this.daterandom.toLocaleDateString(),this.daterandom.toLocaleDateString(),"purple"));
   
   }
   
 
+  }
+
+
+
+  public consoledebutprev(){
+    console.log(this.debutprev);
   }
 
 

@@ -7,6 +7,7 @@ import { ChartsModule } from 'ng2-charts';
 //import {BsDatepickerModule} from 'ngx-bootstrap/datepicker';
 import { PaginationModule } from "ngx-bootstrap/pagination";
 import { NgxSmartModalModule } from 'ngx-smart-modal';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -98,6 +99,7 @@ import { PDFExportModule } from '@progress/kendo-angular-pdf-export';
     PaginationModule.forRoot(),
     NgxSmartModalModule.forRoot(),
     PDFExportModule,
+    NgSelectModule,
     
     RouterModule.forRoot([
       {path: 'home', component: VitrineComponent},

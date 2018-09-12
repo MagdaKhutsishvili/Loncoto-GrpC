@@ -106,11 +106,11 @@
                       <label>Choisir le mois :</label>
                         <form>
                          
-                          <input type="date" [(ngModel)]="debutprev">
+                          <input type="date" name="debutprev" [(ngModel)]="debutprev"  >
                          
-                        </form>
-                        <button class="btn btn-success" (click)="genererEventsPreventives()" pageScroll href="#planning">Générer</button>
-
+                       
+                        <button class="btn btn-success" (click)="consoledebutprev()" pageScroll href="#planning">Générer</button>
+                      </form>
                         
                       </div>
                </div>

@@ -56,6 +56,9 @@ public getEventsbyIntervenant(id:number): Observable <Evenement[]> {
    }
 
 
+   public findclientById(id:number):Observable<Intervention[]>{
+    return this.http.get<Intervention[]>(`http://localhost:8080/loncogroup-c/interventions/client/${id}`);
+  }
 
    public findintervenantById(id:number):Observable<Intervention[]>{
     return this.http.get<Intervention[]>(`http://localhost:8080/loncogroup-c/interventions/intervenant/${id}`);

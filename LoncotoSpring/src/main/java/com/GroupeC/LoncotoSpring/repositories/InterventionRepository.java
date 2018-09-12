@@ -19,6 +19,11 @@ public interface InterventionRepository extends PagingAndSortingRepository<Inter
 	@Query("select i from Intervention i where i.intervenant.id = :idintervenant")
 	public List<Intervention> findByIntervenant_Id(@Param("idintervenant") int idintervenant);
 	
+	
+	@Query("select i from Intervention i where i.client.id = :idclient")
+	public List<Intervention> findByClient_Id(@Param("idclient") int idclient);
+	
+	
 	@Query("select i from Intervention i where i.materiel.id = :idmateriel")
 	public List<Intervention> findByMateriel_Id(@Param("idmateriel") int idmateriel);
 	

@@ -10,6 +10,7 @@ import { IntervenantRepositoryService } from '../../../../services/intervenant-r
 
 import { Materiel } from '../../../../metier/objet-materiel';
 import { MaterielRepositoryService } from '../../../../services/materiel-repository.service';
+import { Site } from '../../../../metier/objet-site';
 
 @Component({
   selector: 'app-display-interventions-operateur',
