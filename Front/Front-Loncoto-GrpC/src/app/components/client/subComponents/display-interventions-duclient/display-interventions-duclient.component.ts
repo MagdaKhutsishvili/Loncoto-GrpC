@@ -6,6 +6,8 @@ import { Intervenant } from '../../../../metier/objet-intervenant';
 import { Materiel } from '../../../../metier/objet-materiel';
 import { MaterielRepositoryService } from '../../../../services/materiel-repository.service';
 import { IntervenantRepositoryService } from '../../../../services/intervenant-repository.service';
+import { ClientRepositoryService } from '../../../../services/client-repository.service';
+import { Client } from '../../../../metier/objet-client';
 
 @Component({
   selector: 'app-display-interventions-duclient',
@@ -19,7 +21,6 @@ export class DisplayInterventionsDuclientComponent implements OnInit {
   private intervenantsSouscription : Subscription;
   public materielsSubject : Subject<Materiel[]>
   private materielsSouscription : Subscription;
- 
 
 
   public totalItems:number;
@@ -31,8 +32,9 @@ export class DisplayInterventionsDuclientComponent implements OnInit {
   public currentIntervenant : Intervenant;
   public currentMateriel : Materiel;
 
+  public Clientconnected: Client=new Client(0,"","",0);
 
-  constructor(private interventionRepository: InterventionsRepositoryService,private materielRepository: MaterielRepositoryService,private intervenantnRepository: IntervenantRepositoryService) {
+  constructor(private clientRepository: ClientRepositoryService, private interventionRepository: InterventionsRepositoryService,private materielRepository: MaterielRepositoryService,private intervenantnRepository: IntervenantRepositoryService) {
     //pour le ngfor
     this.interventionsSubject= new Subject<Intervention[]>();
     this.intervenantsSubject= new Subject<Intervenant[]>();
@@ -45,7 +47,7 @@ public pageChanged(event){
   this.interventionRepository.setnopage(event.page-1);
 }
   ngOnInit() {
-    this.interventionsSouscription=this.interventionRepository.getInterventionsAsObservable().subscribe(p=>{
+    /*this.interventionsSouscription=this.interventionRepository.getInterventionsAsObservable().subscribe(p=>{
       // je reçois les nouvelles pages d'Interventions
       this.interventionsSubject.next(p.content);
       this.totalItems=p.totalElements;
@@ -61,62 +63,29 @@ public pageChanged(event){
       // je reçois les nouvelles pages d'Interventions
       this.materielsSubject.next(p.content);
       
-    });
+    }); */
 
-
-
-
-    this.currentIntervention=new Intervention(0,"","","En Attente","",this.currentMateriel,this.currentIntervenant,"","","","");
+    {
+      this.interventionsSouscription=this.interventionRepository.findclientById(this.clientRepository.setclient_toconnect()).subscribe(
+        // je reçois les nouvelles pages d'Interventions
+        interventions=> { this.interventionsSubject.next(interventions);
+      });
+     // this.intervenantsSouscription=this.intervenantnRepository.getIntervenantsAsObservable2().subscribe(p=>{
+        // je reçois les nouvelles pages d'Interventions
+       // this.intervenantsSubject.next(p.content);
+        
+     // });
+      this.clientRepository.findById(
+       this.clientRepository.setclient_toconnect()).subscribe(Client=> { this.Clientconnected=Client;
+     },);
+     this.currentIntervention=new Intervention(0,"","","En Attente","",this.currentMateriel,this.currentIntervenant,"","","","");
     this.interventionRepository.refreshListe();
     this.intervenantnRepository.refreshListe();
     this.materielRepository.refreshListe();
-  }
-
-  public details(id: number) {
-    this.editIdIntervention=id;
-    this.interventionRepository.findById(this.editIdIntervention).subscribe(Intervention=> { this.currentIntervention=Intervention;
-    });
-  }
-
+    this.clientRepository.refreshListe();
   
 
-  public saveIntervention() {
-    
-    if (this.currentIntervention.id > 0){
-      let InterToSave = new Intervention(0,"","","En Attente","",this.currentMateriel,this.currentIntervenant,"","","","");
-      
-      // retransformation du modele/json du formulaire
-      // en veritable objet Livre avec ses méthodes
-      InterToSave.copyFrom(this.currentIntervention);
-
-      console.log(InterToSave);
-      this.interventionRepository.updateIntervention(InterToSave);
-      this.currentIntervention = new Intervention(0,"","","En Attente","",this.currentMateriel,this.currentIntervenant,"","","","");
-    }
-    else{
-      let InterToSave = new Intervention(0,"","","En Attente","",this.currentMateriel,this.currentIntervenant,"","","","");
-      
-      
-      InterToSave.copyFrom(this.currentIntervention);
-
-      console.log(InterToSave);
-      this.interventionRepository.createIntervention(InterToSave);
-      this.currentIntervention = new Intervention(0,"","","En Attente","",this.currentMateriel,this.currentIntervenant,"","","","");
-    }
-
   }
 
 
-public cancelIntervention() {
-  this.currentIntervention = new Intervention(0,"","","En Attente","",this.currentMateriel,this.currentIntervenant,"","","","");
-}
-
-public removeIntervention(){
-
-this.interventionRepository.removeIntervention(this.currentIntervention.id);
-this.currentIntervention=new Intervention(0,"","","En Attente","",this.currentMateriel,this.currentIntervenant,"","","","");
-}
-
-
-
-}
+  }}

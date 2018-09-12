@@ -14,7 +14,8 @@ export class EditInterventionsComponent implements OnInit {
 
 public currentMateriel :Materiel;
 public currentIntervenant:Intervenant;
-  @Input() public editId: number;
+ 
+@Input() public editId: number;
   public currentIntervention : Intervention;
   MaterielRepository: any;
 
@@ -29,9 +30,6 @@ public currentIntervenant:Intervenant;
     
       if (this.currentIntervention.id > 0){
         let InterToSave = new Intervention(0,"","","En Attente","",this.currentMateriel,this.currentIntervenant,"","","","");
-        
-        // retransformation du modele/json du formulaire
-        // en veritable objet Livre avec ses méthodes
         InterToSave.copyFrom(this.currentIntervention);
   
         this.InterventionRepository.updateIntervention(InterToSave);

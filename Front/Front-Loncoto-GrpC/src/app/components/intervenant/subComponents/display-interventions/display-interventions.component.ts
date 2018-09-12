@@ -31,6 +31,9 @@ export class DisplayInterventionsComponent implements OnInit {
   public currentIntervenant : Intervenant;
   public currentMateriel : Materiel;
 
+  public Intervenantconnected: Intervenant=new Intervenant(0,"","","","purple");
+
+
 
   constructor(private interventionRepository: InterventionsRepositoryService,private materielRepository: MaterielRepositoryService,private intervenantnRepository: IntervenantRepositoryService) {
     //pour le ngfor
@@ -45,24 +48,18 @@ public pageChanged(event){
   this.interventionRepository.setnopage(event.page-1);
 }
   ngOnInit() {
-    this.interventionsSouscription=this.interventionRepository.getInterventionsAsObservable().subscribe(p=>{
+    this.interventionsSouscription=this.interventionRepository.findintervenantById(this.intervenantnRepository.setintervenant_toconnect()).subscribe(
       // je reçois les nouvelles pages d'Interventions
-      this.interventionsSubject.next(p.content);
-      this.totalItems=p.totalElements;
-      this.currentPage=p.number+1;
-      this.taillePage=p.size;
+      interventions=> { this.interventionsSubject.next(interventions);
     });
-    this.intervenantsSouscription=this.intervenantnRepository.getIntervenantsAsObservable2().subscribe(p=>{
+   // this.intervenantsSouscription=this.intervenantnRepository.getIntervenantsAsObservable2().subscribe(p=>{
       // je reçois les nouvelles pages d'Interventions
-      this.intervenantsSubject.next(p.content);
+     // this.intervenantsSubject.next(p.content);
       
-    });
-    this.materielsSouscription=this.materielRepository.getMaterielsAsObservable2().subscribe(p=>{
-      // je reçois les nouvelles pages d'Interventions
-      this.materielsSubject.next(p.content);
-      
-    });
-
+   // });
+    this.intervenantnRepository.findById(
+     this.intervenantnRepository.setintervenant_toconnect()).subscribe(Intervenant=> { this.Intervenantconnected=Intervenant;
+   },);
 
 
 

@@ -55,14 +55,16 @@ public getEventsbyIntervenant(id:number): Observable <Evenement[]> {
     
    }
 
-
-
    public findintervenantById(id:number):Observable<Intervention[]>{
     return this.http.get<Intervention[]>(`http://localhost:8080/loncogroup-c/interventions/intervenant/${id}`);
   }
 
   public findMaterielById(id:number):Observable<Intervention[]>{
     return this.http.get<Intervention[]>(`http://localhost:8080/loncogroup-c/interventions/materiels/${id}`);
+  }
+
+public findclientById(id:number):Observable<Intervention[]>{
+    return this.http.get<Intervention[]>(`http://localhost:8080/loncogroup-c/interventions/client/${id}`);
   }
 
    public findById(id:number):Observable<Intervention>{

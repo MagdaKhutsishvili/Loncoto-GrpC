@@ -7,15 +7,13 @@
     }
    
     .titre {
-        font-family: 'Abril Fatface', cursive;
+        font-family: 'Dosis', sans-serif;
     }
     .left_col {
         background-color: #666699;
         }
         
-        .titre {
-            font-family: 'Abril Fatface', cursive;
-        }
+      
         .bg-primary {
             background-color: #55457a !important;
         }

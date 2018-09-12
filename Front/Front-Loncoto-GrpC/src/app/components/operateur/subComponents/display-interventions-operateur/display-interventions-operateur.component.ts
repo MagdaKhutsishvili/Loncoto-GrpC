@@ -33,12 +33,12 @@ export class DisplayInterventionsOperateurComponent implements OnInit{
   public currentPage : number;
   public taillePage : number;
   public currentIntervention : Intervention;
-
+  public editIdIntervention: number;
   
   
   public currentIntervenant : Intervenant;
   public currentMateriel : Materiel;
-
+  public Intervenantconnected: Intervenant=new Intervenant(0,"","","","purple");
 
   constructor(private interventionRepository: InterventionsRepositoryService,private materielRepository: MaterielRepositoryService,private intervenantnRepository: IntervenantRepositoryService) {
     //pour le ngfor

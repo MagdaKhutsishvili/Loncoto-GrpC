@@ -9,6 +9,7 @@ import { Page } from '../metier/page';
   providedIn: 'root'
 })
 export class IntervenantRepositoryService {
+ 
 
   private intervenantsSubject: BehaviorSubject<Page<Intervenant>>;
 
@@ -84,5 +85,8 @@ public getintervenant_toconnect(id:number){
 
 public setintervenant_toconnect(){
   return this.idconnected;
+}
+setclient_toconnect() {
+ return this.idconnected;
 }
 }
