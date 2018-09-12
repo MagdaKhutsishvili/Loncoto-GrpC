@@ -26,8 +26,10 @@ export class DisplayPlanningsOperateurComponent implements OnInit {
 
   private listeintervenant: Intervenant[]=[];
 public debutprev:Date;
+public finprev:Date;
+
 public daterandom: Date;
-public mois : number;
+public periode : number;
 
   public listevents: Evenement[]=[];
   public events = null
@@ -121,28 +123,42 @@ public eventbyintervenant(){
      this.listematos=p.content; 
     });
 
-
+    this.periode=Date.parse(this.finprev.toString())-Date.parse(this.debutprev.toString());
       for (let materiel of this.listematos  ){
-        this.daterandom=new Date();
-        this.daterandom.setDate(Math.random() *28+1);
-        this.daterandom.setMonth( this.debutprev.getMonth());
-        this.daterandom.setFullYear(this.debutprev.getFullYear());
-       console.log(
+       
+        this.daterandom=new Date(Date.parse(this.debutprev.toString())+(Math.random() *this.periode));
+        
+      this.interventionRepository.createIntervention2(
           new Intervention(0,"","","Préventive","Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, iusto est nemo earum velit ab"+ 
           "Voluptatibus incidunt architecto eius sapiente laboriosam aut dolores velit repellendus assumenda"+ 
           "tenetur! Hic, nisi necessitatibus!",materiel,
           this.listeintervenant[Math.floor((Math.random() * this.listeintervenant.length) )],
-          "Intervention Preventive sur"+materiel.article.nom,this.daterandom.toLocaleDateString(),this.daterandom.toLocaleDateString(),"purple"));
+          "Intervention Preventive sur"+materiel.article.nom,this.daterandom.toJSON().substring(0,10),this.daterandom.toJSON().substring(0,10),"#b67fc7"));
   
   }
   
-
+this.interventionRepository.refreshListe();
+this.interventionRepository.getEvents().subscribe(data=>{
+    
+  this.events= data;   
+});
   }
 
 
 
   public consoledebutprev(){
-    console.log(this.debutprev);
+   // this.debutprev=Date.parse(this.debutprev.toString());
+
+   this.daterandom=new Date(Date.parse(this.debutprev.toString())+(Math.random() *this.periode));
+
+   console.log(this.debutprev.toString());
+   console.log(Date.parse(this.finprev.toString()));
+    this.periode=Date.parse(this.finprev.toString())-Date.parse(this.debutprev.toString());
+        this.daterandom=new Date(Date.parse(this.debutprev.toString())+(Math.random() *this.periode));
+
+        //this.daterandom.setDate());
+        console.log(this.daterandom.toJSON());
+
   }
 
 

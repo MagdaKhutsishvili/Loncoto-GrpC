@@ -141,7 +141,7 @@
                     <small>dernières mise à jour le 02/09/2018.19:58:02</small>
                   </h2>
                   <ul class="nav navbar-right panel_toolbox">
-                    <button class="btn btn-warning" (click)="details(0)" pageScroll href="#intervention">Créer une nouvelle
+                    <button class="btn btn-warning" (click)="details(0)" pageScroll href="#editer">Créer une nouvelle
                     </button>
                     <li>
                       <a class="collapse-link">
@@ -209,14 +209,10 @@
                       </tr>
                     </tbody>
                   </table>
-                  <div class="row">
-                    <div class="col-lg-7"></div>
-                    <div class="col-lg-5">
-                      <pagination style="margin-top: 0px;padding-top: 0px;padding-bottom: 0px;border-bottom: 0px" [totalItems]="totalItems" [ngModel]="currentPage"
+             
+                      <pagination [totalItems]="totalItems" [ngModel]="currentPage"
                         [itemsPerPage]="taillePage" (pageChanged)="pageChanged($event)"></pagination>
-                    </div>
-                  </div>
-
+                       
                 </div>
               </div>
             </div>

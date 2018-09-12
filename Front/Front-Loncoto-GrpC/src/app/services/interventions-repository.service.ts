@@ -93,7 +93,11 @@ public getEventsbyIntervenant(id:number): Observable <Evenement[]> {
     });
   }
 
-
+  public createIntervention2(intervention : Intervention): void {
+    this.http.post(`http://localhost:8080/loncogroup-c/interventions/save/`, intervention.toJson()).subscribe(resp =>{
+             
+  });
+  }
 
 
 

@@ -105,11 +105,12 @@
                     <div class="x_panel">
                       <label>Choisir le mois :</label>
                         <form>
-                         
+                         <label>De</label>
                           <input type="date" name="debutprev" [(ngModel)]="debutprev"  >
-                         
+                          <label>à</label>
+                          <input type="date" name="finprev" [(ngModel)]="finprev"  >
                        
-                        <button class="btn btn-success" (click)="consoledebutprev()" pageScroll href="#planning">Générer</button>
+                        <button class="btn btn-success" (click)="genererEventsPreventives()" pageScroll href="#planning">Générer</button>
                       </form>
                         
                       </div>

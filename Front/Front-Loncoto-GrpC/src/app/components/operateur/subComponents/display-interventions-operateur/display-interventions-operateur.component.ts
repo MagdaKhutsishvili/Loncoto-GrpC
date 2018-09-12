@@ -30,9 +30,9 @@ export class DisplayInterventionsOperateurComponent implements OnInit{
  
 
 
-  public totalItems:number;
-  public currentPage : number;
-  public taillePage : number;
+  public totalItems:number=0;
+  public currentPage : number=1;
+  public taillePage : number=10;
   public currentIntervention : Intervention;
 
   
