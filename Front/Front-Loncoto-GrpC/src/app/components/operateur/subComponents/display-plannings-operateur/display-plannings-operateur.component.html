@@ -92,13 +92,30 @@
     </div>
   </header>
   
-  <section class="bg-primary backgroundallpage" id="preventive">
+  <section class=" backgroundallpage" id="preventive" style="background: linear-gradient(rgba(75, 8, 8, 0.7),rgba(75, 8, 8, 0.7))">
     <div class="col-lg-2 col-sm-2 col-xs-2 col-md-2"></div>
     <div class="col-lg-10 col-sm-10 col-xs-10 col-md-10 ">
       <div class="container">
         <div class="row">
           <div class="col-lg-8 mx-auto text-center">
-           
+              <div class="x_panel" style="height: 100%;">
+                  <div class="x_title">
+                      <h3>Programmer des interventions préventives</h3>
+                    </div>
+                    <div class="x_panel">
+                      <label>Choisir le mois :</label>
+                        <form>
+                         <label>De</label>
+                          <input type="date" name="debutprev" [(ngModel)]="debutprev"  >
+                          <label>à</label>
+                          <input type="date" name="finprev" [(ngModel)]="finprev"  >
+                       
+                        <button class="btn btn-success" (click)="genererEventsPreventives()" pageScroll href="#planning">Générer</button>
+                      </form>
+                        
+                      </div>
+               </div>
+
           </div>
         </div>
       </div>

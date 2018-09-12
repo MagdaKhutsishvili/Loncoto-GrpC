@@ -40,7 +40,7 @@
       <div class="col-lg-8 mx-auto">
         <p class="text-faded mb-5">Je suis </p>
         <a class="btn btn-primary4 btn-xl js-scroll-trigger" (click)="ngxSmartModalService.getModal('connexionclient').open()" >Un Client</a>
-   <a class="btn btn-primary2 btn-xl js-scroll-trigger" routerLink='/operateur'>Un Opérateur</a>
+   <a class="btn btn-primary2 btn-xl js-scroll-trigger" (click)="ngxSmartModalService.getModal('connexionoperateur').open()">Un Opérateur</a>
     <a class="btn btn-primary3 btn-xl js-scroll-trigger" style="color:black" (click)="ngxSmartModalService.getModal('connexionintervenant').open()" >Un intervenant</a>
     
     <ngx-smart-modal style="color:black;text-align: left" #connexionclient identifier="connexionclient">
@@ -52,10 +52,10 @@
           </h2>
           <table>
               <tr>
-                <td>Identifiant : </td><td><input type="text"></td>
+                <td>Identifiant : </td><td><input type="text" value="xxxxxx@xxxxx.fr"></td>
               </tr>
               <tr>
-                  <td>Mot de Passe :</td><td><input type="text"></td>
+                  <td>Mot de Passe :</td><td><input  type="password" value="xxxxxxxx"></td>
                 </tr>
   
 
@@ -93,7 +93,31 @@
     </ngx-smart-modal>
 
 
+    <ngx-smart-modal style="color:black;text-align: left" #connexionoperateur identifier="connexionoperateur">
+      <h2>Se Connecter
+          <small>Operateur: <select name="operateur" [(ngModel)]="ouioui" >
+            
+            <option value="1">Boss
+              </option>
+              <option value="2">Big Boss
+              </option>
+          </select> 
+            </small>
+        </h2>
+        <table>
+            <tr>
+              <td>Identifiant : </td><td><input type="text" value="boss@loncoto.fr"></td>
+            </tr>
+            <tr>
+                <td>Mot de Passe :</td><td><input type="password" value="xxxxxxxx"></td>
+              </tr>
+
+
+        </table>
+   
+    <button routerLink='/operateur' (click)="connexionoperateur.close()" style="text-align: center" class="btn btn-primary3">Connexion</button>
     
+  </ngx-smart-modal>
 
 
 

@@ -43,6 +43,16 @@ public class InterventionController {
 	}
 	
 	
+
+	@RequestMapping(value = "/client/{id:[0-9]+}", method = RequestMethod.GET, produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
+	@ResponseBody
+	@CrossOrigin(origins = {"http://localhost:4200"}, methods = {RequestMethod.GET})
+	public List<Intervention> findInterventionByClient(@PathVariable("id") int id){
+		return interventionRepository.findByClient_Id(id);
+	}
+	
+	
+	
 	
 	@RequestMapping(value = "/intervenant/{id:[0-9]+}", method = RequestMethod.GET, produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
 	@ResponseBody

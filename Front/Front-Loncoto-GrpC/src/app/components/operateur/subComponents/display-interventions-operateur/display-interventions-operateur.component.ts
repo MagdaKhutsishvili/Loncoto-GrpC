@@ -10,6 +10,7 @@ import { IntervenantRepositoryService } from '../../../../services/intervenant-r
 
 import { Materiel } from '../../../../metier/objet-materiel';
 import { MaterielRepositoryService } from '../../../../services/materiel-repository.service';
+import { Site } from '../../../../metier/objet-site';
 
 @Component({
   selector: 'app-display-interventions-operateur',
@@ -18,7 +19,7 @@ import { MaterielRepositoryService } from '../../../../services/materiel-reposit
 })
 export class DisplayInterventionsOperateurComponent implements OnInit{
 
-
+  curDate=new Date();
 
   public interventionsSubject : Subject<Intervention[]>
   private interventionsSouscription : Subscription;
@@ -29,9 +30,9 @@ export class DisplayInterventionsOperateurComponent implements OnInit{
  
 
 
-  public totalItems:number;
-  public currentPage : number;
-  public taillePage : number;
+  public totalItems:number=0;
+  public currentPage : number=1;
+  public taillePage : number=10;
   public currentIntervention : Intervention;
   public editIdIntervention: number;
   

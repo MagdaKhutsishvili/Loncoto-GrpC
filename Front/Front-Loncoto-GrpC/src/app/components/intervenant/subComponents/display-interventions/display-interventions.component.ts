@@ -13,6 +13,7 @@ import { MaterielRepositoryService } from '../../../../services/materiel-reposit
   styleUrls: ['./display-interventions.component.css']
 })
 export class DisplayInterventionsComponent implements OnInit {
+
   public interventionsSubject : Subject<Intervention[]>
   private interventionsSouscription : Subscription;
   public intervenantsSubject : Subject<Intervenant[]>
@@ -48,6 +49,7 @@ public pageChanged(event){
   this.interventionRepository.setnopage(event.page-1);
 }
   ngOnInit() {
+<<<<<<< HEAD
     this.interventionsSouscription=this.interventionRepository.findintervenantById(this.intervenantnRepository.setintervenant_toconnect()).subscribe(
       // je reçois les nouvelles pages d'Interventions
       interventions=> { this.interventionsSubject.next(interventions);
@@ -61,6 +63,25 @@ public pageChanged(event){
      this.intervenantnRepository.setintervenant_toconnect()).subscribe(Intervenant=> { this.Intervenantconnected=Intervenant;
    },);
 
+=======
+
+    
+    this.interventionsSouscription=this.interventionRepository.findintervenantById(this.intervenantnRepository.setintervenant_toconnect()).subscribe(
+      // je reçois les nouvelles pages d'Interventions
+      intervntions=> { this.interventionsSubject.next(intervntions);
+    });
+
+
+
+    this.materielsSouscription=this.materielRepository.getMaterielsAsObservable2().subscribe(p=>{
+      // je reçois les nouvelles pages d'Interventions
+      this.materielsSubject.next(p.content);
+      
+    });
+
+ 
+   
+>>>>>>> eb5a205a688ac8025d124db39ee3b8126bcd91f6
 
 
     this.currentIntervention=new Intervention(0,"","","En Attente","",this.currentMateriel,this.currentIntervenant,"","","","");

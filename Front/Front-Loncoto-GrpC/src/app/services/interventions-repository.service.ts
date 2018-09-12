@@ -55,6 +55,8 @@ public getEventsbyIntervenant(id:number): Observable <Evenement[]> {
     
    }
 
+
+
    public findintervenantById(id:number):Observable<Intervention[]>{
     return this.http.get<Intervention[]>(`http://localhost:8080/loncogroup-c/interventions/intervenant/${id}`);
   }
@@ -92,7 +94,11 @@ public findclientById(id:number):Observable<Intervention[]>{
     });
   }
 
-
+  public createIntervention2(intervention : Intervention): void {
+    this.http.post(`http://localhost:8080/loncogroup-c/interventions/save/`, intervention.toJson()).subscribe(resp =>{
+             
+  });
+  }
 
 
 
